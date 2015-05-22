@@ -22,8 +22,8 @@
     <div id="contents_wrap">
       <div class="section" data-menuanchor="page1">
         <a href="#" onclick="open_video();">신민아의 메탈쿠션 영상 플레이</a>
-        <div id="player_wrap" style="display:none;z-index:75">
-          <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer" style="width:100%;height:100%;width:800px;height:450px;"></iframe>
+        <div id="player_wrap" style="position:absolute;display:none;z-index:75;width:800px;height:450px;">
+          <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer" style="width:100%;height:100%;"></iframe>
         </div>
       </div>
       <div class="section" data-menuanchor="page2">page2</div>
