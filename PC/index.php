@@ -70,6 +70,8 @@ $(window).resize(function(){
 });
 
 $(document).ready(function() {
+	Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
+
 	//처음 화면 크기에 따라 영상및 커버 크기 변경
 	var width = $(window).width();
 	$("#ytplayer").width(width);
