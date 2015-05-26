@@ -1,6 +1,6 @@
 <?
 	// 유입매체 정보 입력
-	function VK_InsertTrackingInfo($media, $gubun)
+	function VM_InsertTrackingInfo($media, $gubun)
 	{
 		global $_gl;
 		global $my_db;
@@ -10,7 +10,7 @@
 	}
 
 	// 난수 생성
-	function VK_SerialNumber()
+	function VM_SerialNumber()
 	{
 		$randcode = md5( mktime() . $_SERVER['REMOTE_ADDR'] . $_SERVER['HTTP_USER_AGENT'] ); ;
 		return $randcode; // 난수 생성

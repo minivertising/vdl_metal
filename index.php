@@ -6,7 +6,7 @@
 
 	//$_SESSION['ss_media'] = $media;
 
-	VK_InsertTrackingInfo($media, $gubun);
+	VM_InsertTrackingInfo($media, $gubun);
 
 	if($gubun == "MOBILE")
 	{

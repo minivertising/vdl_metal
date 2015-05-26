@@ -203,29 +203,53 @@ function start_api()
 	}
 }
 
+function popup_desc(param)
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#' + param+ ''
+		},
+		type: 'inline',
+		fixedContentPos: true,
+		fixedBgPos: true,
+		overflowY: 'hidden',
+		closeBtnInside: true,
+		//preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in',
+		showCloseBtn : false,
+		closeOnBgClick: false,
+		callbacks: {
+			open: function() {
+			},
+			close: function() {
+				//chk_ins = 0;
+				//chk_ins2 = 0;
+				//$("#mb_receive").val("");
+				//$("#mb_send").val("");
+				//$("#mb_message").val("");
+			}
+		}
+	}, 0);
+}
+
+
 function answer_complete()
 {
 	var answer_txt	= $("#answer_input").val();
 
 	if (answer_txt == "메탈쿠션")
 	{
-		$.ajax({
-			type:"POST",
-			data:{
-				"exec"					: "insert_message",
-				"mb_receive"		: mb_receive,
-				"mb_message"		: mb_message,
-				"mb_send"			: mb_send
-			},
-			url: "../main_exec.php",
-			success: function(response){
-				//alert(response);
-				//$("#mb_idx").val(response);
-				setTimeout("ins2_data('" + response + "');",500);
-			}
-		});
+		setTimeout("popup_desc('event_input');",500);
 	}else{
 		alert("정답을 다시 입력해주세요.");
 	}
+}
+
+function input_word()
+{
+	setTimeout("popup_desc('event_answer');",500);
+
 }
 </script>
