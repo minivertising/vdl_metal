@@ -14,9 +14,9 @@
         <a href="#">SHIN MINA BEAYTY LIFE</a>
         <a href="#">METAL CUSHION</a>
         <a href="#">EVENT</a>
-        <a href="#">트위터</a>
-        <a href="#">페이스북</a>
-        <a href="#">스토리</a>
+        <a href="#" onclick="sns_share('twitter');">트위터</a>
+        <a href="#" onclick="sns_share('facebook');">페이스북</a>
+        <a href="#" onclick="sns_share('story');">스토리</a>
       </div>
     </div>
 
@@ -322,6 +322,7 @@ function movie_share(media)
 {
 	if (media == "facebook")
 	{
+		media	= "fbmovie";
 		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://youtu.be/eefSEWT_1jI'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
@@ -333,7 +334,82 @@ function movie_share(media)
 			}
 		});
 	}else if (media == "twitter"){
+		media	= "twmovie";
 		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS KAKAO FRIENDS! 친구에게 메시지를 보내고 컬렉션 제품이 담긴 VDL FRIENDS KIT를 받으세요! 참여만 해도 5천원 할인 쿠폰을 드려요.") + '&url='+ encodeURIComponent('https://youtu.be/eefSEWT_1jI'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
+		});
+	}else{
+		media	= "stmovie";
+		// 로그인 창을 띄웁니다.
+		Kakao.Auth.login({
+			success: function() {
+
+				// 로그인 성공시, API를 호출합니다.
+				Kakao.API.request( {
+					url : '/v1/api/story/linkinfo',
+					data : {
+						url : 'https://youtu.be/eefSEWT_1jI'
+					}
+				}).then(function(res) {
+					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
+					return Kakao.API.request( {
+						url : '/v1/api/story/post/link',
+						data : {
+						link_info : res,
+							content:"VDL MEETS SHIN MINA,\r\n특별한 피부의 새로운 시작, 진화된 [메탈 쿠션]을 만나다.\r\첫 화장 그대로 화사하고 깨끗한 피부를 연출해주는 VDL의 베스트 셀링 아이템, 뷰티 메탈 쿠션 파운데이션. 무결점 피부의 새로운 뮤즈 신민아가 완벽한 쿠션 선택을 제안한다."
+						}
+					});
+				}).then(function(res) {
+					return Kakao.API.request( {
+						url : '/v1/api/story/mystory',
+						data : { id : res.id }
+					});
+				}).then(function(res) {
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "../main_exec.php",
+						data:{
+							"exec" : "insert_share_info",
+							"media" : media	
+						}
+					});
+					alert("카카오스토리에 공유 되었습니다.");
+				}, function (err) {
+					alert(JSON.stringify(err));
+				});
+
+			},
+			fail: function(err) {
+				alert(JSON.stringify(err))
+			},
+		});
+	}
+}
+
+function sns_share(media)
+{
+	if (media == "facebook")
+	{
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.mnv.kr/?media=fbshare'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
+		});
+	}else if (media == "twitter"){
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS KAKAO FRIENDS! 친구에게 메시지를 보내고 컬렉션 제품이 담긴 VDL FRIENDS KIT를 받으세요! 참여만 해도 5천원 할인 쿠폰을 드려요.") + '&url='+ encodeURIComponent('http://www.mnv.kr/?media=twshare'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -352,7 +428,7 @@ function movie_share(media)
 				Kakao.API.request( {
 					url : '/v1/api/story/linkinfo',
 					data : {
-						url : 'https://youtu.be/eefSEWT_1jI'
+						url : 'http://www.mnv.kr/?media=ksshare'
 					}
 				}).then(function(res) {
 					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
@@ -390,6 +466,5 @@ function movie_share(media)
 		});
 	}
 }
-
 
 </script>

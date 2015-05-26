@@ -4,11 +4,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="Generator" content="EditPlus®">
-    <meta name="Author" content="">
-    <meta name="Keywords" content="">
-    <meta name="Description" content="">
+    <meta property="og:title" content="VDL MEETS KAKAO FRIENDS">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.vdlxkakao.com/MOBILE/index.php" />
+    <meta property="og:image" content="http://www.vdlxkakao.com/MOBILE/images/img_sns_share_new2.jpg" />
+    <meta property="og:description" content="VDL MEETS KAKAO FRIENDS 친구에게 메시지를 보내고 컬렉션 제품이 담긴 VDL FRIENDS KIT를 받아가세요! 참여만해도 5천원 할인 쿠폰을 드려요.">
     <link rel="stylesheet" type="text/css" href="../lib/Magnific-Popup/magnific-popup.css"> 
     <link rel="stylesheet" type="text/css" href="./css/style.css"> 
     <link rel="stylesheet" href="../lib/iCheck/skins/all.css">
