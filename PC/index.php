@@ -1,7 +1,7 @@
 <?
 	include_once   "./header.php";
 ?>
-    <div id="header_wrap" style="width:100%;height:70px;background:skyblue;z-index:19995">
+    <div id="header_wrap" style="position:absolute;width:100%;height:70px;background:skyblue;z-index:19995">
       <div>
         <a href="#">VDL SHOP</a> | 
         <a href="#">VDL TREND</a> | 
