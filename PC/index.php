@@ -60,6 +60,40 @@
 <script type="text/javascript">
 var txt_num = 0;
 
+    // 유튜브 반복 재생
+    var controllable_player,start, 
+    statechange = function(e){
+		if (e.data === 0)
+		{
+			controllable_player.seekTo(0); controllable_player.playVideo();
+		}
+		else if (e.data === 1)
+		{
+		}
+		else if (e.data === 2)
+		{
+		}
+		else if (e.data === 5)
+		{
+		}
+    	//controllable_player.playVideo(); 
+    };
+    function onYouTubeIframeAPIReady() {
+		controllable_player = new YT.Player('ytplayer', {events: {'onStateChange': statechange}}); 
+    }
+
+    if(window.opera){
+		addEventListener('load', onYouTubeIframeAPIReady, false);
+    }
+	setTimeout(function(){
+    	if (typeof(controllable_player) == 'undefined'){
+    		onYouTubeIframeAPIReady();
+    	}
+		//$(".cover_area").css("background","url('./images/movCover.png') repeat");
+
+    }, 1000)
+
+
 $(window).resize(function(){
 	var width = $(window).width();
 	var youtube_height = (width / 16) * 9;
