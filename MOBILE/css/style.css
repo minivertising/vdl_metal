@@ -456,56 +456,26 @@ body{
 	width:95%;
 	z-index:200;
 	margin:0 auto;
-	padding-top:50px;
-}
-.popup_wrap .p_mid.p_position.p_agree{
-	position:relative;
-	width:95%;
-	z-index:200;
-	margin:0 auto;
-	padding-top:50px;
-	height:400px;
-}
-.popup_wrap .p_mid.p_position.p_wide{
-	position:relative;
-	width:100%;
-	z-index:200;
-	margin:0;
-	padding-top:30px;
 }
 
 .popup_wrap .p_mid.p_position .block_content{
 	z-index:200;
 	background:#fff;
 	height:100%;
-	width:99%;
-	border-radius: 10px;
-	border:3px solid #000;
+	border:8px solid #302683;
 }
 .popup_wrap .p_mid.p_position.p_wide .block_content{
 	border:none;
-	background:#ffe600;
+	background:#fff;
 }
 
-
-.popup_wrap .p_mid.p_position.bg_gray .block_content{
-	background:#fff url(../images/popup/bg_gray.png) bottom repeat-x;
-}
-.popup_wrap .p_mid_bg_chrc{
-	position:absolute;
-	z-index:90;
-	top:0;
-	right:5%;
-}
-.popup_wrap .p_mid_bg_chrc img{
-}
 .popup_wrap .p_mid.p_position .block_close {
 	width:100%;
 	position:absolute;
 	padding:0 0 0;
 	z-index:300;
-	top:40px;
-	right:-1%;
+	top:13px;
+	right:10px;
 }
 .popup_wrap .p_mid.p_position.p_wide .block_close {
 	width:100%;
@@ -518,8 +488,7 @@ body{
 .popup_wrap .block_close .btn_close{
 	display:block;
 	float:right;
-	width:40px;
-	height:40px;
+	width:8%;
 }
 .popup_wrap .block_close .btn_close img{
 	width:95%;
@@ -702,7 +671,7 @@ body{
 	float:left;
 }
 .popup_wrap .p_position .block_content .inner .block_btn a img{
-	width:80%;
+	width:70%;
 }
 
 
