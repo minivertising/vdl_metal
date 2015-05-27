@@ -185,6 +185,7 @@ $(window).resize(function(){
 });
 
 $(document).ready(function() {
+	Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
 
 	//처음 화면 크기에 따라 영상및 커버 크기 변경
 	var width = $(window).width();
@@ -506,7 +507,6 @@ function movie_share(media)
 			}
 		});
 	}else{
-		Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
 		media	= "stmovie";
 		// 로그인 창을 띄웁니다.
 		Kakao.Auth.login({
@@ -524,7 +524,7 @@ function movie_share(media)
 						url : '/v1/api/story/post/link',
 						data : {
 						link_info : res,
-							content:"VDL MEETS SHIN MINA,\r\n특별한 피부의 새로운 시작, 진화된 [메탈 쿠션]을 만나다.\r\첫 화장 그대로 화사하고 깨끗한 피부를 연출해주는 VDL의 베스트 셀링 아이템, 뷰티 메탈 쿠션 파운데이션. 무결점 피부의 새로운 뮤즈 신민아가 완벽한 쿠션 선택을 제안한다."
+							content:"VDL MEETS SHIN MINA,\r\n특별한 피부의 새로운 시작, 진화된 [메탈 쿠션]을 만나다.\r\n첫 화장 그대로 화사하고 깨끗한 피부를 연출해주는 VDL의 베스트 셀링 아이템, 뷰티 메탈 쿠션 파운데이션. 무결점 피부의 새로운 뮤즈 신민아가 완벽한 쿠션 선택을 제안한다."
 						}
 					});
 				}).then(function(res) {
@@ -581,7 +581,6 @@ function sns_share(media)
 			}
 		});
 	}else{
-		Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
 		// 로그인 창을 띄웁니다.
 		Kakao.Auth.login({
 			success: function() {
@@ -598,7 +597,7 @@ function sns_share(media)
 						url : '/v1/api/story/post/link',
 						data : {
 						link_info : res,
-							content:"VDL MEETS SHIN MINA,\r\n특별한 피부의 새로운 시작, 진화된 [메탈 쿠션]을 만나다.\r\첫 화장 그대로 화사하고 깨끗한 피부를 연출해주는 VDL의 베스트 셀링 아이템, 뷰티 메탈 쿠션 파운데이션. 무결점 피부의 새로운 뮤즈 신민아가 완벽한 쿠션 선택을 제안한다."
+							content:"VDL MEETS SHIN MINA,\r\n특별한 피부의 새로운 시작, 진화된 [메탈 쿠션]을 만나다.\r\n첫 화장 그대로 화사하고 깨끗한 피부를 연출해주는 VDL의 베스트 셀링 아이템, 뷰티 메탈 쿠션 파운데이션. 무결점 피부의 새로운 뮤즈 신민아가 완벽한 쿠션 선택을 제안한다."
 						}
 					});
 				}).then(function(res) {
