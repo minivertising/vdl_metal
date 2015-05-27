@@ -1,64 +1,140 @@
 <?
 	include_once   "./header.php";
 ?>
-    <div id="header_wrap" style="position:absolute;width:100%;height:70px;background:skyblue;z-index:19995">
-      <div>
-        <a href="http://www.vdlcosmetics.com/product/index.jsp" target="_blank">VDL SHOP</a> | 
-        <a href="http://www.vdlcosmetics.com/product/collection/list.jsp" target="_blank">VDL TREND</a> | 
-        <a href="http://www.vdlcosmetics.com/story/story.jsp" target="_blank">MEET VDL</a> | 
-        <a href="http://blog.naver.com/vdlcosmetic" target="_blank">BLOG</a> | 
-        <a href="http://www.vdlcosmetics.com/lounge/social.jsp" target="_blank">SOCIAL CLUB</a>
+<!--contents_wrap-->
+<div class="contents_wrap">
+<input type="hidden" name="play_video" id="play_video" value="<?=$play_movie?>">
+<!--area1-->
+  <div class="area1">
+<!--video_area-->
+    <div class="video_area">
+<!--youtube_div-->
+      <div class="youtube_div">
+        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
       </div>
-      <div>
-        <a href="#">VDL MUSE SHIN MINA M/V</a>
-        <a href="#">SHIN MINA BEAYTY LIFE</a>
-        <a href="#">METAL CUSHION</a>
-        <a href="#">EVENT</a>
-        <a href="#" onclick="sns_share('twitter');">트위터</a>
-        <a href="#" onclick="sns_share('facebook');">페이스북</a>
-        <a href="#" onclick="sns_share('story');">스토리</a>
+<!--youtube_div-->
+<!--cover_area-->
+      <div class="cover_area">
       </div>
+<!--cover_area-->
+  <!--icon_area-->
+    <div class="icon_area">
+      <a href="http://www.vdlcosmetics.com/product/index.jsp" target="_blank">VDL SHOP</a> | 
+      <a href="http://www.vdlcosmetics.com/product/collection/list.jsp" target="_blank">VDL TREND</a> | 
+      <a href="http://www.vdlcosmetics.com/story/story.jsp" target="_blank">MEET VDL</a> | 
+      <a href="http://blog.naver.com/vdlcosmetic" target="_blank">BLOG</a> | 
+      <a href="http://www.vdlcosmetics.com/lounge/social.jsp" target="_blank">SOCIAL CLUB</a>
     </div>
+  <!--icon_area-->
+  <!--icon_area-->
+    <div class="icon_area2">
+      <a href="#">VDL MUSE SHIN MINA M/V</a>
+      <a href="#">SHIN MINA BEAYTY LIFE</a>
+      <a href="#">METAL CUSHION</a>
+      <a href="#">EVENT</a>
+      <a href="#" onclick="sns_share('twitter');">트위터</a>
+      <a href="#" onclick="sns_share('facebook');">페이스북</a>
+      <a href="#" onclick="sns_share('story');">스토리</a>
+    </div>
+  <!--icon_area-->
+	<div class="block_logo">  
+    </div>
+<!--center_menu_area-->
+      <div class="center_menu_area">
+        <div class="title">
+   	    	<a href="#">신민아의 메탈쿠션 영상 보기</a>
+        </div>
+      </div>
+<!--center_menu_area-->
+<!--scroll_navi_area-->
+      <div class="scroll_navi_area">
+	    <a href="#">아래로 이동</a>
+      </div>
+      <div class="bg_cloud">
+   	  	<img src="images/movie_bg.png" alt=""/>
+      </div>
+<!--scroll_navi_area-->
+    </div>
+<!--video_area-->
+  </div>
+<!--area1-->
 
-    <div id="contents_wrap">
-      <div id="area1">
-        <div id="video_area">
-          <div class="youtube_div">
-            <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
-          </div>
-          <div id="cover_area" style="position : absolute;top : 0;left : 0;width : 100%;height : 100%;background : url('./images/movCover.png') repeat;overflow : hidden;z-index : 10;">
-          </div>
-        </div>
+
+
+
+<!--area2-->
+<div class="area2_bg bg2" style="display:none">
+  <div class="area4">
+    <!-- <div class="product_group">
+      <div class="product_area">
+        <ul class="thumb_list clearfix">
+          <li>
+            <a href="#event_movie" class="popup-with-zoom-anim" onclick="start_api();">이벤트 참여</a>
+          </li>
+        </ul>
       </div>
-      <div>
-        <a href="#" onclick="prev_txt();return false;"><</a>
-        <div id="metal_txt1">
-          "쿠션 하나도 특별하게, 그게 제 스타일이에요."
-        </div>
-        <div id="metal_txt2" style="display:none">
-          "메탈쿠션2222222222"
-        </div>
-        <div id="metal_txt3" style="display:none">
-          "메탈쿠션3333333333"
-        </div>
-        <a href="#" onclick="next_txt();return false;">></a>
-      </div>
+    </div> -->
+  </div>
+ </div>
+<!--area2-->
+
+
+<!--area3-->
+<div class="area3_bg" style="display:none">
+  <div class="area3">
+  </div>
+ </div>  
+<!--area3-->
+
+<!--area4-->
+<div class="area4_bg" style="display:none">
+  <div class="area4">
+  </div>
+ </div>  
+<!--area4-->
+
+<!--area5-->
+<div class="area5_bg" style="display:none">
+  <div class="area5">
+  </div>
+ </div>  
+<!--area5-->
+
+<!--footer-->
+  <div class="footer" style="display:none">
+    <img src="images/footer.png" alt=""/>
+  </div>
+<!--footer-->
+
+
+
+<!--quickmenu-->
+<div class="quickmenu">
+  <a href="#"><img src="images/btn_top.png" width="45" height="45" alt=""/></a>
+</div>
+<!--quickmenu-->
       <div id="player_wrap" style="display:none;z-index:10;position:absolute">
         <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer" style="width:100%;height:100%;"></iframe>
       </div>
-      <div>
-        <a href="#event_movie" class="popup-with-zoom-anim" onclick="start_api();">이벤트 참여</a>
-      </div>
-    </div>
+
+</div>
     <div class="mask"></div>
 <?
 	include_once   "./popup_div.php";
 ?>
-
   </body>
 </html>
 <script type="text/javascript">
 var txt_num = 0;
+
+	// quick menu
+	var quickTop;
+	$(window).scroll(function() {
+		quickTop = ($(window).height()-$('.quickmenu').height()) /2;
+		$('.quickmenu').stop().animate({top:$(window).scrollTop()+quickTop},400,'easeOutExpo');
+		
+	});
+
 
     // 유튜브 반복 재생
     var controllable_player,start, 
@@ -101,6 +177,11 @@ $(window).resize(function(){
 	$("#ytplayer").height(youtube_height);
 	$("#cover_area").width($("#ytplayer").width());
 	$("#cover_area").height($("#ytplayer").height());
+
+	$('.area2').height(995); // 제품
+	$('.area4').height(995); // 제품
+	$('.area5').height(1500); // 제품
+	$('.area3').height(wHeight); // 제품
 });
 
 $(document).ready(function() {
@@ -112,6 +193,11 @@ $(document).ready(function() {
 	var youtube_height = (width / 16) * 9;
 	$("#ytplayer").height(youtube_height);
 	$("#cover_area").height($("#ytplayer").height());
+
+	$( '.quickmenu' ).click( function() {
+		$( 'html, body' ).animate( { scrollTop : 0 }, 800 );
+		return false;
+	} );
 
 	// 체크박스 스타일 설정
 	$('.zoom-anim-dialog input').on('ifChecked ifUnchecked', function(event){
@@ -149,6 +235,30 @@ $(document).ready(function() {
 		$(".mask").fadeOut(300);
 		$("#player_wrap").fadeOut(300);
 	});
+
+	// 퀵메뉴 기본 위치
+	var quick_height	= $(window).height()/2;
+	$('.quickmenu').css("top",quick_height);
+
+	var wHeight =$(window).height();
+
+	if (wHeight <= 780){
+		wHeight = 780;
+	}else if(wHeight > 1000){
+		wHeight = 1000;
+	}
+
+	$('.area2').height(995); // 제품
+	$('.area4').height(995); // 제품
+	$('.area5').height(1500); // 제품
+	$('.area3').height(wHeight); // 제품
+
+	$(".area2_bg").show();
+	$(".area3_bg").show();
+	$(".area4_bg").show();
+	$(".area5_bg").show();
+	$(".footer").show();
+
 });
 
 function open_video()
