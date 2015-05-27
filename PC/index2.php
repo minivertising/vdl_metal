@@ -47,7 +47,18 @@
         <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer" style="width:100%;height:100%;"></iframe>
       </div>
       <div>
+<?
+	if ($IE7 == "Y")
+	{
+?>
+        <a href="#" onclick="start_api();open_pop('IE7_event_movie')">이벤트 참여</a>
+<?
+	}else{
+?>
         <a href="#event_movie" class="popup-with-zoom-anim" onclick="start_api();">이벤트 참여</a>
+<?
+	}
+?>
       </div>
     </div>
     <div class="mask"></div>
@@ -57,177 +68,94 @@
 
   </body>
 </html>
+<?
+	if ($IE7 == "Y")
+	{
+?>
 <script type="text/javascript">
-var txt_num = 0;
-
-    // 유튜브 반복 재생
-    var controllable_player,start, 
-    statechange = function(e){
-		if (e.data === 0)
-		{
-			controllable_player.seekTo(0); controllable_player.playVideo();
-		}
-		else if (e.data === 1)
-		{
-		}
-		else if (e.data === 2)
-		{
-		}
-		else if (e.data === 5)
-		{
-		}
-    	//controllable_player.playVideo(); 
-    };
-    function onYouTubeIframeAPIReady() {
-		controllable_player = new YT.Player('ytplayer', {events: {'onStateChange': statechange}}); 
-    }
-
-    if(window.opera){
-		addEventListener('load', onYouTubeIframeAPIReady, false);
-    }
-	setTimeout(function(){
-    	if (typeof(controllable_player) == 'undefined'){
-    		onYouTubeIframeAPIReady();
-    	}
-		//$(".cover_area").css("background","url('./images/movCover.png') repeat");
-
-    }, 1000)
-
-
-$(window).resize(function(){
-	var width = $(window).width();
-	var youtube_height = (width / 16) * 9;
-	$("#ytplayer").width(width);
-	$("#ytplayer").height(youtube_height);
-	$("#cover_area").width($("#ytplayer").width());
-	$("#cover_area").height($("#ytplayer").height());
-});
-
-$(document).ready(function() {
-
-	//처음 화면 크기에 따라 영상및 커버 크기 변경
-	var width = $(window).width();
-	$("#ytplayer").width(width);
-	$("#cover_area").width($("#ytplayer").width());
-	var youtube_height = (width / 16) * 9;
-	$("#ytplayer").height(youtube_height);
-	$("#cover_area").height($("#ytplayer").height());
-
-	// 체크박스 스타일 설정
-	$('.zoom-anim-dialog input').on('ifChecked ifUnchecked', function(event){
-		//alert(this.id);
-	}).iCheck({
-		checkboxClass: 'icheckbox_flat-blue',
-		radioClass: 'iradio_square-blue',
-		increaseArea: '0%'
-	});
-
-
-	// 팝업 jQuery 스타일
-	$('.popup-with-zoom-anim').magnificPopup({
-		type: 'inline',
-		fixedContentPos: true,
-		fixedBgPos: true,
-		overflowY: 'hidden',
-		closeBtnInside: true,
-		//preloader: false,
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-zoom-in',
-		showCloseBtn : false,
-		closeOnBgClick: true,
-		callbacks: {
-			open: function() {
-			},
-			close: function() {
+function movie_share(media)
+{
+	if (media == "facebook")
+	{
+		media	= "fbmovie";
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://youtu.be/eefSEWT_1jI'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
 			}
-		}
-	});
-
-
-	$(".mask").click(function(){
-		$(".mask").fadeOut(300);
-		$("#player_wrap").fadeOut(300);
-	});
-});
-
-function open_video()
-{
-	$(".mask").width($(window).width());
-	$(".mask").height($(window).height());
-	$(".mask").fadeIn(300);
-	$("#player_wrap").fadeIn(300);
-}
-
-function prev_txt()
-{
-	if (txt_num == 0)
-	{
-		$("#metal_txt1").fadeOut("fast", function(){
-			$("#metal_txt3").fadeIn("fast", function(){
-				txt_num = 2;
-			});
 		});
-	}else if (txt_num == 1){
-		$("#metal_txt2").fadeOut("fast", function(){
-			$("#metal_txt1").fadeIn("fast", function(){
-				txt_num = 0;
-			});
+	}else if (media == "twitter"){
+		media	= "twmovie";
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS KAKAO FRIENDS! 친구에게 메시지를 보내고 컬렉션 제품이 담긴 VDL FRIENDS KIT를 받으세요! 참여만 해도 5천원 할인 쿠폰을 드려요.") + '&url='+ encodeURIComponent('https://youtu.be/eefSEWT_1jI'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
 		});
 	}else{
-		$("#metal_txt3").fadeOut("fast", function(){
-			$("#metal_txt2").fadeIn("fast", function(){
-				txt_num = 1;
-			});
-		});
+		alert("해당 브라우저에서는 지원하지 않는 기능입니다.");
 	}
 }
 
-function next_txt()
+function sns_share(media)
 {
-	if (txt_num == 0)
+	if (media == "facebook")
 	{
-		$("#metal_txt1").fadeOut("fast", function(){
-			$("#metal_txt2").fadeIn("fast", function(){
-				txt_num = 1;
-			});
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.mnv.kr/?media=fbshare'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
 		});
-	}else if (txt_num == 1){
-		$("#metal_txt2").fadeOut("fast", function(){
-			$("#metal_txt3").fadeIn("fast", function(){
-				txt_num = 2;
-			});
+	}else if (media == "twitter"){
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS KAKAO FRIENDS! 친구에게 메시지를 보내고 컬렉션 제품이 담긴 VDL FRIENDS KIT를 받으세요! 참여만 해도 5천원 할인 쿠폰을 드려요.") + '&url='+ encodeURIComponent('http://www.mnv.kr/?media=twshare'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
 		});
 	}else{
-		$("#metal_txt3").fadeOut("fast", function(){
-			$("#metal_txt1").fadeIn("fast", function(){
-				txt_num = 0;
-			});
-		});
+		alert("해당 브라우저에서는 지원하지 않는 기능입니다.");
 	}
 }
 
-function event_start()
+function open_pop(param)
 {
-	alert(document.body.scrollHeight);
 	$(".mask").width($(window).width());
 	$(".mask").height($(window).height());
-	$(".mask").fadeIn(300);
-	$("#event_movie").fadeIn(300);
+
+	$(".mask").show();
+	$("#" + param).show();
 }
 
 function start_api()
 {
-	$("#fake_btn").show();
-	$("#real_btn").hide();
+	$("#IE7_fake_btn").show();
+	$("#IE7_real_btn").hide();
 
 	// 유튜브 반복 재생
 	var controllable_player,start, 
 	statechange = function(e){
 		if (e.data === 0) // 종료됨
 		{
-			$("#fake_btn").hide();
-			$("#real_btn").show();
+			$("#IE7_fake_btn").hide();
+			$("#IE7_real_btn").show();
 			//$("#btn_sel_cloud").attr("data-mfp-src","#share_present");
 			//$("#btn_sel_cloud").attr("class","popup-with-zoom-anim");
 			//$("#btn_event_wait").hide();
@@ -235,7 +163,7 @@ function start_api()
 		}
 	};
 	function onYouTubeIframeAPIReady() {
-		controllable_player = new YT.Player('ytplayer_pop', {events: {'onStateChange': statechange}}); 
+		controllable_player = new YT.Player('IE7_ytplayer_pop', {events: {'onStateChange': statechange}}); 
 	}
 
 	if(window.opera){
@@ -248,126 +176,64 @@ function start_api()
 	}
 }
 
-function popup_desc(param)
+function input_word()
 {
-	$.magnificPopup.open({
-		items: {
-			src: '#' + param+ ''
-		},
-		type: 'inline',
-		fixedContentPos: true,
-		fixedBgPos: true,
-		overflowY: 'hidden',
-		closeBtnInside: true,
-		//preloader: false,
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-zoom-in',
-		showCloseBtn : false,
-		closeOnBgClick: false,
-		callbacks: {
-			open: function() {
-			},
-			close: function() {
-				//chk_ins = 0;
-				//chk_ins2 = 0;
-				//$("#mb_receive").val("");
-				//$("#mb_send").val("");
-				//$("#mb_message").val("");
-			}
-		}
-	}, 0);
+	$("#IE7_event_movie").hide();
+	$("#IE7_event_answer").show();
 }
 
+function chktxt(param) 
+{
+	if (param.id == "IE7_answer_input1")
+	{
+		if (param.value == "메")
+		{
+			$("#IE7_answer_input2").focus();
+		}
+	}else if (param.id == "IE7_answer_input2"){
+		if (param.value == "탈")
+		{
+			$("#IE7_answer_input3").focus();
+		}
+	}else if (param.id == "IE7_answer_input3"){
+		if (param.value == "쿠")
+		{
+			$("#IE7_answer_input4").focus();
+		}
+	}else if (param.id == "IE7_answer_input4"){
+		if (param.value == "션")
+		{
+			$("#IE7_answer_input4").blur();
+		}
+	}
+}
 
 function answer_complete()
 {
-	var answer_txt1	= $("#answer_input1").val();
-	var answer_txt2	= $("#answer_input2").val();
-	var answer_txt3	= $("#answer_input3").val();
-	var answer_txt4	= $("#answer_input4").val();
+	var answer_txt1	= $("#IE7_answer_input1").val();
+	var answer_txt2	= $("#IE7_answer_input2").val();
+	var answer_txt3	= $("#IE7_answer_input3").val();
+	var answer_txt4	= $("#IE7_answer_input4").val();
 	var answer_txt	= answer_txt1 + answer_txt2 + answer_txt3 + answer_txt4;
 	if (answer_txt == "메탈쿠션")
 	{
-		setTimeout("popup_desc('event_input');",500);
+		$("#IE7_event_movie").hide();
+		$("#IE7_event_answer").show();
 	}else{
 		alert("정답을 다시 입력해주세요.");
-		$("#answer_input1").val("");
-		$("#answer_input2").val("");
-		$("#answer_input3").val("");
-		$("#answer_input4").val("");
+		$("#IE7_answer_input1").val("");
+		$("#IE7_answer_input2").val("");
+		$("#IE7_answer_input3").val("");
+		$("#IE7_answer_input4").val("");
 	}
 }
 
-function input_word()
-{
-	setTimeout("popup_desc('event_answer');",500);
-}
 
-function input_info()
-{
-	var mb_name	= $("#mb_name").val();
-	var mb_phone1	= $("#mb_phone1").val();
-	var mb_phone2	= $("#mb_phone2").val();
-	var mb_phone3	= $("#mb_phone3").val();
-	var mb_phone	= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
-
-	if (mb_name == "")
-	{
-		setTimeout("popup_desc('pop_input');",500);
-
-		$("#mb_name").focus();
-		return false;
-	}
-
-	if (mb_phone2 == "")
-	{
-		setTimeout("popup_desc('pop_input');",500);
-
-		$("#mb_phone2").focus();
-		return false;
-	}
-
-	if (mb_phone3 == "")
-	{
-		setTimeout("popup_desc('pop_input');",500);
-
-		$("#mb_phone3").focus();
-		return false;
-	}
-
-	if ($('#use_agree').is(":checked") == false)
-	{
-		setTimeout("popup_desc('pop_use_agree_alert');",500);
-		return false;
-	}
-
-	if ($('#privacy_agree').is(":checked") == false)
-	{
-		setTimeout("popup_desc('pop_privacy_agree_alert');",500);
-		return false;
-	}
-
-	if ($('#adver_agree').is(":checked") == false)
-	{
-		setTimeout("popup_desc('pop_adver_agree_alert');",500);
-		return false;
-	}
-
-	$.ajax({
-		type:"POST",
-		data:{
-			"exec"					: "insert_info",
-			"mb_name"		: mb_name,
-			"mb_phone"		: mb_phone
-		},
-		url: "../main_exec.php",
-		success: function(response){
-			setTimeout("popup_desc('pop_thanks');",500);
-		}
-	});
-}
-
+</script>
+<?
+	}else{
+?>
+<script type="text/javascript">
 function movie_share(media)
 {
 	if (media == "facebook")
@@ -517,6 +383,43 @@ function sns_share(media)
 	}
 }
 
+function start_api()
+{
+	$("#fake_btn").show();
+	$("#real_btn").hide();
+
+	// 유튜브 반복 재생
+	var controllable_player,start, 
+	statechange = function(e){
+		if (e.data === 0) // 종료됨
+		{
+			$("#fake_btn").hide();
+			$("#real_btn").show();
+			//$("#btn_sel_cloud").attr("data-mfp-src","#share_present");
+			//$("#btn_sel_cloud").attr("class","popup-with-zoom-anim");
+			//$("#btn_event_wait").hide();
+			//$("#btn_event").show();
+		}
+	};
+	function onYouTubeIframeAPIReady() {
+		controllable_player = new YT.Player('ytplayer_pop', {events: {'onStateChange': statechange}}); 
+	}
+
+	if(window.opera){
+		addEventListener('load', onYouTubeIframeAPIReady, false);
+	}
+
+	//alert(typeof(controllable_player));
+	if (typeof(controllable_player) == 'undefined'){
+		onYouTubeIframeAPIReady();
+	}
+}
+
+function input_word()
+{
+	setTimeout("popup_desc('event_answer');",500);
+}
+
 function chktxt(param) 
 {
 	if (param.id == "answer_input1")
@@ -542,4 +445,288 @@ function chktxt(param)
 		}
 	}
 }
+
+function answer_complete()
+{
+	var answer_txt1	= $("#answer_input1").val();
+	var answer_txt2	= $("#answer_input2").val();
+	var answer_txt3	= $("#answer_input3").val();
+	var answer_txt4	= $("#answer_input4").val();
+	var answer_txt	= answer_txt1 + answer_txt2 + answer_txt3 + answer_txt4;
+	if (answer_txt == "메탈쿠션")
+	{
+		setTimeout("popup_desc('right_answer_alert');",500);
+	}else{
+		$("#answer_input1").val("");
+		$("#answer_input2").val("");
+		$("#answer_input3").val("");
+		$("#answer_input4").val("");
+		setTimeout("popup_desc('wrong_answer_alert');",500);
+	}
+}
+
+
+</script>
+<?
+	}
+?>
+<script type="text/javascript">
+var txt_num = 0;
+
+    // 유튜브 반복 재생
+    var controllable_player,start, 
+    statechange = function(e){
+		if (e.data === 0)
+		{
+			controllable_player.seekTo(0); controllable_player.playVideo();
+		}
+		else if (e.data === 1)
+		{
+		}
+		else if (e.data === 2)
+		{
+		}
+		else if (e.data === 5)
+		{
+		}
+    	//controllable_player.playVideo(); 
+    };
+    function onYouTubeIframeAPIReady() {
+		controllable_player = new YT.Player('ytplayer', {events: {'onStateChange': statechange}}); 
+    }
+
+    if(window.opera){
+		addEventListener('load', onYouTubeIframeAPIReady, false);
+    }
+	setTimeout(function(){
+    	if (typeof(controllable_player) == 'undefined'){
+    		onYouTubeIframeAPIReady();
+    	}
+		//$(".cover_area").css("background","url('./images/movCover.png') repeat");
+
+    }, 1000)
+
+
+$(window).resize(function(){
+	var width = $(window).width();
+	var youtube_height = (width / 16) * 9;
+	$("#ytplayer").width(width);
+	$("#ytplayer").height(youtube_height);
+	$("#cover_area").width($("#ytplayer").width());
+	$("#cover_area").height($("#ytplayer").height());
+});
+
+$(document).ready(function() {
+
+	//처음 화면 크기에 따라 영상및 커버 크기 변경
+	var width = $(window).width();
+	$("#ytplayer").width(width);
+	$("#ytplayer_pop").width(630);
+	$("#cover_area").width($("#ytplayer").width());
+	var youtube_height = (width / 16) * 9;
+	var youtubepop_height = (630 / 16) * 9;
+	$("#ytplayer").height(youtube_height);
+	$("#ytplayer_pop").height(youtubepop_height);
+	$("#cover_area").height($("#ytplayer").height());
+
+	// 체크박스 스타일 설정
+	$('#event_input input').on('ifChecked ifUnchecked', function(event){
+		//alert(this.id);
+	}).iCheck({
+		checkboxClass: 'icheckbox_flat-blue',
+		radioClass: 'iradio_square-blue',
+		increaseArea: '0%'
+	});
+
+
+	// 팝업 jQuery 스타일
+	$('.popup-with-zoom-anim').magnificPopup({
+		type: 'inline',
+		fixedContentPos: true,
+		fixedBgPos: true,
+		overflowY: 'hidden',
+		closeBtnInside: true,
+		//preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in',
+		showCloseBtn : false,
+		closeOnBgClick: false,
+		callbacks: {
+			open: function() {
+			},
+			close: function() {
+			}
+		}
+	});
+
+
+	$(".mask").click(function(){
+		$(".mask").fadeOut(300);
+		$("#player_wrap").fadeOut(300);
+	});
+});
+
+function open_video()
+{
+	$(".mask").width($(window).width());
+	$(".mask").height($(window).height());
+	$(".mask").fadeIn(300);
+	$("#player_wrap").fadeIn(300);
+}
+
+function prev_txt()
+{
+	if (txt_num == 0)
+	{
+		$("#metal_txt1").fadeOut("fast", function(){
+			$("#metal_txt3").fadeIn("fast", function(){
+				txt_num = 2;
+			});
+		});
+	}else if (txt_num == 1){
+		$("#metal_txt2").fadeOut("fast", function(){
+			$("#metal_txt1").fadeIn("fast", function(){
+				txt_num = 0;
+			});
+		});
+	}else{
+		$("#metal_txt3").fadeOut("fast", function(){
+			$("#metal_txt2").fadeIn("fast", function(){
+				txt_num = 1;
+			});
+		});
+	}
+}
+
+function next_txt()
+{
+	if (txt_num == 0)
+	{
+		$("#metal_txt1").fadeOut("fast", function(){
+			$("#metal_txt2").fadeIn("fast", function(){
+				txt_num = 1;
+			});
+		});
+	}else if (txt_num == 1){
+		$("#metal_txt2").fadeOut("fast", function(){
+			$("#metal_txt3").fadeIn("fast", function(){
+				txt_num = 2;
+			});
+		});
+	}else{
+		$("#metal_txt3").fadeOut("fast", function(){
+			$("#metal_txt1").fadeIn("fast", function(){
+				txt_num = 0;
+			});
+		});
+	}
+}
+
+function event_start()
+{
+	alert(document.body.scrollHeight);
+	$(".mask").width($(window).width());
+	$(".mask").height($(window).height());
+	$(".mask").fadeIn(300);
+	$("#event_movie").fadeIn(300);
+}
+
+function popup_desc(param)
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#' + param+ ''
+		},
+		type: 'inline',
+		fixedContentPos: true,
+		fixedBgPos: true,
+		overflowY: 'hidden',
+		closeBtnInside: true,
+		//preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in',
+		showCloseBtn : false,
+		closeOnBgClick: false,
+		callbacks: {
+			open: function() {
+			},
+			close: function() {
+				//chk_ins = 0;
+				//chk_ins2 = 0;
+				//$("#mb_receive").val("");
+				//$("#mb_send").val("");
+				//$("#mb_message").val("");
+			}
+		}
+	}, 0);
+}
+
+
+
+function input_info()
+{
+	var mb_name	= $("#mb_name").val();
+	var mb_phone1	= $("#mb_phone1").val();
+	var mb_phone2	= $("#mb_phone2").val();
+	var mb_phone3	= $("#mb_phone3").val();
+	var mb_phone	= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
+
+	if (mb_name == "")
+	{
+		setTimeout("popup_desc('pop_input');",500);
+
+		$("#mb_name").focus();
+		return false;
+	}
+
+	if (mb_phone2 == "")
+	{
+		setTimeout("popup_desc('pop_input');",500);
+
+		$("#mb_phone2").focus();
+		return false;
+	}
+
+	if (mb_phone3 == "")
+	{
+		setTimeout("popup_desc('pop_input');",500);
+
+		$("#mb_phone3").focus();
+		return false;
+	}
+
+	if ($('#use_agree').is(":checked") == false)
+	{
+		setTimeout("popup_desc('pop_use_agree_alert');",500);
+		return false;
+	}
+
+	if ($('#privacy_agree').is(":checked") == false)
+	{
+		setTimeout("popup_desc('pop_privacy_agree_alert');",500);
+		return false;
+	}
+
+	if ($('#adver_agree').is(":checked") == false)
+	{
+		setTimeout("popup_desc('pop_adver_agree_alert');",500);
+		return false;
+	}
+
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"					: "insert_info",
+			"mb_name"		: mb_name,
+			"mb_phone"		: mb_phone
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			setTimeout("popup_desc('pop_thanks');",500);
+		}
+	});
+}
+
 </script>

@@ -288,19 +288,6 @@
 	overflow:hidden;
 }
 
-/* 이벤트 응모 팝업*/
-.popup_wrap{
-	position:absolute;
-	top:50%;
-	left:50%;
-	margin-top:-280px;
-	margin-left:-220px;
-	width:400px;
-	height:400px;
-	text-align:center;
-	z-index:40;
-}
-
 .popup_wrap .block_close {
 	width:100%;
 	padding:10px 0;
@@ -426,7 +413,7 @@ html[xmlns] .clearfix {
 	position: relative;
 }
 
-.mask{display:none; position:absolute;left:0;width:100%;height:100%;background:url(../images/mask_bg.png) repeat;z-index:8}
+.mask{display:none; position:absolute;top:0;left:0;width:100%;height:100%;background:url(../images/mask_bg.png) repeat;z-index:8}
 
 /**
  * Fade-zoom animation for first dialog

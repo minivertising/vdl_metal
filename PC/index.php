@@ -114,7 +114,7 @@
 </div>
 <!--quickmenu-->
       <div id="player_wrap" style="display:none;z-index:10;position:absolute">
-        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer2" class="ytplayer2" style="width:100%;height:100%;"></iframe>
+        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url2']?>" frameborder="0" id="ytplayer2" class="ytplayer2" style="width:100%;height:100%;"></iframe>
       </div>
 
 </div>
