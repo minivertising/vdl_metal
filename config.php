@@ -23,8 +23,8 @@
 		}
 	}
 
-	//if(stripos( $_SERVER['HTTP_HOST'], "vdl-metalcushion.com" )){
-	if(stripos( $_SERVER['HTTP_HOST'], "mnv.kr" )){
+	if(stripos( $_SERVER['HTTP_HOST'], "vdl-metalcushion.com" )){
+	//if(stripos( $_SERVER['HTTP_HOST'], "mnv.kr" )){
 		echo "오픈 중비중입니다.";
 		exit;
 	}
