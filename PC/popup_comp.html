@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="shortcut icon" type="image/x-icon" href="./img/icon/favicon.ico" />
+<title>VDL 완료팝업</title>
+<!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]-->
+<link href="css/style_yang.css" rel="stylesheet" type="text/css">
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+</head>
+
+<body style="background:#3d3303;">
+
+
+	<!--메시지 완료 팝업-->
+	<div class="popup_wrap">
+   	  <div class="p_mid_comp p_position">
+            <div class="block_close clearfix">
+                <a href="#" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+            </div>
+            <div class="block_content">
+            	<div class="inner">
+                	<div class="title">
+       	    	    	<img src="images/popup/title_alert_comp.png" />
+                    </div>
+                    <div class="block_url">
+                    	www.wwwwww
+                    </div>
+                    <div class="txt_notice">
+                    	<img src="images/popup/txt_url_notice_2.png" alt=""/>
+                    </div>                    
+                    <div class="btn_block">
+                        <a href="#"><img src="images/popup/btn_url.png" alt=""/></a>
+                    </div>
+
+                    <div class="txt_notice">
+                    	<img src="images/popup/txt_url_notice.png" alt=""/>
+                    </div>
+                </div><!--inner-->
+            </div>
+            <div class="bg_chrc">
+            	<img src="images/popup/bg_chrc.png" alt=""/>
+            </div>
+        </div>
+	</div>
+    <!--END : 개인정보입력  작성-->
+
+ 
+ <!--------------------- 이벤트 참여 완료 팝업 --------------------->
+<div id="pop_event_thank" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-left:-268px;top:50%;left:50%;">
+  <div class="p_mid_comp p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="$.magnificPopup.close();" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_alert_comp.png" />
+        </div>
+        <div class="block_url" id="c_url">ddd</div>
+        <div class="btn_block">
+          <a href="#" onclick="copy_url();"><img src="images/popup/btn_url.png" alt=""/></a>
+        </div>
+        <div class="btn_close_block">
+          <a href="#" onclick="$.magnificPopup.close();" class="btn_close"><img src="images/popup/btn_close_event.png" /></a>
+        </div>
+      </div><!--inner-->
+    </div>
+    <div class="bg_chrc">
+      <img src="images/popup/bg_chrc.png" alt=""/>
+    </div>
+  </div>
+</div>
+<!--------------------- 이벤트 참여 완료 팝업 --------------------->
+ 
+ 
+ 
+    
+    
+</body>
+</html>
