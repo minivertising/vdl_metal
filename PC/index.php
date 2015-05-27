@@ -114,7 +114,7 @@
 </div>
 <!--quickmenu-->
       <div id="player_wrap" style="display:none;z-index:10;position:absolute">
-        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer" style="width:100%;height:100%;"></iframe>
+        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer2" class="ytplayer2" style="width:100%;height:100%;"></iframe>
       </div>
 
 </div>
@@ -155,7 +155,7 @@ var txt_num = 0;
     	//controllable_player.playVideo(); 
     };
     function onYouTubeIframeAPIReady() {
-		controllable_player = new YT.Player('ytplayer', {events: {'onStateChange': statechange}}); 
+		controllable_player = new YT.Player('ytplayer2', {events: {'onStateChange': statechange}}); 
     }
 
     if(window.opera){
@@ -506,6 +506,7 @@ function movie_share(media)
 			}
 		});
 	}else{
+		Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
 		media	= "stmovie";
 		// 로그인 창을 띄웁니다.
 		Kakao.Auth.login({
@@ -580,6 +581,7 @@ function sns_share(media)
 			}
 		});
 	}else{
+		Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
 		// 로그인 창을 띄웁니다.
 		Kakao.Auth.login({
 			success: function() {
