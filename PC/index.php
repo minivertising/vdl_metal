@@ -590,7 +590,7 @@ function sns_share(media)
 				Kakao.API.request( {
 					url : '/v1/api/story/linkinfo',
 					data : {
-						url : 'http://www.mnv.kr/?media=ksshare'
+						url : 'http://www.mnv.kr/index.php?media=ksshare'
 					}
 				}).then(function(res) {
 					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
