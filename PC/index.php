@@ -3,11 +3,11 @@
 ?>
     <div id="header_wrap" style="position:absolute;width:100%;height:70px;background:skyblue;z-index:19995">
       <div>
-        <a href="#">VDL SHOP</a> | 
-        <a href="#">VDL TREND</a> | 
-        <a href="#">MEET VDL</a> | 
-        <a href="#">BLOG</a> | 
-        <a href="#">SOCIAL CLUB</a>
+        <a href="http://www.vdlcosmetics.com/product/index.jsp" target="_blank">VDL SHOP</a> | 
+        <a href="http://www.vdlcosmetics.com/product/collection/list.jsp" target="_blank">VDL TREND</a> | 
+        <a href="http://www.vdlcosmetics.com/story/story.jsp" target="_blank">MEET VDL</a> | 
+        <a href="http://blog.naver.com/vdlcosmetic" target="_blank">BLOG</a> | 
+        <a href="http://www.vdlcosmetics.com/lounge/social.jsp" target="_blank">SOCIAL CLUB</a>
       </div>
       <div>
         <a href="#">VDL MUSE SHIN MINA M/V</a>
