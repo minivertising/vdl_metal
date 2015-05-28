@@ -51,7 +51,7 @@
 	if ($IE7 == "Y")
 	{
 ?>
-        <a href="#" onclick="start_api();open_pop('IE7_event_movie')">이벤트 참여</a>
+        <a href="#" onclick="start_api();open_pop('IE7_event_movie','')">이벤트 참여</a>
 <?
 	}else{
 ?>
@@ -135,13 +135,32 @@ function sns_share(media)
 	}
 }
 
-function open_pop(param)
+function open_pop(param, param2)
 {
 	$(".mask").width($(window).width());
 	$(".mask").height($(window).height());
 
 	$(".mask").show();
+
+	if (param2 != "")
+		$("#" + param2).hide();
+	
 	$("#" + param).show();
+}
+
+function close_pop(param, param2)
+{
+	$(".mask").width($(window).width());
+	$(".mask").height($(window).height());
+
+	$(".mask").show();
+
+	if (param != "")
+	{
+		$("#" + param).hide();
+		$(".mask").hide();
+	}
+	$("#" + param2).show();
 }
 
 function start_api()
@@ -217,17 +236,75 @@ function answer_complete()
 	var answer_txt	= answer_txt1 + answer_txt2 + answer_txt3 + answer_txt4;
 	if (answer_txt == "메탈쿠션")
 	{
-		$("#IE7_event_movie").hide();
-		$("#IE7_event_answer").show();
+		open_pop("IE7_right_answer_alert", "IE7_event_answer");
 	}else{
-		alert("정답을 다시 입력해주세요.");
 		$("#IE7_answer_input1").val("");
 		$("#IE7_answer_input2").val("");
 		$("#IE7_answer_input3").val("");
 		$("#IE7_answer_input4").val("");
+		open_pop("IE7_wrong_answer_alert", "IE7_event_answer");
 	}
 }
 
+function input_info()
+{
+	var mb_name	= $("#IE7_mb_name").val();
+	var mb_phone1	= $("#IE7_mb_phone1").val();
+	var mb_phone2	= $("#IE7_mb_phone2").val();
+	var mb_phone3	= $("#IE7_mb_phone3").val();
+	var mb_phone	= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
+
+	if (mb_name == "")
+	{
+		open_pop("IE7_pop_input", "IE7_event_input");
+
+		//$("#mb_name").focus();
+		return false;
+	}
+
+	if (mb_phone2 == "")
+	{
+		open_pop("IE7_pop_input", "IE7_event_input");
+		return false;
+	}
+
+	if (mb_phone3 == "")
+	{
+		open_pop("IE7_pop_input", "IE7_event_input");
+		return false;
+	}
+
+	if ($('#IE7_use_agree').is(":checked") == false)
+	{
+		open_pop("IE7_pop_use_agree_alert", "IE7_event_input");
+		return false;
+	}
+
+	if ($('#IE7_privacy_agree').is(":checked") == false)
+	{
+		open_pop("IE7_pop_privacy_agree_alert", "IE7_event_input");
+		return false;
+	}
+
+	if ($('#IE7_adver_agree').is(":checked") == false)
+	{
+		open_pop("IE7_pop_adver_agree_alert", "IE7_event_input");
+		return false;
+	}
+
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"					: "insert_info",
+			"mb_name"		: mb_name,
+			"mb_phone"		: mb_phone
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			open_pop("IE7_pop_thanks", "IE7_event_input");
+		}
+	});
+}
 
 </script>
 <?
@@ -464,6 +541,69 @@ function answer_complete()
 	}
 }
 
+function input_info()
+{
+	var mb_name	= $("#mb_name").val();
+	var mb_phone1	= $("#mb_phone1").val();
+	var mb_phone2	= $("#mb_phone2").val();
+	var mb_phone3	= $("#mb_phone3").val();
+	var mb_phone	= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
+
+	if (mb_name == "")
+	{
+		setTimeout("popup_desc('pop_input');",500);
+
+		$("#mb_name").focus();
+		return false;
+	}
+
+	if (mb_phone2 == "")
+	{
+		setTimeout("popup_desc('pop_input');",500);
+
+		$("#mb_phone2").focus();
+		return false;
+	}
+
+	if (mb_phone3 == "")
+	{
+		setTimeout("popup_desc('pop_input');",500);
+
+		$("#mb_phone3").focus();
+		return false;
+	}
+
+	if ($('#use_agree').is(":checked") == false)
+	{
+		setTimeout("popup_desc('pop_use_agree_alert');",500);
+		return false;
+	}
+
+	if ($('#privacy_agree').is(":checked") == false)
+	{
+		setTimeout("popup_desc('pop_privacy_agree_alert');",500);
+		return false;
+	}
+
+	if ($('#adver_agree').is(":checked") == false)
+	{
+		setTimeout("popup_desc('pop_adver_agree_alert');",500);
+		return false;
+	}
+
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"					: "insert_info",
+			"mb_name"		: mb_name,
+			"mb_phone"		: mb_phone
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			setTimeout("popup_desc('pop_thanks');",500);
+		}
+	});
+}
 
 </script>
 <?
@@ -521,11 +661,13 @@ $(document).ready(function() {
 	var width = $(window).width();
 	$("#ytplayer").width(width);
 	$("#ytplayer_pop").width(630);
+	$("#IE7_ytplayer_pop").width(630);
 	$("#cover_area").width($("#ytplayer").width());
 	var youtube_height = (width / 16) * 9;
 	var youtubepop_height = (630 / 16) * 9;
 	$("#ytplayer").height(youtube_height);
 	$("#ytplayer_pop").height(youtubepop_height);
+	$("#IE7_ytplayer_pop").height(youtubepop_height);
 	$("#cover_area").height($("#ytplayer").height());
 
 	// 체크박스 스타일 설정
@@ -667,68 +809,5 @@ function popup_desc(param)
 
 
 
-function input_info()
-{
-	var mb_name	= $("#mb_name").val();
-	var mb_phone1	= $("#mb_phone1").val();
-	var mb_phone2	= $("#mb_phone2").val();
-	var mb_phone3	= $("#mb_phone3").val();
-	var mb_phone	= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
-
-	if (mb_name == "")
-	{
-		setTimeout("popup_desc('pop_input');",500);
-
-		$("#mb_name").focus();
-		return false;
-	}
-
-	if (mb_phone2 == "")
-	{
-		setTimeout("popup_desc('pop_input');",500);
-
-		$("#mb_phone2").focus();
-		return false;
-	}
-
-	if (mb_phone3 == "")
-	{
-		setTimeout("popup_desc('pop_input');",500);
-
-		$("#mb_phone3").focus();
-		return false;
-	}
-
-	if ($('#use_agree').is(":checked") == false)
-	{
-		setTimeout("popup_desc('pop_use_agree_alert');",500);
-		return false;
-	}
-
-	if ($('#privacy_agree').is(":checked") == false)
-	{
-		setTimeout("popup_desc('pop_privacy_agree_alert');",500);
-		return false;
-	}
-
-	if ($('#adver_agree').is(":checked") == false)
-	{
-		setTimeout("popup_desc('pop_adver_agree_alert');",500);
-		return false;
-	}
-
-	$.ajax({
-		type:"POST",
-		data:{
-			"exec"					: "insert_info",
-			"mb_name"		: mb_name,
-			"mb_phone"		: mb_phone
-		},
-		url: "../main_exec.php",
-		success: function(response){
-			setTimeout("popup_desc('pop_thanks');",500);
-		}
-	});
-}
 
 </script>

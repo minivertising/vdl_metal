@@ -28,13 +28,30 @@
 <!----------------- 이벤트 영상보기 팝업 ----------------->
 
 <!----------------- IE7 이벤트 영상보기 팝업 ----------------->
-<div id="IE7_event_movie" style="position:absolute;width:800px;height:500px;top:50%;left:50%;margin-top:-250px;margin-left:-400px;background:white;z-index:99999;display:none">
-  <iframe allowfullscreen="1" src="<?=$_gl['youtube_url2']?>" frameborder="0" id="IE7_ytplayer_pop" class="IE7_ytplayer_pop" style="width:400px;height:250px;"></iframe>
-  <div id="IE7_fake_btn">
-    <a href="#" onclick="alert('영상을 끝까지 보셔야 이벤트 참여가 가능합니다.');">힌트 영상보기</a>
-  </div>
-  <div id="IE7_real_btn" style="display:none;">
-    <a href="#" onclick="input_word();">힌트 영상보기</a>
+<div id="IE7_event_movie" class="popup_wrap" style="position:absolute;top:50%;left:50%;margin-top:-325px;margin-left:-325px;background:white;z-index:99999;display:none">
+  <div class="p_mid_event p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="open_pop('IE7_confirm1_alert','IE7_event_movie')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_event_1.png" />
+        </div>
+        <div class="movie">
+          <iframe allowfullscreen="1" src="<?=$_gl['youtube_url2']?>" frameborder="0" id="IE7_ytplayer_pop" class="IE7_ytplayer_pop"></iframe>
+        </div>
+        <div class="txt_notice">
+          <img src="images/popup/txt_notice_movie.png" alt=""/>
+        </div>
+        <div class="btn_block" id="IE7_fake_btn">
+          <a href="#" onclick="alert('영상을 끝까지 보셔야 이벤트 참여가 가능합니다.');"><img src="images/popup/btn_end_view.png" alt=""/></a>
+        </div>
+        <div class="btn_block" id="IE7_real_btn" style="display:none;">
+          <a href="#" onclick="input_word();"><img src="images/popup/btn_end_view.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
   </div>
 </div>
 <!----------------- 이벤트 영상보기 팝업 ----------------->
@@ -71,14 +88,32 @@
 <!----------------- 이벤트 단어넣기 팝업 ----------------->
 
 <!----------------- IE7 이벤트 단어넣기 팝업 ----------------->
-<div id="IE7_event_answer" style="position:absolute;width:800px;height:500px;top:50%;left:50%;margin-left:-400px;background:white;z-index:99999;display:none">
-  <h3>신민아의 셀피 비밀영상 잘 보셨나요?</h3>
-  <div>
-    <input type="text" name="IE7_answer_input1" id="IE7_answer_input1" onkeyup="chktxt(this)" maxlength="1">
-    <input type="text" name="IE7_answer_input2" id="IE7_answer_input2" onkeyup="chktxt(this)" maxlength="1">
-    <input type="text" name="IE7_answer_input3" id="IE7_answer_input3" onkeyup="chktxt(this)" maxlength="1">
-    <input type="text" name="IE7_answer_input4" id="IE7_answer_input4" onkeyup="chktxt(this)" maxlength="1">
-    <a href="#" onclick="answer_complete()">정답입력완료</a>
+<div id="IE7_event_answer" class="popup_wrap" style="position:absolute;top:50%;left:50%;margin-top:-325px;margin-left:-325px;z-index:99999;display:none">
+  <div class="p_mid_event p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="open_pop('IE7_confirm2_alert','IE7_event_answer')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_event_2.png" />
+        </div>
+        <div class="quiz">
+          <div class="quiz_inner clearfix">
+            <div><input type="text" name="IE7_answer_input1" id="IE7_answer_input1" onkeyup="chktxt(this)" maxlength="1"></div>
+            <div><input type="text" name="IE7_answer_input2" id="IE7_answer_input2" onkeyup="chktxt(this)" maxlength="1"></div>
+            <div><input type="text" name="IE7_answer_input3" id="IE7_answer_input3" onkeyup="chktxt(this)" maxlength="1"></div>
+            <div><input type="text" name="IE7_answer_input4" id="IE7_answer_input4" onkeyup="chktxt(this)" maxlength="1"></div>
+          </div>
+          <div class="btn_hint">
+            <a href="#"><img src="images/popup/btn_hint.png" alt=""/></a>
+          </div>
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="answer_complete()"><img src="images/popup/btn_event_end.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
   </div>
 </div>
 <!----------------- 이벤트 단어넣기 팝업 ----------------->
@@ -108,7 +143,17 @@
               <img src="images/popup/label_phone.png" alt=""/>
             </div>
             <div class="input_phone clearfix">
-              <div class="phone_ip"><input type="tel" name="mb_phone1" id="mb_phone1"></div>
+              <div class="phone_ip">
+                <!-- <input type="tel" name="mb_phone1" id="mb_phone1"> -->
+                <select name="mb_phone1" id="mb_phone1">
+                  <option value="010">010</option>
+                  <option value="011">011</option>
+                  <option value="016">016</option>
+                  <option value="017">017</option>
+                  <option value="018">018</option>
+                  <option value="019">019</option>
+                </select>
+              </div>
               <div class="phone_ip_dash">-</div>
               <div class="phone_ip"><input type="tel" name="mb_phone2" id="mb_phone2"></div>
               <div class="phone_ip_dash">-</div>
@@ -177,6 +222,110 @@
 </div>
 <!----------------- 이벤트 개인정보 입력 팝업 ----------------->
 
+<!----------------- IE7 이벤트 개인정보 입력 팝업 ----------------->
+<div id="IE7_event_input" class="popup_wrap" style="position:absolute;width:550px;top:50%;left:50%;margin-top:-310px;margin-left:-275px;z-index:99999;display:none;">
+  <div class="p_mid_input p_position">
+    <div class="block_close clearfix">
+      <a href="#confirm3_alert" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_input.png" />
+        </div>
+        <div class="block_input">
+          <div class="input_one clearfix">
+            <div class="label">
+              <img src="images/popup/label_name.png" alt=""/>
+            </div>
+            <div class="input">
+              <input type="text" name="IE7_mb_name" id="IE7_mb_name">
+            </div>
+          </div>
+          <div class="input_one clearfix">
+            <div class="label">
+              <img src="images/popup/label_phone.png" alt=""/>
+            </div>
+            <div class="input_phone clearfix">
+              <div class="phone_ip">
+                <!-- <input type="tel" name="mb_phone1" id="mb_phone1"> -->
+                <select name="IE7_mb_phone1" id="IE7_mb_phone1">
+                  <option value="010">010</option>
+                  <option value="011">011</option>
+                  <option value="016">016</option>
+                  <option value="017">017</option>
+                  <option value="018">018</option>
+                  <option value="019">019</option>
+                </select>
+              </div>
+              <div class="phone_ip_dash">-</div>
+              <div class="phone_ip"><input type="tel" name="IE7_mb_phone2" id="IE7_mb_phone2"></div>
+              <div class="phone_ip_dash">-</div>
+              <div class="phone_ip"><input type="tel" name="IE7_mb_phone3" id="IE7_mb_phone3"></div>
+            </div>
+          </div>
+          <div class="input_one clearfix">
+            <div class="label">
+            </div>	
+            <div class="notice">
+              <img src="images/popup/txt_notice.png" alt=""/>
+            </div>
+          </div>
+        </div>
+        <div class="check_block">
+          <div class="check_one clearfix">
+            <div class="in_check">
+              <input type="checkbox" name="all_agree" id="all_agree" class="all_chk_cl">
+            </div>
+            <div class="txt_check">
+              <img src="images/popup/label_agree_all.png" alt=""/>
+            </div>
+          </div>  
+          <div class="bar">
+          </div>
+          <div class="check_one clearfix">
+            <div class="in_check">
+              <input type="checkbox" name="IE7_use_agree" id="IE7_use_agree">
+            </div>
+            <div class="txt_check">
+              <img src="images/popup/label_agree.png" alt=""/>
+            </div>
+            <div class="btn_check">
+              <a href="#pop_use_agree" class="popup-with-zoom-anim"><img src="images/popup/btn_agree_info.png" alt=""/></a>
+            </div>
+          </div>
+          <div class="check_one clearfix">
+            <div class="in_check">
+              <input type="checkbox" name="IE7_privacy_agree" id="IE7_privacy_agree">
+            </div>
+            <div class="txt_check">
+              <img src="images/popup/label_agree.png" alt=""/>
+            </div>
+            <div class="btn_check">
+              <a href="#pop_privacy_agree" class="popup-with-zoom-anim"><img src="images/popup/btn_agree_agency.png" alt=""/></a>
+            </div>
+          </div>
+          <div class="check_one clearfix">
+            <div class="in_check">
+              <input type="checkbox" name="IE7_adver_agree" id="IE7_adver_agree">
+            </div>
+            <div class="txt_check">
+              <img src="images/popup/label_agree.png" alt=""/>
+            </div>
+            <div class="btn_check">
+              <a href="#pop_adver_agree" class="popup-with-zoom-anim"><img src="images/popup/btn_agree_ad.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="input_info();"><img src="images/popup/btn_input_ok.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- IE7 이벤트 개인정보 입력 팝업 ----------------->
+
 <!----------------- 이벤트 완료 팝업 ----------------->
 	<div id="pop_thanks" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:550px;top:50%;left:50%;margin-left:-275px;">
    	  <div class="p_mid_input p_position">
@@ -206,6 +355,36 @@
         </div>
 	</div>
 <!----------------- 이벤트 완료 팝업 ----------------->
+
+<!----------------- IE7 이벤트 완료 팝업 ----------------->
+	<div id="IE7_pop_thanks" class="popup_wrap" style="position:absolute;width:550px;top:50%;left:50%;margin-top:-310px;margin-left:-275px;z-index:99999;display:none">
+   	  <div class="p_mid_input p_position">
+            <div class="block_close clearfix">
+                <a href="#" onclick="close_pop('IE7_pop_thanks','')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+            </div>
+            <div class="block_content">
+            	<div class="inner">
+                	<div class="title">
+       	    	    	<img src="images/popup/img_thanks.png" />
+                    </div>
+                    
+                    
+                    <div class="block_sns">
+                        <div class="btn_sns">
+                            <a href="#" onclick="movie_share('facebook')"><img src="images/popup/btn_share_fb.png" /></a>
+                            <a href="#" onclick="movie_share('story')"><img src="images/popup/btn_share_ks.png" /></a>
+                            <a href="#" onclick="movie_share('twitter')"><img src="images/popup/btn_share_tw.png" /></a>
+                        </div>
+                    </div>
+
+                    <div class="btn_block end">
+                        <a href="#" onclick="close_pop('IE7_pop_thanks','')"><img src="images/popup/btn_ok_big.png" alt=""/></a>
+                    </div>
+                </div><!--inner-->
+            </div>
+        </div>
+	</div>
+<!----------------- IE7 이벤트 완료 팝업 ----------------->
 
 
 <!----------------- 개인정보 활용 약관 팝업 ----------------->
@@ -339,6 +518,26 @@
 </div>
 <!----------------- 개인정보 입력 alert 팝업 ----------------->
 
+<!----------------- IE7 개인정보 입력 alert 팝업 ----------------->
+<div id="IE7_pop_input" class="popup_wrap" style="position:absolute;width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px;z-index:99999;display:none;">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="close_pop('IE7_pop_input','IE7_event_input')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title one">
+          <img src="images/popup/title_alert_input_info.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="close_pop('IE7_pop_input','IE7_event_input')"><img src="images/popup/btn_ok.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- IE7 개인정보 입력 alert 팝업 ----------------->
+
 <!----------------- 개인정보 활용약관 alert 팝업 ----------------->
 <div id="pop_use_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px">
   <div class="p_alert p_position">
@@ -352,6 +551,26 @@
         </div>
         <div class="btn_block">
           <a href="#event_input" class="popup-with-zoom-anim"><img src="images/popup/btn_ok.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- 개인정보 활용약관 alert 팝업 ----------------->
+
+<!----------------- IE7 개인정보 활용약관 alert 팝업 ----------------->
+<div id="IE7_pop_use_agree_alert" class="popup_wrap" style="position:absolute;width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px;z-index:99999;display:none">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="close_pop('IE7_pop_use_agree_alert','IE7_event_input')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title one">
+          <img src="images/popup/title_alert_agree_info.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="close_pop('IE7_pop_use_agree_alert','IE7_event_input')"><img src="images/popup/btn_ok.png" alt=""/></a>
         </div>
       </div><!--inner-->
     </div>
@@ -379,6 +598,26 @@
 </div>
 <!----------------- 개인정보 취급위탁 동의약관 alert 팝업 ----------------->
 
+<!----------------- IE7 개인정보 취급위탁 동의약관 alert 팝업 ----------------->
+<div id="IE7_pop_privacy_agree_alert" class="popup_wrap" style="position:absolute;width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px;z-index:99999;display:none;">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="close_pop('IE7_pop_privacy_agree_alert','IE7_event_input')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title one">
+          <img src="images/popup/title_alert_agree_agency.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="close_pop('IE7_pop_privacy_agree_alert','IE7_event_input')"><img src="images/popup/btn_ok.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- IE7 개인정보 취급위탁 동의약관 alert 팝업 ----------------->
+
 <!----------------- 광고성 정보전송 동의약관 alert 팝업 ----------------->
 <div id="pop_adver_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px">
   <div class="p_alert p_position">
@@ -392,6 +631,26 @@
         </div>
         <div class="btn_block">
           <a href="#event_input" class="popup-with-zoom-anim"><img src="images/popup/btn_ok.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- 광고성 정보전송 동의약관 alert 팝업 ----------------->
+
+<!----------------- IE7 광고성 정보전송 동의약관 alert 팝업 ----------------->
+<div id="IE7_pop_adver_agree_alert" class="popup_wrap" style="position:absolute;width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px;z-index:99999;display:none">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="close_pop('IE7_pop_adver_agree_alert','IE7_event_input')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title one">
+          <img src="images/popup/title_alert_agree_ad.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="close_pop('IE7_pop_adver_agree_alert','IE7_event_input')"><img src="images/popup/btn_ok.png" alt=""/></a>
         </div>
       </div><!--inner-->
     </div>
@@ -420,6 +679,27 @@
 </div>
 <!----------------- 이벤트 팝업 닫을때 1 alert 팝업 ----------------->
 
+<!----------------- IE7 이벤트 팝업 닫을때 1 alert 팝업 ----------------->
+<div id="IE7_confirm1_alert" class="popup_wrap" style="position:absolute;width:400px;height:280px;top:50%;left:50%;margin-top:-140px;margin-left:-200px;display:none;z-index:99999">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" class="btn_close" onclick="start_api();close_pop('IE7_confirm1_alert','IE7_event_movie')"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_alert_close.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="close_pop('IE7_confirm1_alert','')"><img src="images/popup/btn_out.png" alt=""/></a>
+          <a href="#" onclick="start_api();close_pop('IE7_confirm1_alert','IE7_event_movie')"><img src="images/popup/btn_keepgoing.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- IE7 이벤트 팝업 닫을때 1 alert 팝업 ----------------->
+
 <!----------------- 이벤트 팝업 닫을때 2 alert 팝업 ----------------->
 <div id="confirm2_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px">
   <div class="p_alert p_position">
@@ -440,6 +720,27 @@
   </div>
 </div>
 <!----------------- 이벤트 팝업 닫을때 2 alert 팝업 ----------------->
+
+<!----------------- IE7 이벤트 팝업 닫을때 2 alert 팝업 ----------------->
+<div id="IE7_confirm2_alert" class="popup_wrap" style="position:absolute;width:400px;height:280px;top:50%;left:50%;margin-top:-140px;margin-left:-200px;display:none;z-index:99999">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" class="btn_close" onclick="start_api();close_pop('IE7_confirm2_alert','IE7_event_answer')"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_alert_close.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="close_pop('IE7_confirm2_alert','')"><img src="images/popup/btn_out.png" alt=""/></a>
+          <a href="#" onclick="start_api();close_pop('IE7_confirm2_alert','IE7_event_answer')"><img src="images/popup/btn_keepgoing.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- IE7 이벤트 팝업 닫을때 2 alert 팝업 ----------------->
 
 <!----------------- 이벤트 팝업 닫을때 3 alert 팝업 ----------------->
 <div id="confirm3_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px">
@@ -462,6 +763,27 @@
 </div>
 <!----------------- 이벤트 팝업 닫을때 3 alert 팝업 ----------------->
 
+<!----------------- IE7 이벤트 팝업 닫을때 3 alert 팝업 ----------------->
+<div id="IE7_confirm3_alert" class="popup_wrap" style="position:absolute;width:400px;height:280px;top:50%;left:50%;margin-top:-140px;margin-left:-200px;display:none;z-index:99999">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" class="btn_close" onclick="start_api();close_pop('IE7_confirm3_alert','IE7_event_input')"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_alert_close.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="close_pop('IE7_confirm3_alert','')"><img src="images/popup/btn_out.png" alt=""/></a>
+          <a href="#" onclick="start_api();close_pop('IE7_confirm3_alert','IE7_event_input')"><img src="images/popup/btn_keepgoing.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- IE7 이벤트 팝업 닫을때 3 alert 팝업 ----------------->
+
 <!--미정답!-->
 <div id="wrong_answer_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px">
   <div class="p_alert p_position">
@@ -482,6 +804,26 @@
 </div>
 <!--end 미정답.--> 
 
+<!--IE7 미정답!-->
+<div id="IE7_wrong_answer_alert" class="popup_wrap" style="position:absolute;width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px;z-index:99999;display:none;">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="close_pop('IE7_wrong_answer_alert','IE7_event_answer');" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_alert_uncollect.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="close_pop('IE7_wrong_answer_alert','IE7_event_answer');"><img src="images/popup/btn_ok.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!--IE7 미정답!-->
+
     <!--정답!-->
 <div id="right_answer_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px">
   <div class="p_alert p_position">
@@ -501,3 +843,23 @@
   </div>
 </div>
     <!--end 정답.--> 
+
+    <!--IE7 정답!-->
+<div id="IE7_right_answer_alert" class="popup_wrap" style="position:absolute;width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px;z-index:99999;display:none;">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="open_pop('IE7_event_input','IE7_right_answer_alert')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_alert_collect.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="open_pop('IE7_event_input','IE7_right_answer_alert')"><img src="images/popup/btn_ok.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+    <!--IE7 정답!-->
