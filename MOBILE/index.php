@@ -29,7 +29,7 @@
   </div>
 </div>
 <div class="block_top">
-  <a href="popup_movie.php"><img src="images/img_top.png" alt=""/></a>
+  <a href="popup_movie.php"><img src="images/img_top.jpg" alt=""/></a>
 </div>
 
 <div class="block_mina">
