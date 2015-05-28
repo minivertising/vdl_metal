@@ -101,6 +101,6 @@ html,body { height: 100%; margin: 0; padding: 0;}
     	<div class="bg_pro"><img src="images/bg_pro.jpg" alt=""/></div>
     </div>
     
-    
+    <div class="mask"></div>
 </body>
 </html>

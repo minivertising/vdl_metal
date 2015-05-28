@@ -410,6 +410,25 @@ body{
 	height:630px;
 }
 
+.popup_wrap .p_position.p_mid_movie{
+	position:relative;
+	width:900px;
+	height:506px;
+	margin-top:40px;
+}
+.popup_wrap .p_position.p_mid_movie .block_content{
+	width:880px;
+	height:486px;
+}
+.popup_wrap .p_position.p_mid_movie .block_close{
+  width: 100%;
+  position: absolute;
+  padding: 0 0 0;
+  z-index: 300;
+  top: -30px;
+  right: 0px;
+}
+
 .popup_wrap .p_position.p_alert{
 	position:relative;
 	width:400px;
