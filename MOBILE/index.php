@@ -1,106 +1,257 @@
-<!doctype html>
-<head>
-  <title>VDL KAKAO FRIENDS</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
-  <meta property="og:title" content="VDL MEETS KAKAO FRIENDS">
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://www.vdlxkakao.com/MOBILE/index.php" />
-  <meta property="og:image" content="http://www.vdlxkakao.com/MOBILE/images/img_sns_share_new.jpg" />
-  <meta property="og:description" content="VDL MEETS KAKAO FRIENDS! 친구에게 메시지를 보내고 컬렉션 제품이 담긴 VDL FRIENDS KIT를 받으세요! 참여만 해도 5천원 할인 쿠폰을 드려요.">
-
-  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="./css/style.css" />
-  <link rel="stylesheet" href="../lib/iCheck/skins/all.css">
-  <link rel="stylesheet" href="../lib/Magnific-Popup/magnific-popup.css"> 
-  <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-  <script type='text/javascript' src="../js/jquery-1.11.2.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <script type='text/javascript' src="../js/analytics.js"></script>
-  <script type='text/javascript' src='../lib/iCheck/icheck.js'></script>
-  <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
-  <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
-  <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-  <script type='text/javascript' src="../js/main.js"></script>
-  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-63183773-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-
-
+<?
+	include_once   "./header.php";
+?>
 <style>
-html,body { height: 100%; margin: 0; padding: 0;}
+.swiper-container {
+    width: 84%;
+    height: 80px;
+}      
 </style>
-
-</head>
-
-
- <body>
- 
- 
-    <div class="menu clearfix">
-      <a href="index.php" class="logo"><img src="images/logo.png" width="80" alt=""/></a>
-      <a href="#" class="menu_ham"  onclick="show_menu()"><img src="images/menu_ham.png" width="27" alt=""/></a>
+<div class="menu clearfix">
+  <a href="index.php" class="logo"><img src="images/logo.png" width="80" alt=""/></a>
+  <a href="#" class="menu_ham"  onclick="show_menu()"><img src="images/menu_ham.png" width="27" alt=""/></a>
+</div>
+<div id="mobile_menu" class="mobile_menu">
+  <ul>
+    <li><a href="#" onclick="screen_move('mv')"><img src="images/btn_gnb_mv.png"  alt=""/></a></li>
+    <li><a href="#" onclick="screen_move('life')"><img src="images/btn_gnb_mina.png"  alt=""/></a></li>
+    <li><a href="#" onclick="screen_move('event')"><img src="images/btn_gnb_event.png"  alt=""/></a></li>
+    <li><a href="#" onclick="screen_move('metal')"><img src="images/btn_gnb_pro.png"  alt=""/></a></li>
+    <li><a href="http://www.vdlcosmetics.com/m/index.jsp" target="_blank"><img src="images/btn_home.jpg"  alt=""/></a></li>
+  </ul>
+  <div class="btn_sns">
+    <div class="inner_sns clearfix">
+      <a href="#" onclick="sns_share('twitter');"><img src="images/btn_tw.jpg"  alt=""/></a>
+      <a href="#" onclick="sns_share('facebook');"><img src="images/btn_fb.jpg"  alt=""/></a>
+      <a href="#" onclick="sns_share('kakao');" id="kakao-link-btn"><img src="images/btn_kt.jpg"  alt=""/></a>
+      <a href="#" onclick="sns_share('story');"><img src="images/btn_ks.jpg"  alt=""/></a>
     </div>
-    <div id="mobile_menu" class="mobile_menu">
-      <ul>
-        <li><a href="#" onclick="screen_move('summer')"><img src="images/btn_gnb_mv.png"  alt=""/></a></li>
-        <li><a href="#" onclick="screen_move('kit')"><img src="images/btn_gnb_mina.png"  alt=""/></a></li>
-        <li><a href="#" onclick="screen_move('kit')"><img src="images/btn_gnb_event.png"  alt=""/></a></li>
-        <li><a href="#" onclick="screen_move('kit')"><img src="images/btn_gnb_pro.png"  alt=""/></a></li>
-        <li><a href="http://www.vdlcosmetics.com/m/index.jsp" target="_blank"><img src="images/btn_home.jpg"  alt=""/></a></li>
-      </ul>
-      <div class="btn_sns">
-        <div class="inner_sns clearfix">
-          <a href="#" onclick="sns_share('twitter');"><img src="images/btn_tw.jpg"  alt=""/></a>
-          <a href="#" onclick="sns_share('facebook');"><img src="images/btn_fb.jpg"  alt=""/></a>
-          <a href="#" onclick="sns_share('kakao');" id="kakao-link-btn"><img src="images/btn_kt.jpg"  alt=""/></a>
-          <a href="#" onclick="sns_share('story');"><img src="images/btn_ks.jpg"  alt=""/></a>
+  </div>
+</div>
+<div class="block_top">
+  <a href="popup_movie.php"><img src="images/img_top.png" alt=""/></a>
+</div>
+
+<div class="block_mina">
+  <div class="txt_roll">
+    <div class="inner_roll clearfix">
+      <div class="arrow_left"><a href="#" class="swiper-slide-prev"><img src="images/btn_arrow_left.png" alt=""/></a></div>
+      <div class="txt">
+	  <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><a href="#"><img src="images/txt_mina_say_1.png" alt=""/></a></div>
+          <div class="swiper-slide"><a href="#"><img src="images/txt_mina_say_2.png" alt=""/></a></div>
+          <div class="swiper-slide"><a href="#"><img src="images/txt_mina_say_3.png" alt=""/></a></div>
         </div>
+		</div>
       </div>
+      <div class="arrow_right"><a href="#" class="swiper-slide-next"><img src="images/btn_arrow_right.png" alt=""/></a></div>
     </div>
-    
-    <div class="block_top">
-    	<a href="#"><img src="images/img_top.png" alt=""/></a>
+  </div>
+  <div class="bg_mina"><img src="images/bg_mina.jpg" alt=""/></div>
+</div>
+
+<div class="block_event">
+  <div class="btn_play"><a href="#"><img src="images/btn_play.png" alt=""/></a></div>
+  <div class="btn_event"><a href="popup_event1.php"><img src="images/btn_event_go.png" alt=""/></a></div>
+  <div class="bg_event"><img src="images/bg_event.jpg" alt=""/></div>
+</div>
+
+<div class="block_pro">
+  <div class="txt_roll">
+    <div class="inner_roll clearfix">
+      <div class="arrow_left"><a href="#"><img src="images/btn_arrow_left.png" alt=""/></a></div>
+      <div class="txt"><a href="#"><img src="images/txt_pro_1.png" alt=""/></a></div>
+      <div class="arrow_right"><a href="#"><img src="images/btn_arrow_right.png" alt=""/></a></div>
     </div>
-    
-    <div class="block_mina">
-    	<div class="txt_roll">
-        	<div class="inner_roll clearfix">
-            	<div class="arrow_left"><a href="#"><img src="images/btn_arrow_left.png" alt=""/></a></div>
-                <div class="txt"><a href="#"><img src="images/txt_mina_say_1.png" alt=""/></a></div>
-                <div class="arrow_right"><a href="#"><img src="images/btn_arrow_right.png" alt=""/></a></div>
-            </div>
-        </div>
-    	 <div class="bg_mina"><img src="images/bg_mina.jpg" alt=""/></div>
-    </div>
-    
-    <div class="block_event">
-    	<div class="btn_play"><a href="#"><img src="images/btn_play.png" alt=""/></a></div>
-        <div class="btn_event"><a href="#"><img src="images/btn_event_go.png" alt=""/></a></div>
-        <div class="bg_event"><img src="images/bg_event.jpg" alt=""/></div>
-    </div>
-    
-    <div class="block_pro">
-    	<div class="txt_roll">
-        	<div class="inner_roll clearfix">
-            	<div class="arrow_left"><a href="#"><img src="images/btn_arrow_left.png" alt=""/></a></div>
-                <div class="txt"><a href="#"><img src="images/txt_pro_1.png" alt=""/></a></div>
-                <div class="arrow_right"><a href="#"><img src="images/btn_arrow_right.png" alt=""/></a></div>
-            </div>
-        </div>
-    	<div class="bg_pro"><img src="images/bg_pro.jpg" alt=""/></div>
-    </div>
-    
-    
+  </div>
+  <div class="bg_pro"><img src="images/bg_pro.jpg" alt=""/></div>
+</div>
+<div class="mask"></div>
 </body>
 </html>
+<script type="text/javascript">
+Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
+$(document).ready(function() {
+	var mySwiper = new Swiper ('.swiper-container', {
+	// Optional parameters
+		direction: 'horizontal',
+		loop: true,
+		prevButton : '.swiper-slide-prev',
+		nextButton : '.swiper-slide-next'
+	});
+/*
+mySwiper.on('slideChangeStart', function () {
+    alert('1111');
+});
+*/
+$(".mask").click(function(){
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(300);
+			$(window).off(".disableScroll");
+		});
+	});
+
+});
+
+function show_menu()
+{
+	if ($("#mobile_menu").css("display") == "block")
+	{
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(300);
+			$(window).off(".disableScroll");
+		});
+	}else{
+		$(".mask").width($(window).width());
+		$(".mask").height($(window).height());
+		$(".mask").fadeTo(1000, 0.6);
+
+		$('#mobile_menu').css('right','-200px');
+		// 이동위치값 지정
+		var position = 0;
+		$('#mobile_menu').show().animate({right:position},300,'linear');
+
+		$(window).on("mousewheel.disableScroll DOMMouseScroll.disableScroll touchmove.disableScroll", function(e) {
+			e.preventDefault();
+			return;
+		});
+	}
+}
+
+function screen_move(param)
+{
+	if (param == "mv")
+	{
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(100);
+			$( 'html, body' ).animate({ scrollTop: 0},500);
+			$(window).off(".disableScroll");
+		});
+	}else if (param == "life"){
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(100);
+			$( 'html, body' ).animate({ scrollTop: $(".block_top").height()},500);
+			$(window).off(".disableScroll");
+		});
+	}else if (param == "event"){
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(100);
+			$( 'html, body' ).animate({ scrollTop: $(".block_top").height() + $(".block_mina").height()},500);
+			$(window).off(".disableScroll");
+		});
+	}else{
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(100);
+			$( 'html, body' ).animate({ scrollTop: $(".block_top").height() + $(".block_mina").height() + $(".block_event").height()},500);
+			$(window).off(".disableScroll");
+		});
+	}
+}
+
+function sns_share(media)
+{
+	if (media == "facebook")
+	{
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.mnv.kr/?media=fbshare'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
+		});
+	}else if (media == "twitter"){
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS KAKAO FRIENDS! 친구에게 메시지를 보내고 컬렉션 제품이 담긴 VDL FRIENDS KIT를 받으세요! 참여만 해도 5천원 할인 쿠폰을 드려요.") + '&url='+ encodeURIComponent('http://www.mnv.kr/?media=twshare'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
+		});
+	}else if (media == "kakao"){
+		media	= "ktmovie";
+
+		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+		Kakao.Link.createTalkLinkButton({
+		  container: '#kakao-link-btn',
+		  label: "지금 정해진 시간안에 폭탄 크림을 터트리면 빌리프의 다양한 선물이 쏟아집니다.\r\n\r\n더 많은 이벤트 자세히 보기",
+		  image: {
+			src: 'http://www.belifbomb.com/MOBILE/img/sns_image.png',
+			width: '1200',
+			height: '630'
+		  },
+		  webButton: {
+			text: '수분폭탄, 즐거움이 터진다',
+			url: 'http://www.belifbomb.com/?media=kakao' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+		  }
+		});
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
+		});
+	}else{
+		// 로그인 창을 띄웁니다.
+		Kakao.Auth.login({
+			success: function() {
+
+				// 로그인 성공시, API를 호출합니다.
+				Kakao.API.request( {
+					url : '/v1/api/story/linkinfo',
+					data : {
+						url : 'http://www.mnv.kr/?media=ksshare'
+					}
+				}).then(function(res) {
+					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
+					return Kakao.API.request( {
+						url : '/v1/api/story/post/link',
+						data : {
+						link_info : res,
+							content:"VDL MEETS SHIN MINA,\r\n특별한 피부의 새로운 시작, 진화된 [메탈 쿠션]을 만나다.\r\첫 화장 그대로 화사하고 깨끗한 피부를 연출해주는 VDL의 베스트 셀링 아이템, 뷰티 메탈 쿠션 파운데이션. 무결점 피부의 새로운 뮤즈 신민아가 완벽한 쿠션 선택을 제안한다."
+						}
+					});
+				}).then(function(res) {
+					return Kakao.API.request( {
+						url : '/v1/api/story/mystory',
+						data : { id : res.id }
+					});
+				}).then(function(res) {
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "../main_exec.php",
+						data:{
+							"exec" : "insert_share_info",
+							"media" : "story"
+						}
+					});
+					alert("카카오스토리에 공유 되었습니다.");
+				}, function (err) {
+					alert(JSON.stringify(err));
+				});
+
+			},
+			fail: function(err) {
+				alert(JSON.stringify(err))
+			},
+		});
+	}
+}
+
+</script>
