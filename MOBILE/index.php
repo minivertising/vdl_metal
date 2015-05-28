@@ -2,9 +2,13 @@
 	include_once   "./header.php";
 ?>
 <style>
-.swiper-container {
+.s1 {
     width: 84%;
     height: 80px;
+}      
+.s2 {
+    width: 80%;
+    margin-top:7%;
 }      
 </style>
 <div class="menu clearfix">
@@ -37,13 +41,13 @@
     <div class="inner_roll clearfix">
       <div class="arrow_left"><a href="#" class="swiper-slide-prev"><img src="images/btn_arrow_left.png" alt=""/></a></div>
       <div class="txt">
-	  <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><a href="#"><img src="images/txt_mina_say_1.png" alt=""/></a></div>
-          <div class="swiper-slide"><a href="#"><img src="images/txt_mina_say_2.png" alt=""/></a></div>
-          <div class="swiper-slide"><a href="#"><img src="images/txt_mina_say_3.png" alt=""/></a></div>
+	    <div class="swiper-container s1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#"><img src="images/txt_mina_say_1.png" alt=""/></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/txt_mina_say_2.png" alt=""/></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/txt_mina_say_3.png" alt=""/></a></div>
+          </div>
         </div>
-		</div>
       </div>
       <div class="arrow_right"><a href="#" class="swiper-slide-next"><img src="images/btn_arrow_right.png" alt=""/></a></div>
     </div>
@@ -60,9 +64,19 @@
 <div class="block_pro">
   <div class="txt_roll">
     <div class="inner_roll clearfix">
-      <div class="arrow_left"><a href="#"><img src="images/btn_arrow_left.png" alt=""/></a></div>
-      <div class="txt"><a href="#"><img src="images/txt_pro_1.png" alt=""/></a></div>
-      <div class="arrow_right"><a href="#"><img src="images/btn_arrow_right.png" alt=""/></a></div>
+      <div class="arrow_left"><a href="#" onclick="prev_slide();return false;"><img src="images/btn_arrow_left.png" alt=""/></a></div>
+      <div class="txt test111"  id="slide_txt_1"><a href="#"><img src="images/txt_pro_1.png" alt=""/></a></div>
+      <div class="txt test111" id="slide_txt_2" style="display:none;"><a href="#"><img src="images/txt_pro_2.png" alt=""/></a></div>
+      <div class="txt test111" id="slide_txt_3" style="display:none;"><a href="#"><img src="images/txt_pro_3.png" alt=""/></a></div>
+	    <!-- <div class="swiper-container s2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#"><img src="images/txt_pro_1.png" alt=""/></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/txt_pro_2.png" alt=""/></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/txt_pro_3.png" alt=""/></a></div>
+          </div>
+        </div>
+      </div> -->
+      <div class="arrow_right"><a href="#" onclick="next_slide();return false;"><img src="images/btn_arrow_right.png" alt=""/></a></div>
     </div>
   </div>
   <div class="bg_pro"><img src="images/bg_pro.jpg" alt=""/></div>
@@ -72,8 +86,65 @@
 </html>
 <script type="text/javascript">
 Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
+var txt_num = 0;
+function prev_slide()
+{
+	if (txt_num == 0)
+	{
+		$("#slide_txt_1").fadeOut("fast", function(){
+			$("#slide_txt_3").fadeIn("fast", function(){
+				txt_num = 2;
+			});
+		});
+	}else if (txt_num == 1){
+		$("#slide_txt_2").fadeOut("fast", function(){
+			$("#slide_txt_1").fadeIn("fast", function(){
+				txt_num = 0;
+			});
+		});
+	}else{
+		$("#slide_txt_3").fadeOut("fast", function(){
+			$("#slide_txt_2").fadeIn("fast", function(){
+				txt_num = 1;
+			});
+		});
+	}
+
+}
+
+function next_slide()
+{
+	if (txt_num == 0)
+	{
+		$("#slide_txt_1").fadeOut("fast", function(){
+			$("#slide_txt_2").fadeIn("fast", function(){
+				txt_num = 1;
+			});
+		});
+	}else if (txt_num == 1){
+		$("#slide_txt_2").fadeOut("fast", function(){
+			$("#slide_txt_3").fadeIn("fast", function(){
+				txt_num = 2;
+			});
+		});
+	}else{
+		$("#slide_txt_3").fadeOut("fast", function(){
+			$("#slide_txt_1").fadeIn("fast", function(){
+				txt_num = 0;
+			});
+		});
+	}
+}
+
 $(document).ready(function() {
-	var mySwiper = new Swiper ('.swiper-container', {
+	var mySwiper = new Swiper ('.s1', {
+	// Optional parameters
+		direction: 'horizontal',
+		loop: true,
+		prevButton : '.swiper-slide-prev',
+		nextButton : '.swiper-slide-next'
+	});
+	var mySwiper2 = new Swiper ('.s2', {
 	// Optional parameters
 		direction: 'horizontal',
 		loop: true,
@@ -81,7 +152,7 @@ $(document).ready(function() {
 		nextButton : '.swiper-slide-next'
 	});
 /*
-mySwiper.on('slideChangeStart', function () {
+mySwiper2.on('oInit', function () {
     alert('1111');
 });
 */
@@ -93,6 +164,28 @@ $(".mask").click(function(){
 		});
 	});
 
+	$(".test111").bind('touchstart', function(e) {
+		if (txt_num == 0)
+		{
+			$("#slide_txt_1").fadeOut("fast", function(){
+				$("#slide_txt_3").fadeIn("fast", function(){
+					txt_num = 2;
+				});
+			});
+		}else if (txt_num == 1){
+			$("#slide_txt_2").fadeOut("fast", function(){
+				$("#slide_txt_1").fadeIn("fast", function(){
+					txt_num = 0;
+				});
+			});
+		}else{
+			$("#slide_txt_3").fadeOut("fast", function(){
+				$("#slide_txt_2").fadeIn("fast", function(){
+					txt_num = 1;
+				});
+			});
+		}
+	});
 });
 
 function show_menu()
