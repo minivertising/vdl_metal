@@ -35,21 +35,20 @@
 	left : 0;
 	width : 100%;
 	height : 100%;
-	background : url("../images/area1_bg.jpg") repeat;
+	background : url("../images/bg_black.png") repeat;
 	overflow : hidden;
-	background:rgba(0, 0, 0, 0.2);
 	z-index : 10;
 }
 
 .contents_wrap .wrap_menu{
-	background:rgba(0, 0, 0, 1.0);
+	background:#000;
 	position:fixed;
 	top:0;
 	z-index:999;
 	width:100%;
 }
 .contents_wrap .block_logo{
-	background:rgba(0, 0, 0, 1.0);
+	background:#000;
 	z-index:29;
 	width:100%;
 	text-align:center;
@@ -57,7 +56,7 @@
 }
 .contents_wrap .icon_area{
 	text-align:right;
-	background:rgba(0, 0, 0, 1.0);
+	background:#000;
 	padding-top:10px;
 	padding-right:20px;
 }
@@ -113,7 +112,7 @@
 .contents_wrap .area1 .video_area .scroll_navi_area{
 	position:absolute;
 	z-index:40;
-	bottom:15%;
+	bottom:10%;
 	left:50%;
 	margin-left:-36px;
 	width:72px;
@@ -139,7 +138,9 @@
 }
 .contents_wrap .area2_bg.bg2{
   background: #fff url(../images/bg_mina.jpg) center 0 no-repeat;
+  background-size:cover;
   height:1226px;
+  margin-top:-2px;
 }
 .contents_wrap .area2_bg .inner{
 	width:1000px;
@@ -281,8 +282,10 @@
 	top:0;
 	width:100%;
 	padding:20px 0;
-	background:rgba(49, 43, 129, 0.8);
-	z-index:100;
+	background:#302683;
+    opacity: 0.8;
+    filter: alpha(opacity=80);	
+	z-index:49;
 	
 }
 .contents_wrap .area4_bg .btn_event{
