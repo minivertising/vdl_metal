@@ -94,7 +94,7 @@
 
 
 <!--area4-->
-<div class="area4_bg" style="display:none;height:900px">
+<div class="area4_bg" style="display:none;">
   <div class="area4">
   	<div class="tag_event"><img src="images/title_sec_event.png" alt=""/></div>
     
