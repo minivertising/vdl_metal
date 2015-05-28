@@ -1,5 +1,5 @@
 <!----------------- 이벤트 영상보기 팝업 ----------------->
-<div id="event_movie" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:650px;top:50%;left:50%;margin-top:-325px;margin-left:-325px;">
+<div id="event_movie" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:650px;top:50%;left:50%;margin-left:-325px;">
   <div class="p_mid_event p_position">
     <div class="block_close clearfix">
       <a href="#confirm1_alert" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
@@ -40,7 +40,7 @@
 <!----------------- 이벤트 영상보기 팝업 ----------------->
 
 <!----------------- 이벤트 단어넣기 팝업 ----------------->
-<div id="event_answer" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:650px;top:50%;left:50%;margin-top:-325px;margin-left:-325px">
+<div id="event_answer" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:650px;top:50%;left:50%;margin-left:-325px">
   <div class="p_mid_event p_position">
     <div class="block_close clearfix">
       <a href="#confirm2_alert" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
@@ -71,7 +71,7 @@
 <!----------------- 이벤트 단어넣기 팝업 ----------------->
 
 <!----------------- IE7 이벤트 단어넣기 팝업 ----------------->
-<div id="IE7_event_answer" style="position:absolute;width:800px;height:500px;top:50%;left:50%;margin-top:-250px;margin-left:-400px;background:white;z-index:99999;display:none">
+<div id="IE7_event_answer" style="position:absolute;width:800px;height:500px;top:50%;left:50%;margin-left:-400px;background:white;z-index:99999;display:none">
   <h3>신민아의 셀피 비밀영상 잘 보셨나요?</h3>
   <div>
     <input type="text" name="IE7_answer_input1" id="IE7_answer_input1" onkeyup="chktxt(this)" maxlength="1">
@@ -84,7 +84,7 @@
 <!----------------- 이벤트 단어넣기 팝업 ----------------->
 
 <!----------------- 이벤트 개인정보 입력 팝업 ----------------->
-<div id="event_input" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:550px;top:50%;left:50%;margin-top:-310px;margin-left:-275px;">
+<div id="event_input" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:550px;top:50%;left:50%;margin-left:-275px;">
   <div class="p_mid_input p_position">
     <div class="block_close clearfix">
       <a href="#confirm3_alert" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
@@ -126,7 +126,7 @@
         <div class="check_block">
           <div class="check_one clearfix">
             <div class="in_check">
-              <input type="checkbox">
+              <input type="checkbox" name="all_agree" id="all_agree" class="all_chk_cl">
             </div>
             <div class="txt_check">
               <img src="images/popup/label_agree_all.png" alt=""/>
@@ -178,10 +178,10 @@
 <!----------------- 이벤트 개인정보 입력 팝업 ----------------->
 
 <!----------------- 이벤트 완료 팝업 ----------------->
-	<div id="pop_thanks" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:550px;top:50%;left:50%;margin-top:-310px;margin-left:-275px;">
+	<div id="pop_thanks" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:550px;top:50%;left:50%;margin-left:-275px;">
    	  <div class="p_mid_input p_position">
             <div class="block_close clearfix">
-                <a href="#" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+                <a href="#" onclick="$.magnificPopup.close();" class="btn_close"><img src="images/popup/btn_close.png" /></a>
             </div>
             <div class="block_content">
             	<div class="inner">
@@ -403,7 +403,7 @@
 <div id="confirm1_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-140px;margin-left:-200px">
   <div class="p_alert p_position">
     <div class="block_close clearfix">
-      <a href="#event_movie" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
+      <a href="#event_movie" class="btn_close popup-with-zoom-anim" onclick="start_api();"><img src="images/popup/btn_close.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">
@@ -412,7 +412,7 @@
         </div>
         <div class="btn_block">
           <a href="#" onclick="$.magnificPopup.close();"><img src="images/popup/btn_out.png" alt=""/></a>
-          <a href="#event_movie" class="popup-with-zoom-anim"><img src="images/popup/btn_keepgoing.png" alt=""/></a>
+          <a href="#event_movie" class="popup-with-zoom-anim" onclick="start_api();"><img src="images/popup/btn_keepgoing.png" alt=""/></a>
         </div>
       </div><!--inner-->
     </div>

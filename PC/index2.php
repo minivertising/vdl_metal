@@ -409,7 +409,6 @@ function start_api()
 		addEventListener('load', onYouTubeIframeAPIReady, false);
 	}
 
-	//alert(typeof(controllable_player));
 	if (typeof(controllable_player) == 'undefined'){
 		onYouTubeIframeAPIReady();
 	}
@@ -538,6 +537,9 @@ $(document).ready(function() {
 		increaseArea: '0%'
 	});
 
+	$('.all_chk_cl').on('ifChecked', function(event){
+		$('.zoom-anim-dialog input').iCheck('check');
+	});
 
 	// 팝업 jQuery 스타일
 	$('.popup-with-zoom-anim').magnificPopup({
