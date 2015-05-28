@@ -138,8 +138,51 @@
   background-size: cover;
 }
 .contents_wrap .area2_bg.bg2{
-  background: #fff url(../images/bg_event2.png) center 0 no-repeat;
+  background: #fff url(../images/bg_mina.jpg) center 0 no-repeat;
   background-size: cover;
+}
+.contents_wrap .area2_bg .inner{
+	width:1000px;
+	margin:0 auto;
+	position:relative;
+}
+.contents_wrap .area2_bg .title_mina{
+	position:absolute;
+	top:100px;
+	right:0;
+	width:428px;
+}
+.contents_wrap .area2_bg .txt_mina {
+	width:850px;
+	height:500px;
+	position:absolute;
+	top:600px;
+	left:0;
+	background:url(../images/bg_mina_say.png) center 0 no-repeat;
+}
+.contents_wrap .area2_bg .txt_mina .inner_txt_mina {
+	padding-top:160px;
+	padding-left:30px;
+	width:635px;
+
+}
+
+.contents_wrap .area2_bg .txt_mina .arrow_right,
+.contents_wrap .area2_bg .txt_mina .mina_txt,
+.contents_wrap .area2_bg .txt_mina .arrow_left{
+	float:left;
+}
+.contents_wrap .area2_bg .txt_mina .mina_txt{
+}
+.contents_wrap .area2_bg .txt_mina .arrow_right,
+.contents_wrap .area2_bg .txt_mina .arrow_left{
+	padding-top:40px;
+	width:50px;
+	text-align:center;
+}
+
+.contents_wrap .area2_bg .txt_mina .arrow_right{
+	float:right;
 }
 
 .contents_wrap .area2{
@@ -282,8 +325,8 @@
 .contents_wrap .area5_bg{
   width: 100%;
   height: 100%;
-  background: #fff url(../images/bg_detail.png) center 0 no-repeat;
-  background-size: cover;
+  background: #fff url(../images/bg_detail.jpg) center 0 no-repeat;
+  background-size:contain;
 }
 .contents_wrap .area5{
 	position: relative;

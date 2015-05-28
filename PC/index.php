@@ -80,15 +80,16 @@
 <!--area2-->
 <div class="area2_bg bg2" style="display:none">
   <div class="area4">
-    <!-- <div class="product_group">
-      <div class="product_area">
-        <ul class="thumb_list clearfix">
-          <li>
-            <a href="#event_movie" class="popup-with-zoom-anim" onclick="start_api();">이벤트 참여</a>
-          </li>
-        </ul>
-      </div>
-    </div> -->
+  	<div class="inner">
+  		<div class="title_mina"><img src="images/title_mina.png" alt=""/></div>
+        <div class="txt_mina">
+        	<div class="inner_txt_mina clearfix">
+                <div class="arrow_left"><a href="#"><img src="images/btn_arrow_left.png" alt=""/></a></div>
+                <div class="mina_txt"><img src="images/txt_mina_say_1.png" alt=""/></div>
+                <div class="arrow_right"><a href="#"><img src="images/btn_arrow_right.png" alt=""/></a></div>
+            </div>
+        </div>
+    </div>
   </div>
  </div>
 <!--area2-->
@@ -122,6 +123,15 @@
 <!--area5-->
 <div class="area5_bg" style="display:none">
   <div class="area5">
+    <div class="inner">
+        <div class="txt_pro">
+        	<div class="inner_txt_pro clearfix">
+                <div class="arrow_left"><a href="#"><img src="images/btn_arrow_left.png" alt=""/></a></div>
+                <div class="mina_txt"><img src="images/txt_mina_say_1.png" alt=""/></div>
+                <div class="arrow_right"><a href="#"><img src="images/btn_arrow_right.png" alt=""/></a></div>
+            </div>
+        </div>
+    </div>
   </div>
  </div>  
 <!--area5-->
