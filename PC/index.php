@@ -9,7 +9,7 @@
   <div class="wrap_menu">
     <!--icon_area-->
       <div class="icon_area">
-        <a href="http://www.vdlcosmetics.com/product/index.jsp" target="_blank"><img src="images/btn_top_home.png" alt=""/></a>
+        <a href="http://www.vdlcosmetics.com/index.jsp" target="_blank"><img src="images/btn_top_home.png" alt=""/></a>
         <a href="http://www.vdlcosmetics.com/product/index.jsp" target="_blank"><img src="images/btn_top_shop.png" alt=""/></a>
         <a href="http://www.vdlcosmetics.com/product/collection/list.jsp" target="_blank"><img src="images/btn_top_trend.png" alt=""/></a>
         <a href="http://www.vdlcosmetics.com/story/story.jsp" target="_blank"><img src="images/btn_top_meet.png" alt=""/></a>
@@ -224,7 +224,7 @@ function sns_share(media)
 			}
 		});
 	}else if (media == "twitter"){
-		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS KAKAO FRIENDS! 친구에게 메시지를 보내고 컬렉션 제품이 담긴 VDL FRIENDS KIT를 받으세요! 참여만 해도 5천원 할인 쿠폰을 드려요.") + '&url='+ encodeURIComponent('http://www.mnv.kr/?media=twshare'),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS SHIN MINA 신민아 셀피의 비밀을 말하다. 신민아 셀피의 비밀 힌트 영상을 보고 퀴즈를 맞춰주세요! 맞추신 분에게는 VDL 뷰티 메탈쿠션 파운데이션과 LG전자 G4를 선물로 드려요!") + '&url='+ encodeURIComponent('http://www.mnv.kr/?media=twshare'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -506,7 +506,7 @@ function sns_share(media)
 			}
 		});
 	}else if (media == "twitter"){
-		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS KAKAO FRIENDS! 친구에게 메시지를 보내고 컬렉션 제품이 담긴 VDL FRIENDS KIT를 받으세요! 참여만 해도 5천원 할인 쿠폰을 드려요.") + '&url='+ encodeURIComponent('http://www.mnv.kr/?media=twshare'),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS SHIN MINA 신민아 셀피의 비밀을 말하다. 신민아 셀피의 비밀 힌트 영상을 보고 퀴즈를 맞춰주세요! 맞추신 분에게는 VDL 뷰티 메탈쿠션 파운데이션과 LG전자 G4를 선물로 드려요!") + '&url='+ encodeURIComponent('http://www.mnv.kr/?media=twshare'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -533,7 +533,7 @@ function sns_share(media)
 						url : '/v1/api/story/post/link',
 						data : {
 						link_info : res,
-							content:"VDL MEETS SHIN MINA,\r\n특별한 피부의 새로운 시작, 진화된 [메탈 쿠션]을 만나다.\r\첫 화장 그대로 화사하고 깨끗한 피부를 연출해주는 VDL의 베스트 셀링 아이템, 뷰티 메탈 쿠션 파운데이션. 무결점 피부의 새로운 뮤즈 신민아가 완벽한 쿠션 선택을 제안한다."
+							content:"VDL MEETS SHIN MINA\r\n신민아 셀피의 비밀 힌트 영상을 보고 퀴즈를 맞춰주세요! 맞추신 분에게는 VDL 뷰티 메탈 쿠션 파운데이션과 LG전자 G4를 선물로 드려요!
 						}
 					});
 				}).then(function(res) {
@@ -719,24 +719,28 @@ var txt_num2 = 0;
 
     // 유튜브 반복 재생
     var controllable_player1,start, 
-    statechange = function(e){
+    statechange1 = function(e){
 		if (e.data === 0)
 		{
 			controllable_player1.seekTo(0); controllable_player1.playVideo();controllable_player1.mute();
 		}
 		else if (e.data === 1)
 		{
+			controllable_player1.mute();
 		}
 		else if (e.data === 2)
 		{
+			controllable_player1.mute();
 		}
 		else if (e.data === 5)
 		{
+			controllable_player1.mute();
 		}
+			controllable_player1.mute();
     	//controllable_player.playVideo(); 
     };
     function onYouTubeIframeAPIReady() {
-		controllable_player1 = new YT.Player('ytplayer', {events: {'onStateChange': statechange}}); 
+		controllable_player1 = new YT.Player('ytplayer', {events: {'onStateChange': statechange1}}); 
     }
 
     // 유튜브 반복 재생
