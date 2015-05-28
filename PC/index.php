@@ -3,7 +3,6 @@
 ?>
 <!--contents_wrap-->
 <div class="contents_wrap">
-<input type="hidden" name="play_video" id="play_video" value="<?=$play_movie?>">
 <!--area1-->
 
 
@@ -57,7 +56,7 @@
       <div class="center_menu_area">
         <div class="title">
         	<div><img src="images/title.png" alt=""/></div>
-   	    	<div class="btn_view_mv"><a href="#event_movie" class="popup-with-zoom-anim"><img src="images/bt_top_play.png" alt=""/></a></div>
+   	    	<div class="btn_view_mv"><a href="#movie_pop" class="popup-with-zoom-anim"><img src="images/bt_top_play.png" alt=""/></a></div>
         </div>
       </div>
 <!--center_menu_area-->
@@ -118,7 +117,7 @@
     <div class="video_area">
     <!--youtube_div-->
           <div class="youtube_div">
-            <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
+            <iframe allowfullscreen="1" src="<?=$_gl['youtube_url4']?>" frameborder="0" id="ytplayer_viral" class="ytplayer_viral"></iframe>
           </div>
     <!--youtube_div-->
     <!--cover_area-->
@@ -719,11 +718,11 @@ var txt_num = 0;
 var txt_num2 = 0;
 
     // 유튜브 반복 재생
-    var controllable_player,start, 
+    var controllable_player1,start, 
     statechange = function(e){
 		if (e.data === 0)
 		{
-			controllable_player.seekTo(0); controllable_player.playVideo();
+			controllable_player1.seekTo(0); controllable_player1.playVideo();controllable_player1.mute();
 		}
 		else if (e.data === 1)
 		{
@@ -737,15 +736,38 @@ var txt_num2 = 0;
     	//controllable_player.playVideo(); 
     };
     function onYouTubeIframeAPIReady() {
-		controllable_player = new YT.Player('ytplayer', {events: {'onStateChange': statechange}}); 
+		controllable_player1 = new YT.Player('ytplayer', {events: {'onStateChange': statechange}}); 
+    }
+
+    // 유튜브 반복 재생
+    var controllable_player2,start, 
+    statechange2 = function(e){
+		if (e.data === 0)
+		{
+			controllable_player2.seekTo(0); controllable_player2.playVideo();controllable_player2.mute();
+		}
+		else if (e.data === 1)
+		{
+			controllable_player2.mute();
+		}
+		else if (e.data === 2)
+		{
+		}
+		else if (e.data === 5)
+		{
+		}
+    	//controllable_player.playVideo(); 
+    };
+    function onYouTubeIframeAPIReady2() {
+		controllable_player2 = new YT.Player('ytplayer_viral', {events: {'onStateChange': statechange2}}); 
     }
 
     if(window.opera){
-		addEventListener('load', onYouTubeIframeAPIReady, false);
+		addEventListener('load', onYouTubeIframeAPIReady2, false);
     }
 	setTimeout(function(){
-    	if (typeof(controllable_player) == 'undefined'){
-    		onYouTubeIframeAPIReady();
+    	if (typeof(controllable_player2) == 'undefined'){
+    		onYouTubeIframeAPIReady2();
     	}
 		//$(".cover_area").css("background","url('./images/movCover.png') repeat");
 
@@ -771,11 +793,13 @@ $(window).scroll(function() {
 		$("#menu_navi2").attr('src','images/btn_gnb_mina_off.png');
 		$("#menu_navi3").attr('src','images/btn_gnb_event_off.png');
 		$("#menu_navi4").attr('src','images/btn_gnb_metal_off.png');
+		controllable_player1.playVideo();
 	}else if (navi1 <= $(window).scrollTop() && $(window).scrollTop() <= navi2){
 		$("#menu_navi1").attr('src','images/btn_gnb_mv_off.png');
 		$("#menu_navi2").attr('src','images/btn_gnb_mina_on.png');
 		$("#menu_navi3").attr('src','images/btn_gnb_event_off.png');
 		$("#menu_navi4").attr('src','images/btn_gnb_metal_off.png');
+		controllable_player1.pauseVideo();
 	}else if (navi2 <= $(window).scrollTop() && $(window).scrollTop() <= navi3){
 		$("#menu_navi1").attr('src','images/btn_gnb_mv_off.png');
 		$("#menu_navi2").attr('src','images/btn_gnb_mina_off.png');
@@ -795,6 +819,8 @@ $(window).resize(function(){
 	var youtube_height = (width / 16) * 9;
 	$("#ytplayer").width(width);
 	$("#ytplayer").height(youtube_height);
+	$("#ytplayer_viral").width(width);
+	$("#ytplayer_viral").height(youtube_height);
 	$("#cover_area").width($("#ytplayer").width());
 	$("#cover_area").height($("#ytplayer").height());
 });
@@ -804,12 +830,14 @@ $(document).ready(function() {
 	//처음 화면 크기에 따라 영상및 커버 크기 변경
 	var width = $(window).width();
 	$("#ytplayer").width(width);
+	$("#ytplayer_viral").width(width);
 	$("#ytplayer_pop").width(630);
 	$("#IE7_ytplayer_pop").width(630);
 	$("#cover_area").width($("#ytplayer").width());
 	var youtube_height = (width / 16) * 9;
 	var youtubepop_height = (630 / 16) * 9;
 	$("#ytplayer").height(youtube_height);
+	$("#ytplayer_viral").height(youtube_height);
 	$("#ytplayer_pop").height(youtubepop_height);
 	$("#IE7_ytplayer_pop").height(youtubepop_height);
 	$("#cover_area").height($("#ytplayer").height());

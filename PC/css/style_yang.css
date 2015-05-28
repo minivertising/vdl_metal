@@ -410,6 +410,25 @@ body{
 	height:630px;
 }
 
+.popup_wrap .p_position.p_mid_movie{
+	position:relative;
+	width:900px;
+	height:506px;
+	margin-top:40px;
+}
+.popup_wrap .p_position.p_mid_movie .block_content{
+	width:880px;
+	height:486px;
+}
+.popup_wrap .p_position.p_mid_movie .block_close{
+  width: 100%;
+  position: absolute;
+  padding: 0 0 0;
+  z-index: 300;
+  top: -30px;
+  right: 0px;
+}
+
 .popup_wrap .p_position.p_alert{
 	position:relative;
 	width:400px;
@@ -464,8 +483,8 @@ body{
 .popup_wrap .p_position.p_mid_event .block_content .quiz .quiz_inner{
 	position:absolute;
 	width:200px;
-	right:48px;
-	top:187px;
+	right:123px;
+	top:206px;
 }
 .popup_wrap .p_position.p_mid_event .block_content .quiz .quiz_inner div{
 	float:left;
@@ -487,7 +506,7 @@ body{
 .popup_wrap .p_position.p_mid_event .block_content .quiz .btn_hint{
 	position:absolute;
 	right:210px;
-	bottom:40px;
+	bottom:20px;
 }
 
 

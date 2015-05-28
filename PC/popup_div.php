@@ -75,7 +75,7 @@
             <div><input type="text" name="answer_input4" id="answer_input4" onkeyup="chktxt(this)" maxlength="1"></div>
           </div>
           <div class="btn_hint">
-            <a href="#"><img src="images/popup/btn_hint.png" alt=""/></a>
+            <a href="#event_hint" class="popup-with-zoom-anim"><img src="images/popup/btn_hint.png" alt=""/></a>
           </div>
         </div>
         <div class="btn_block">
@@ -386,6 +386,25 @@
 	</div>
 <!----------------- IE7 이벤트 완료 팝업 ----------------->
 
+<!--힌트.-->
+<div id="event_hint" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:550px;top:50%;left:50%;margin-left:-275px;">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#event_answer" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_alert_hint.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#event_answer" class="popup-with-zoom-anim"><img src="images/popup/btn_ok.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!--end 힌트-->  
 
 <!----------------- 개인정보 활용 약관 팝업 ----------------->
 <div id="pop_use_agree" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-250px;margin-left:-200px">
@@ -863,3 +882,20 @@
   </div>
 </div>
     <!--IE7 정답!-->
+
+<!--영상-->
+<div id="movie_pop" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:900px;top:50%;left:50%;margin-left:-450px;">
+  <div class="p_mid_movie p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="$.magnificPopup.close();" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="movie">
+        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer_pop2" class="ytplayer_pop2" width="880" height="486"></iframe>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!--END : 영상-->

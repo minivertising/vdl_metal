@@ -1000,8 +1000,32 @@ body{
 .popup_wrap .p_position .block_content .inner .quiz .block_input{
 	position: absolute;
 	width:40%;
-	top:50%;
-	left:57%;
+	top:52%;
+	left:45%;
+}
+@media screen and (min-device-width: 375px) and (max-device-width: 400px) {
+	.popup_wrap .p_position .block_content .inner .quiz .block_input{
+		top:53%;
+	}
+	.popup_wrap .p_position .block_content .inner .quiz .block_input .inner_input div input{
+		width:78%;
+		text-align:center;
+		line-height:18px;
+		height:30px;
+	}
+	
+}
+@media screen and (min-device-width: 401px) and (max-device-width: 800px) {
+	.popup_wrap .p_position .block_content .inner .quiz .block_input{
+		top:54%;
+	}
+	.popup_wrap .p_position .block_content .inner .quiz .block_input .inner_input div input{
+		width:78%;
+		text-align:center;
+		line-height:18px;
+		height:30px;
+	}
+	
 }
 .popup_wrap .p_position .block_content .inner .quiz .block_input .inner_input{
 	width:100%;
@@ -1009,21 +1033,20 @@ body{
 .popup_wrap .p_position .block_content .inner .quiz .block_input .inner_input div{
 	float:left;
 	width:21%;
-	padding-right:4px;
 	height:20%;
-	background: rgba(221,72,74,1.00);
 }
 
 .popup_wrap .p_position .block_content .inner .quiz .block_input .inner_input div input{
 	border:none;
-	width:88%;
+	width:78%;
 	text-align:center;
 	height:auto;
-	border:3px solid #302185;
-	font-size:18px;
+	font-size:17px;
 	font-weight:bold;
 	color:#302185;
-	line-height:inherit;
+	line-height:17px;
+	height:23px;
+	background: none;
 }
 
 .popup_wrap .p_position .block_content .inner .quiz .btn_hint{
