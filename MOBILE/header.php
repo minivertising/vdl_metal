@@ -4,6 +4,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
     <meta property="og:title" content="VDL MEETS KAKAO FRIENDS">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.vdlxkakao.com/MOBILE/index.php" />
@@ -12,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" type="text/css" href="../lib/Magnific-Popup/magnific-popup.css"> 
     <link rel="stylesheet" type="text/css" href="./css/style.css"> 
-    <link rel="stylesheet" type="text/css" href="css/style_yang.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style_yang.css"> -->
     <link rel="stylesheet" href="../lib/iCheck/skins/all.css">
     <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
@@ -23,4 +24,4 @@
     <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
     <title>Document</title>
   </head>
-  <body>
+  <body style="background:white;">
