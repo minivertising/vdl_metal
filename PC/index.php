@@ -214,10 +214,6 @@ $(window).resize(function(){
 	$("#cover_area").width($("#ytplayer").width());
 	$("#cover_area").height($("#ytplayer").height());
 
-	$('.area2').height(995); // 제품
-	$('.area4').height(995); // 제품
-	$('.area5').height(1500); // 제품
-	$('.area3').height(wHeight); // 제품
 });
 
 $(document).ready(function() {
@@ -276,19 +272,6 @@ $(document).ready(function() {
 	// 퀵메뉴 기본 위치
 	var quick_height	= $(window).height()/2;
 	$('.quickmenu').css("top",quick_height);
-
-	var wHeight =$(window).height();
-
-	if (wHeight <= 780){
-		wHeight = 780;
-	}else if(wHeight > 1000){
-		wHeight = 1000;
-	}
-
-	$('.area2').height(995); // 제품
-	$('.area4').height(995); // 제품
-	$('.area5').height(1500); // 제품
-	$('.area3').height(wHeight); // 제품
 
 	$(".area2_bg").show();
 	$(".area3_bg").show();

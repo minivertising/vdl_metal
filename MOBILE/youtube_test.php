@@ -2,7 +2,7 @@
 	include_once   "./header.php";
 ?>
         <div style="width:100%; background:#000; margin-bottom:10px;">
-          <iframe allowfullscreen="1" src="<?=$_gl['youtube_url2']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
+          <iframe allowfullscreen="1" src="<?=$_gl['youtube_url3']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
         </div>
 <?
 	include_once   "./popup_div.php";
@@ -44,25 +44,19 @@
 
     }, 1000)
 
-$(window).on("orientationchange",function(){
-   if(window.orientation == 0) // Portrait
-      {
-	var width = $(window).width();
-	var height = $(window).height();
-	alert(height);
-	$("#ytplayer").width(width);
-	var youtube_height = (width / 16) * 9;
-	$("#ytplayer").height(youtube_height);
-      }
-   else // Landscape
-      {
-	var width = $(window).width();
-	alert(width);
-	$("#ytplayer").width(width);
-	var youtube_height = (width / 16) * 9;
-	$("#ytplayer").height(youtube_height);
-      }
-});
+ jQuery(window).bind("orientationchange", function(e) { // 가로세로 전환 처리
+            var orientation = window.orientation;
+ 
+            if (orientation == 90 || orientation == -90) {
+	            var i_tw = document.body.clientWidth;
+				alert(i_tw);
+            } else {
+	            var i_tw = document.body.clientWidth;
+				alert(i_tw);
+            }
+ 
+        });
+ 
 $(document).ready(function() {
 
 	//처음 화면 크기에 따라 영상및 커버 크기 변경
