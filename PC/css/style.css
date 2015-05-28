@@ -141,6 +141,7 @@
   background: #fff url(../images/bg_mina.jpg) center 0 no-repeat;
   background-size:cover;
   height:1226px;
+  margin-top:-2px;
 }
 .contents_wrap .area2_bg .inner{
 	width:1000px;
