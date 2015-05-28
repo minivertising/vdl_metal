@@ -52,7 +52,7 @@
 </div>
 
 <div class="block_event">
-  <div class="btn_play"><a href="#"><img src="images/btn_play.png" alt=""/></a></div>
+  <div class="btn_play"><a href="popup_viral.php"><img src="images/btn_play.png" alt=""/></a></div>
   <div class="btn_event"><a href="popup_event1.php"><img src="images/btn_event_go.png" alt=""/></a></div>
   <div class="bg_event"><img src="images/bg_event.jpg" alt=""/></div>
 </div>

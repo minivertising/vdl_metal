@@ -24,10 +24,10 @@
       </div>
     <!--icon_area-->
       <div class="icon_area2">
-        <a href="#"><img src="images/btn_gnb_mv_on.png" alt="" id="menu_navi1"/></a>
-        <a href="#"><img src="images/btn_gnb_mina_off.png" alt="" id="menu_navi2"/></a>
-        <a href="#"><img src="images/btn_gnb_event_off.png" alt="" id="menu_navi3"/></a>
-        <a href="#"><img src="images/btn_gnb_metal_off.png" alt="" id="menu_navi4"/></a>
+        <a href="#" onclick="move_area('mv')"><img src="images/btn_gnb_mv_on.png" alt="" id="menu_navi1"/></a>
+        <a href="#" onclick="move_area('life')"><img src="images/btn_gnb_mina_off.png" alt="" id="menu_navi2"/></a>
+        <a href="#" onclick="move_area('event')"><img src="images/btn_gnb_event_off.png" alt="" id="menu_navi3"/></a>
+        <a href="#" onclick="move_area('metal')"><img src="images/btn_gnb_metal_off.png" alt="" id="menu_navi4"/></a>
         <div class="sns">
         	<a href="#" onclick="sns_share('facebook');"><img src="images/btn_sns_fb.png" alt=""/></a>
         	<a href="#" onclick="sns_share('story');"><img src="images/btn_sns_ks.png" alt=""/></a>
@@ -57,16 +57,13 @@
       <div class="center_menu_area">
         <div class="title">
         	<div><img src="images/title.png" alt=""/></div>
-   	    	<div class="btn_view_mv"><a href="#"><img src="images/bt_top_play.png" alt=""/></a></div>
+   	    	<div class="btn_view_mv"><a href="#event_movie" class="popup-with-zoom-anim"><img src="images/bt_top_play.png" alt=""/></a></div>
         </div>
       </div>
 <!--center_menu_area-->
 <!--scroll_navi_area-->
       <div class="scroll_navi_area">
-	    <a href="#"><img src="images/btn_go_down.png" alt=""/></a>
-      </div>
-      <div class="bg_cloud">
-   	  	<img src="images/movie_bg.png" alt=""/>
+	    <a href="#" onclick="move_area('life')"><img src="images/btn_go_down.png" alt=""/></a>
       </div>
 <!--scroll_navi_area-->
     </div>
@@ -98,14 +95,26 @@
 
 
 <!--area4-->
-<div class="area4_bg" style="display:none">
+<div class="area4_bg" style="display:none;height:900px">
   <div class="area4">
   	<div class="tag_event"><img src="images/title_sec_event.png" alt=""/></div>
     
     <div class="btn_event">
-    	<a><img src="images/btn_event.png" alt=""/></a>
+<?
+	if ($IE7 == "Y")
+	{
+?>
+    	<a href="#" onclick="start_api();open_pop('IE7_event_movie','')"><img src="images/btn_event.png" alt=""/></a>
+<?
+	}else{
+?>
+    	<a href="#event_movie" class="popup-with-zoom-anim" onclick="start_api();"><img src="images/btn_event.png" alt=""/></a>
+<?
+	}
+?>
+
     </div>
-    
+
     <div class="video_area">
     <!--youtube_div-->
           <div class="youtube_div">
@@ -752,22 +761,22 @@ $(window).scroll(function() {
 	quickTop = ($(window).height()-$('.quickmenu').height()) /2;
 	$('.quickmenu').stop().animate({top:$(window).scrollTop()+quickTop},400,'easeOutExpo');
 
-	navi1	= $('.area1').height();
-	navi2	= $('.area1').height() + $('.area2_bg').height();
-	navi3	= $('.area1').height() + $('.area2_bg').height() + $('.area4_bg').height();
-	navi4	= $('.area1').height() + $('.area2_bg').height() + $('.area4_bg').height() + $('.area5_bg').height();
+	navi1	= $('.area1').height() - 135;
+	navi2	= $('.area1').height() + $('.area2_bg').height() - 135;
+	navi3	= $('.area1').height() + $('.area2_bg').height() + $('.area4_bg').height() - 135;
+	navi4	= $('.area1').height() + $('.area2_bg').height() + $('.area4_bg').height() + $('.area5_bg').height() - 135;
 	if ($(window).scrollTop() < navi1)
 	{
 		$("#menu_navi1").attr('src','images/btn_gnb_mv_on.png');
 		$("#menu_navi2").attr('src','images/btn_gnb_mina_off.png');
 		$("#menu_navi3").attr('src','images/btn_gnb_event_off.png');
 		$("#menu_navi4").attr('src','images/btn_gnb_metal_off.png');
-	}else if (navi1 < $(window).scrollTop() < navi2){
+	}else if (navi1 <= $(window).scrollTop() && $(window).scrollTop() <= navi2){
 		$("#menu_navi1").attr('src','images/btn_gnb_mv_off.png');
 		$("#menu_navi2").attr('src','images/btn_gnb_mina_on.png');
 		$("#menu_navi3").attr('src','images/btn_gnb_event_off.png');
 		$("#menu_navi4").attr('src','images/btn_gnb_metal_off.png');
-	}else if (navi2 < $(window).scrollTop() < navi3){
+	}else if (navi2 <= $(window).scrollTop() && $(window).scrollTop() <= navi3){
 		$("#menu_navi1").attr('src','images/btn_gnb_mv_off.png');
 		$("#menu_navi2").attr('src','images/btn_gnb_mina_off.png');
 		$("#menu_navi3").attr('src','images/btn_gnb_event_on.png');
@@ -1009,5 +1018,20 @@ function popup_desc(param)
 		}
 	}, 0);
 }
+
+function move_area(area)
+{
+	if (area == "mv")
+	{
+		$( 'html, body' ).animate({ scrollTop: 0},500);
+	}else if (area == "life"){
+		$( 'html, body' ).animate({ scrollTop: $(".area1").height() - 130},500);
+	}else if (area == "event"){
+		$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2_bg").height() - 130},500);
+	}else if (area == "metal"){
+		$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2_bg").height() + $(".area4_bg").height() - 130},500);
+	}
+}
+
 
 </script>
