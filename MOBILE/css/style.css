@@ -203,6 +203,7 @@ body{
 .block_event{
 	width:100%;
 	position:relative;
+	margin-top:-1%;
 }
 
 .block_event .btn_play,

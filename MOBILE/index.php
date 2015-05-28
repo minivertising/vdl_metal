@@ -53,8 +53,10 @@ html,body { height: 100%; margin: 0; padding: 0;}
     </div>
     <div id="mobile_menu" class="mobile_menu">
       <ul>
-        <li><a href="#" onclick="screen_move('summer')"><img src="images/btn_summer.jpg"  alt=""/></a></li>
-        <li><a href="#" onclick="screen_move('kit')"><img src="images/btn_vdl_kit.jpg"  alt=""/></a></li>
+        <li><a href="#" onclick="screen_move('summer')"><img src="images/btn_gnb_mv.png"  alt=""/></a></li>
+        <li><a href="#" onclick="screen_move('kit')"><img src="images/btn_gnb_mina.png"  alt=""/></a></li>
+        <li><a href="#" onclick="screen_move('kit')"><img src="images/btn_gnb_event.png"  alt=""/></a></li>
+        <li><a href="#" onclick="screen_move('kit')"><img src="images/btn_gnb_pro.png"  alt=""/></a></li>
         <li><a href="http://www.vdlcosmetics.com/m/index.jsp" target="_blank"><img src="images/btn_home.jpg"  alt=""/></a></li>
       </ul>
       <div class="btn_sns">
