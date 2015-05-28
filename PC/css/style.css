@@ -71,7 +71,7 @@
 .contents_wrap .icon_area2 .sns{
 	position:absolute;
 	right:10px;
-	top:8px;
+	top:9px;
 }
 
 
@@ -157,7 +157,7 @@
 	width:850px;
 	height:500px;
 	position:absolute;
-	top:600px;
+	top:620px;
 	left:0;
 	background:url(../images/bg_mina_say.png) center 0 no-repeat;
 }
@@ -264,6 +264,16 @@
   background:#eee;
   background-size: cover;
 }
+.contents_wrap .area4 .video_area .cover_area{
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+	background : url("../images/bg_black.png") repeat;
+	overflow : hidden;
+	z-index : 10;
+}
 .contents_wrap .area4 .video_area {
   position: relative;
   width: 100%;
@@ -292,6 +302,7 @@
 	position:absolute;
 	top:20%;
 	left:50%;
+	z-index:80;
 }
 
 .contents_wrap .area4{
