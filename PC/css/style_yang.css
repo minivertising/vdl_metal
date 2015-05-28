@@ -631,6 +631,18 @@ body{
 	line-height:18px;
 	color:#000;
 }
+
+.popup_wrap .p_position.p_mid_input .block_input .input_one select{
+	border:3px solid #302683;
+	padding:6px 3px;
+	width:95px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	font-size:14px;
+	line-height:18px;
+	color:#000;
+}
+
 .popup_wrap .p_position.p_mid_input .block_input .input_one .input_phone .phone_ip input{
 	width:82px;
 }

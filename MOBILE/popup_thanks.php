@@ -4,14 +4,14 @@
 <div class="popup_wrap">
   <div class="p_mid p_position big">
     <div class="block_close clearfix">
-      <a href="#confirm1_alert" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close_w.png" /></a>
+      <a href="index.php" class="btn_close"><img src="images/popup/btn_close_w.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">
         <div class="title title_input"><img src="images/popup/bg_thanks.png" /></div>
         <div class="block_sns">
           <a href="#" onclick="movie_share('facebook')"><img src="images/popup/btn_share_fb.png" /></a>
-          <a href="#" onclick="movie_share('kakao')"><img src="images/popup/btn_share_kt.png" /></a>
+          <a href="#" onclick="movie_share('kakao')" id="kakao-link-btn"><img src="images/popup/btn_share_kt.png" /></a>
           <a href="#" onclick="movie_share('story')"><img src="images/popup/btn_share_ks.png" /></a>
           <a href="#" onclick="movie_share('twitter')"><img src="images/popup/btn_share_tw.png" /></a>
         </div>
@@ -84,15 +84,6 @@ function movie_share(media)
 			}
 		});
 
-		$.ajax({
-			type   : "POST",
-			async  : false,
-			url    : "../main_exec.php",
-			data:{
-				"exec" : "insert_share_info",
-				"media" : media
-			}
-		});
 	}else{
 		media	= "stmovie";
 		// 로그인 창을 띄웁니다.

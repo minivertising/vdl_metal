@@ -51,7 +51,7 @@
 	if ($IE7 == "Y")
 	{
 ?>
-        <a href="#" onclick="start_api();open_pop('IE7_event_movie')">이벤트 참여</a>
+        <a href="#" onclick="start_api();open_pop('IE7_event_movie','')">이벤트 참여</a>
 <?
 	}else{
 ?>
@@ -135,13 +135,32 @@ function sns_share(media)
 	}
 }
 
-function open_pop(param)
+function open_pop(param, param2)
 {
 	$(".mask").width($(window).width());
 	$(".mask").height($(window).height());
 
 	$(".mask").show();
+
+	if (param2 != "")
+		$("#" + param2).hide();
+	
 	$("#" + param).show();
+}
+
+function close_pop(param, param2)
+{
+	$(".mask").width($(window).width());
+	$(".mask").height($(window).height());
+
+	$(".mask").show();
+
+	if (param != "")
+	{
+		$("#" + param).hide();
+		$(".mask").hide();
+	}
+	$("#" + param2).show();
 }
 
 function start_api()
@@ -220,11 +239,11 @@ function answer_complete()
 		$("#IE7_event_movie").hide();
 		$("#IE7_event_answer").show();
 	}else{
-		alert("정답을 다시 입력해주세요.");
 		$("#IE7_answer_input1").val("");
 		$("#IE7_answer_input2").val("");
 		$("#IE7_answer_input3").val("");
 		$("#IE7_answer_input4").val("");
+		open_pop("", "IE7_event_answer");
 	}
 }
 
@@ -521,11 +540,13 @@ $(document).ready(function() {
 	var width = $(window).width();
 	$("#ytplayer").width(width);
 	$("#ytplayer_pop").width(630);
+	$("#IE7_ytplayer_pop").width(630);
 	$("#cover_area").width($("#ytplayer").width());
 	var youtube_height = (width / 16) * 9;
 	var youtubepop_height = (630 / 16) * 9;
 	$("#ytplayer").height(youtube_height);
 	$("#ytplayer_pop").height(youtubepop_height);
+	$("#IE7_ytplayer_pop").height(youtubepop_height);
 	$("#cover_area").height($("#ytplayer").height());
 
 	// 체크박스 스타일 설정

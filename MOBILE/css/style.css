@@ -596,6 +596,7 @@ body{
 	width:100%;
 }
 .popup_wrap .p_position .block_content .inner .block_input .input_txt input,
+.popup_wrap .p_position .block_content .inner .block_input .input_txt select,
 .popup_wrap .p_position .block_content .inner .block_input .input_txt textarea{
 	width:90%;
 	border:3px solid #302185;
@@ -635,27 +636,6 @@ body{
 .popup_wrap .p_position .block_content .inner .block_input .input_txt .inner_phone div.in_phone input{
 	width:85%;
 	display:block;
-}
-
-.popup_wrap .p_position .block_content .inner .block_input .input_txt .inner_phone div.in_phone select{
-    -webkit-appearance: none;
-    border-radius:0;	
-    background-image: url(../images/arrow.png);
-    background-position: 90% 12px;
-    background-repeat: no-repeat;
-	background-size: 10px;
-	background: white;
-    width: 100%;
-    display:block;
-	z-index:4000;
-    margin-bottom:-1.5em;
-	border:1px solid #000;
-	padding:7px 4px;
-	font-size:14px;
-	line-height:16px;
-	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight:bold;
-
 }
 
 .popup_wrap .p_position .block_content .inner .block_btn{

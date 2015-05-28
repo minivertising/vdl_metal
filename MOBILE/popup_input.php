@@ -19,11 +19,21 @@
           <div class="label"><img src="images/popup/label_phone.png" /></div>
           <div class="input_txt">
             <div class="inner_phone clearfix">
-              <div class="in_phone"><input type="text" name="mb_phone1" id="mb_phone1"></div>
+              <div class="in_phone">
+                <!-- <input type="tel" name="mb_phone1" id="mb_phone1"> -->
+                <select name="mb_phone1" id="mb_phone1" style="height:34px">
+                  <option value="010">010</option>
+                  <option value="011">011</option>
+                  <option value="016">016</option>
+                  <option value="017">017</option>
+                  <option value="018">018</option>
+                  <option value="019">019</option>
+                </select>
+              </div>
               <div class="in_dash">-</div>
-              <div class="in_phone"><input type="text" name="mb_phone2" id="mb_phone2" onkeyup="chk_len(this.value)"></div>
+              <div class="in_phone"><input type="tel" name="mb_phone2" id="mb_phone2" onkeyup="chk_len(this.value)"></div>
               <div class="in_dash">-</div>
-              <div class="in_phone"><input type="text" name="mb_phone3" id="mb_phone3" onkeyup="chk_len2(this.value)"></div>
+              <div class="in_phone"><input type="tel" name="mb_phone3" id="mb_phone3" onkeyup="chk_len2(this.value)"></div>
             </div>
           </div>
         </div>
