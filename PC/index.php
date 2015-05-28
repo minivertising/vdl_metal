@@ -63,7 +63,7 @@
 <!--center_menu_area-->
 <!--scroll_navi_area-->
       <div class="scroll_navi_area">
-	    <a href="#">아래로 이동</a>
+	    <a href="#"><img src="images/btn_go_down.png" alt=""/></a>
       </div>
       <div class="bg_cloud">
    	  	<img src="images/movie_bg.png" alt=""/>
@@ -94,16 +94,27 @@
 <!--area2-->
 
 
-<!--area3-->
-<div class="area3_bg" style="display:none">
-  <div class="area3">
-  </div>
- </div>  
-<!--area3-->
-
 <!--area4-->
 <div class="area4_bg" style="display:none">
   <div class="area4">
+  	<div class="tag_event"><img src="images/title_sec_event.png" alt=""/></div>
+    
+    <div class="btn_event">
+    	<a><img src="images/btn_event.png" alt=""/></a>
+    </div>
+    
+    <div class="video_area">
+    <!--youtube_div-->
+          <div class="youtube_div">
+            <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
+          </div>
+    <!--youtube_div-->
+    <!--cover_area-->
+          <div class="cover_area">
+          </div>
+    <!--cover_area-->
+    </div>
+        
   </div>
  </div>  
 <!--area4-->
