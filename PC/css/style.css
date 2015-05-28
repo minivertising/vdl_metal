@@ -139,7 +139,7 @@
 }
 .contents_wrap .area2_bg.bg2{
   background: #fff url(../images/bg_mina.jpg) center 0 no-repeat;
-  background-size: cover;
+  height:1226px;
 }
 .contents_wrap .area2_bg .inner{
 	width:1000px;
@@ -326,11 +326,37 @@
   width: 100%;
   height: 100%;
   background: #fff url(../images/bg_detail.jpg) center 0 no-repeat;
-  background-size:contain;
+  height:1105px;
 }
 .contents_wrap .area5{
 	position: relative;
 }
+.contents_wrap .area5_bg .inner{
+	width:1000px;
+	margin:0 auto;
+}
+.contents_wrap .area5_bg .inner .txt_pro{
+	position:absolute;
+	top:340px;
+}
+.contents_wrap .area5_bg .inner .txt_pro .inner_txt_pro{
+	width:320px;
+	height:280px;
+	background:url(../images/bg_txt_pro.png) center 0 no-repeat;
+}
+.contents_wrap .area5_bg .inner .txt_pro .inner_txt_pro div{
+	float:left;
+	padding-top:110px;
+	width:40px;
+	text-align:center;
+}
+.contents_wrap .area5_bg .inner .txt_pro .inner_txt_pro div.mina_txt{
+	text-align:left;
+	width:240px;
+	padding-top:50px;
+	
+}
+
 
 .contents_wrap .area5 .product_group{
 	position: absolute;

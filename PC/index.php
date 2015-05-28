@@ -127,7 +127,7 @@
         <div class="txt_pro">
         	<div class="inner_txt_pro clearfix">
                 <div class="arrow_left"><a href="#"><img src="images/btn_arrow_left.png" alt=""/></a></div>
-                <div class="mina_txt"><img src="images/txt_mina_say_1.png" alt=""/></div>
+                <div class="mina_txt"><img src="images/txt_pro_1.png" alt=""/></div>
                 <div class="arrow_right"><a href="#"><img src="images/btn_arrow_right.png" alt=""/></a></div>
             </div>
         </div>
