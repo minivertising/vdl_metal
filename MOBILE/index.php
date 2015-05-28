@@ -71,9 +71,32 @@ html,body { height: 100%; margin: 0; padding: 0;}
     	<a href="#"><img src="images/img_top.png" alt=""/></a>
     </div>
     
+    <div class="block_mina">
+    	<div class="txt_roll">
+        	<div class="inner_roll clearfix">
+            	<div class="arrow_left"><a href="#"><img src="images/btn_arrow_left.png" alt=""/></a></div>
+                <div class="txt"><a href="#"><img src="images/txt_mina_say_1.png" alt=""/></a></div>
+                <div class="arrow_right"><a href="#"><img src="images/btn_arrow_right.png" alt=""/></a></div>
+            </div>
+        </div>
+    	 <div class="bg_mina"><img src="images/bg_mina.jpg" alt=""/></div>
+    </div>
+    
     <div class="block_event">
-    	<div class="tag_event"><img src="images/tag_event.png" alt=""/></div>
-        <div class="btn_evnet"><img src="images/tag_event.png" alt=""/></div>
+    	<div class="btn_play"><a href="#"><img src="images/btn_play.png" alt=""/></a></div>
+        <div class="btn_event"><a href="#"><img src="images/btn_event_go.png" alt=""/></a></div>
+        <div class="bg_event"><img src="images/bg_event.jpg" alt=""/></div>
+    </div>
+    
+    <div class="block_pro">
+    	<div class="txt_roll">
+        	<div class="inner_roll clearfix">
+            	<div class="arrow_left"><a href="#"><img src="images/btn_arrow_left.png" alt=""/></a></div>
+                <div class="txt"><a href="#"><img src="images/txt_pro_1.png" alt=""/></a></div>
+                <div class="arrow_right"><a href="#"><img src="images/btn_arrow_right.png" alt=""/></a></div>
+            </div>
+        </div>
+    	<div class="bg_pro"><img src="images/bg_pro.jpg" alt=""/></div>
     </div>
     
     
