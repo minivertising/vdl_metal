@@ -15,6 +15,7 @@
 
 
 
+
 .contents_wrap .area1 .video_area{
 	position:relative;
 	width:100%;
@@ -36,46 +37,63 @@
 	height : 100%;
 	background : url("../images/area1_bg.jpg") repeat;
 	overflow : hidden;
+	background:rgba(0, 0, 0, 0.2);
 	z-index : 10;
 }
 
-
-.contents_wrap .area1 .video_area .block_logo{
-	background:rgba(255, 255, 255, 0.8);
-    position:absolute;
-	z-index:29;
-	top:0px;
-	left:0px;
+.contents_wrap .wrap_menu{
+	background:rgba(0, 0, 0, 1.0);
+	position:fixed;
+	top:0;
+	z-index:999;
 	width:100%;
-	height:70px;	
 }
-.contents_wrap .area1 .video_area .icon_area{
-	position:absolute;
+.contents_wrap .block_logo{
+	background:rgba(0, 0, 0, 1.0);
+	z-index:29;
+	width:100%;
+	text-align:center;
+	padding-bottom:20px;
+}
+.contents_wrap .icon_area{
+	text-align:right;
+	background:rgba(0, 0, 0, 1.0);
+	padding-top:10px;
+	padding-right:20px;
+}
+.contents_wrap .icon_area2{
+	text-align:center;
 	z-index:30;
-	top:20px;
-	left:30px;
+	background:#212020;
+	padding:15px 0;
+	position:relative;
 }
-.contents_wrap .area1 .video_area .icon_area2{
+
+.contents_wrap .icon_area2 .sns{
 	position:absolute;
-	z-index:30;
-	top:25px;
-	right:30px;
+	right:10px;
+	top:8px;
 }
+
+
+
 
 .contents_wrap .area1 .video_area .center_menu_area{
 	position:absolute;
-	bottom:32%;
-	right:1%;
-	width:490px;
-	height:100px;
+	left:50%;
+	top:30%;
+	width:500px;
+	margin-left:-250px;
+	height:330px;
 	z-index:40;
 }
-.contents_wrap .area1 .video_area .center_menu_area .title{
-	padding-bottom:15px;
+
+.contents_wrap .area1 .video_area .center_menu_area .btn_view_mv{
+	width:100%;
+	text-align:center;
+	padding-top:20px;
 }
-.contents_wrap .area1 .video_area .center_menu_area .title img{
-	width:80%;
-}
+
 
 @media (max-width: 1000px) {
 	.contents_wrap .area1 .video_area .center_menu_area .title img{
@@ -95,8 +113,11 @@
 .contents_wrap .area1 .video_area .scroll_navi_area{
 	position:absolute;
 	z-index:40;
-	bottom:25%;
+	bottom:15%;
 	left:50%;
+	margin-left:-36px;
+	width:72px;
+	height:37px;
 }
 .contents_wrap .area1 .video_area .bg_cloud{
 	position:absolute;
@@ -192,12 +213,41 @@
 }
 
 /* 메인 네번째 DIV */
+
 .contents_wrap .area4_bg{
   width: 100%;
   height: 100%;
-  background: #fff url(../images/bg_event.png) center 0 no-repeat;
+  background:#eee;
   background-size: cover;
 }
+.contents_wrap .area4 .video_area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.contents_wrap .area4 .youtube_div{
+  overflow: hidden;
+  width: 100%;
+  height: 100%;	
+}
+
+.contents_wrap .area4_bg .tag_event{
+	text-align:center;
+	position:absolute;
+	top:0;
+	width:100%;
+	padding:20px 0;
+	background:rgba(49, 43, 129, 0.8);
+	z-index:100;
+	
+}
+.contents_wrap .area4_bg .btn_event{
+	position:absolute;
+	top:20%;
+	left:50%;
+}
+
 .contents_wrap .area4{
 	position: relative;
 }
@@ -270,10 +320,9 @@
 
 .footer{
 	position: relative;
-	background:#fff;
-	padding:30px 0;
+	background:#f8f8f8;
 	text-align:center;
-	border-top:1px solid #ddd;
+	padding:30px 0;
 }
 
 

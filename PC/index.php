@@ -5,6 +5,39 @@
 <div class="contents_wrap">
 <input type="hidden" name="play_video" id="play_video" value="<?=$play_movie?>">
 <!--area1-->
+
+
+  <div class="wrap_menu">
+    <!--icon_area-->
+      <div class="icon_area">
+        <a href="http://www.vdlcosmetics.com/product/index.jsp" target="_blank"><img src="images/btn_top_home.png" alt=""/></a>
+        <a href="http://www.vdlcosmetics.com/product/index.jsp" target="_blank"><img src="images/btn_top_shop.png" alt=""/></a>
+        <a href="http://www.vdlcosmetics.com/product/collection/list.jsp" target="_blank"><img src="images/btn_top_trend.png" alt=""/></a>
+        <a href="http://www.vdlcosmetics.com/story/story.jsp" target="_blank"><img src="images/btn_top_meet.png" alt=""/></a>
+        <a href="http://blog.naver.com/vdlcosmetic" target="_blank"><img src="images/btn_top_blog.png" alt=""/></a>
+        <a href="http://www.vdlcosmetics.com/lounge/social.jsp" target="_blank"><img src="images/btn_top_social.png" alt=""/></a>
+      </div>
+    <!--icon_area-->    
+    <!--icon_area-->
+      <div class="block_logo">  
+        <a href="#"><img src="images/logo_vdl.png" alt=""/></a>
+      </div>
+    <!--icon_area-->
+      <div class="icon_area2">
+        <a href="#"><img src="images/btn_gnb_mv_off.png" alt=""/></a>
+        <a href="#"><img src="images/btn_gnb_mina_off.png" alt=""/></a>
+        <a href="#"><img src="images/btn_gnb_event_on.png" alt=""/></a>
+        <a href="#"><img src="images/btn_gnb_metal_off.png" alt=""/></a>
+        <div class="sns">
+        	<a href="#" onclick="sns_share('facebook');"><img src="images/btn_sns_fb.png" alt=""/></a>
+        	<a href="#" onclick="sns_share('story');"><img src="images/btn_sns_ks.png" alt=""/></a>
+            <a href="#" onclick="sns_share('twitter');"><img src="images/btn_sns_tw.png" alt=""/></a>
+        	
+        </div>
+      </div>      
+  </div>
+
+
   <div class="area1">
 <!--video_area-->
     <div class="video_area">
@@ -17,38 +50,20 @@
       <div class="cover_area">
       </div>
 <!--cover_area-->
-  <!--icon_area-->
-    <div class="icon_area">
-      <a href="http://www.vdlcosmetics.com/product/index.jsp" target="_blank">VDL SHOP</a> | 
-      <a href="http://www.vdlcosmetics.com/product/collection/list.jsp" target="_blank">VDL TREND</a> | 
-      <a href="http://www.vdlcosmetics.com/story/story.jsp" target="_blank">MEET VDL</a> | 
-      <a href="http://blog.naver.com/vdlcosmetic" target="_blank">BLOG</a> | 
-      <a href="http://www.vdlcosmetics.com/lounge/social.jsp" target="_blank">SOCIAL CLUB</a>
-    </div>
-  <!--icon_area-->
-  <!--icon_area-->
-    <div class="icon_area2">
-      <a href="#">VDL MUSE SHIN MINA M/V</a>
-      <a href="#">SHIN MINA BEAYTY LIFE</a>
-      <a href="#">METAL CUSHION</a>
-      <a href="#">EVENT</a>
-      <a href="#" onclick="sns_share('twitter');">트위터</a>
-      <a href="#" onclick="sns_share('facebook');">페이스북</a>
-      <a href="#" onclick="sns_share('story');">스토리</a>
-    </div>
-  <!--icon_area-->
-	<div class="block_logo">  
-    </div>
+
+    
+    
 <!--center_menu_area-->
       <div class="center_menu_area">
         <div class="title">
-   	    	<a href="#">신민아의 메탈쿠션 영상 보기</a>
+        	<div><img src="images/title.png" alt=""/></div>
+   	    	<div class="btn_view_mv"><a href="#"><img src="images/bt_top_play.png" alt=""/></a></div>
         </div>
       </div>
 <!--center_menu_area-->
 <!--scroll_navi_area-->
       <div class="scroll_navi_area">
-	    <a href="#">아래로 이동</a>
+	    <a href="#"><img src="images/btn_go_down.png" alt=""/></a>
       </div>
       <div class="bg_cloud">
    	  	<img src="images/movie_bg.png" alt=""/>
@@ -79,16 +94,27 @@
 <!--area2-->
 
 
-<!--area3-->
-<div class="area3_bg" style="display:none">
-  <div class="area3">
-  </div>
- </div>  
-<!--area3-->
-
 <!--area4-->
 <div class="area4_bg" style="display:none">
   <div class="area4">
+  	<div class="tag_event"><img src="images/title_sec_event.png" alt=""/></div>
+    
+    <div class="btn_event">
+    	<a><img src="images/btn_event.png" alt=""/></a>
+    </div>
+    
+    <div class="video_area">
+    <!--youtube_div-->
+          <div class="youtube_div">
+            <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
+          </div>
+    <!--youtube_div-->
+    <!--cover_area-->
+          <div class="cover_area">
+          </div>
+    <!--cover_area-->
+    </div>
+        
   </div>
  </div>  
 <!--area4-->
