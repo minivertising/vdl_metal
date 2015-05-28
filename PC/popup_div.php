@@ -387,7 +387,7 @@
 <!----------------- IE7 이벤트 완료 팝업 ----------------->
 
 <!--힌트.-->
-<div id="event_hint" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:550px;top:50%;left:50%;margin-left:-275px;">
+<div id="event_hint" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-left:-200px;">
   <div class="p_alert p_position">
     <div class="block_close clearfix">
       <a href="#event_answer" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
