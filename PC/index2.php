@@ -236,17 +236,75 @@ function answer_complete()
 	var answer_txt	= answer_txt1 + answer_txt2 + answer_txt3 + answer_txt4;
 	if (answer_txt == "메탈쿠션")
 	{
-		$("#IE7_event_movie").hide();
-		$("#IE7_event_answer").show();
+		open_pop("IE7_right_answer_alert", "IE7_event_answer");
 	}else{
 		$("#IE7_answer_input1").val("");
 		$("#IE7_answer_input2").val("");
 		$("#IE7_answer_input3").val("");
 		$("#IE7_answer_input4").val("");
-		open_pop("", "IE7_event_answer");
+		open_pop("IE7_wrong_answer_alert", "IE7_event_answer");
 	}
 }
 
+function input_info()
+{
+	var mb_name	= $("#IE7_mb_name").val();
+	var mb_phone1	= $("#IE7_mb_phone1").val();
+	var mb_phone2	= $("#IE7_mb_phone2").val();
+	var mb_phone3	= $("#IE7_mb_phone3").val();
+	var mb_phone	= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
+
+	if (mb_name == "")
+	{
+		open_pop("IE7_pop_input", "IE7_event_input");
+
+		//$("#mb_name").focus();
+		return false;
+	}
+
+	if (mb_phone2 == "")
+	{
+		open_pop("IE7_pop_input", "IE7_event_input");
+		return false;
+	}
+
+	if (mb_phone3 == "")
+	{
+		open_pop("IE7_pop_input", "IE7_event_input");
+		return false;
+	}
+
+	if ($('#IE7_use_agree').is(":checked") == false)
+	{
+		open_pop("IE7_pop_use_agree_alert", "IE7_event_input");
+		return false;
+	}
+
+	if ($('#IE7_privacy_agree').is(":checked") == false)
+	{
+		open_pop("IE7_pop_privacy_agree_alert", "IE7_event_input");
+		return false;
+	}
+
+	if ($('#IE7_adver_agree').is(":checked") == false)
+	{
+		open_pop("IE7_pop_adver_agree_alert", "IE7_event_input");
+		return false;
+	}
+
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"					: "insert_info",
+			"mb_name"		: mb_name,
+			"mb_phone"		: mb_phone
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			open_pop("IE7_pop_thanks", "IE7_event_input");
+		}
+	});
+}
 
 </script>
 <?
@@ -483,6 +541,69 @@ function answer_complete()
 	}
 }
 
+function input_info()
+{
+	var mb_name	= $("#mb_name").val();
+	var mb_phone1	= $("#mb_phone1").val();
+	var mb_phone2	= $("#mb_phone2").val();
+	var mb_phone3	= $("#mb_phone3").val();
+	var mb_phone	= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
+
+	if (mb_name == "")
+	{
+		setTimeout("popup_desc('pop_input');",500);
+
+		$("#mb_name").focus();
+		return false;
+	}
+
+	if (mb_phone2 == "")
+	{
+		setTimeout("popup_desc('pop_input');",500);
+
+		$("#mb_phone2").focus();
+		return false;
+	}
+
+	if (mb_phone3 == "")
+	{
+		setTimeout("popup_desc('pop_input');",500);
+
+		$("#mb_phone3").focus();
+		return false;
+	}
+
+	if ($('#use_agree').is(":checked") == false)
+	{
+		setTimeout("popup_desc('pop_use_agree_alert');",500);
+		return false;
+	}
+
+	if ($('#privacy_agree').is(":checked") == false)
+	{
+		setTimeout("popup_desc('pop_privacy_agree_alert');",500);
+		return false;
+	}
+
+	if ($('#adver_agree').is(":checked") == false)
+	{
+		setTimeout("popup_desc('pop_adver_agree_alert');",500);
+		return false;
+	}
+
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"					: "insert_info",
+			"mb_name"		: mb_name,
+			"mb_phone"		: mb_phone
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			setTimeout("popup_desc('pop_thanks');",500);
+		}
+	});
+}
 
 </script>
 <?
@@ -688,68 +809,5 @@ function popup_desc(param)
 
 
 
-function input_info()
-{
-	var mb_name	= $("#mb_name").val();
-	var mb_phone1	= $("#mb_phone1").val();
-	var mb_phone2	= $("#mb_phone2").val();
-	var mb_phone3	= $("#mb_phone3").val();
-	var mb_phone	= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
-
-	if (mb_name == "")
-	{
-		setTimeout("popup_desc('pop_input');",500);
-
-		$("#mb_name").focus();
-		return false;
-	}
-
-	if (mb_phone2 == "")
-	{
-		setTimeout("popup_desc('pop_input');",500);
-
-		$("#mb_phone2").focus();
-		return false;
-	}
-
-	if (mb_phone3 == "")
-	{
-		setTimeout("popup_desc('pop_input');",500);
-
-		$("#mb_phone3").focus();
-		return false;
-	}
-
-	if ($('#use_agree').is(":checked") == false)
-	{
-		setTimeout("popup_desc('pop_use_agree_alert');",500);
-		return false;
-	}
-
-	if ($('#privacy_agree').is(":checked") == false)
-	{
-		setTimeout("popup_desc('pop_privacy_agree_alert');",500);
-		return false;
-	}
-
-	if ($('#adver_agree').is(":checked") == false)
-	{
-		setTimeout("popup_desc('pop_adver_agree_alert');",500);
-		return false;
-	}
-
-	$.ajax({
-		type:"POST",
-		data:{
-			"exec"					: "insert_info",
-			"mb_name"		: mb_name,
-			"mb_phone"		: mb_phone
-		},
-		url: "../main_exec.php",
-		success: function(response){
-			setTimeout("popup_desc('pop_thanks');",500);
-		}
-	});
-}
 
 </script>
