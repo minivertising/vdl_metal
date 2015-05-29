@@ -16,7 +16,7 @@
           <a href="#" onclick="movie_share('twitter')"><img src="images/popup/btn_share_tw.png" /></a>
         </div>
         <div class="block_btn">
-          <a href="index.php" class="common_3"><img src="images/popup/btn_ok.png" /></a>
+          <a href="#" onclick="go_main();" class="common_3"><img src="images/popup/btn_ok.png" /></a>
         </div>
       </div><!--inner-->
     </div>
@@ -131,4 +131,9 @@ function movie_share(media)
 	}
 }
 
+function go_main()
+{
+	alert('참여해 주셔서 감사합니다.');
+	location.href = "./index.php";
+}
 </script>
