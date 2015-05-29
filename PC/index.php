@@ -31,7 +31,7 @@
         	<a href="#" onclick="sns_share('facebook');"><img src="images/btn_sns_fb.png" alt=""/></a>
         	<a href="#" onclick="sns_share('story');"><img src="images/btn_sns_ks.png" alt=""/></a>
             <a href="#" onclick="sns_share('twitter');"><img src="images/btn_sns_tw.png" alt=""/></a>
-        	
+        	<a href="http://www.vdlxkakao.com/PC/index.php?media=vdl_metal" target="_blank"><img src="images/btn_kakao.png" alt=""/></a>
         </div>
       </div>      
   </div>
