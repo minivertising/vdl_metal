@@ -56,7 +56,7 @@
       <div class="center_menu_area">
         <div class="title">
         	<div><img src="images/title.png" alt=""/></div>
-   	    	<div class="btn_view_mv"><a href="#movie_pop" class="popup-with-zoom-anim"><img src="images/bt_top_play.png" alt=""/></a></div>
+   	    	<div class="btn_view_mv"><a href="#movie_pop" class="popup-with-zoom-anim" style="outline:none;"><img src="images/bt_top_play.png" alt=""/></a></div>
         </div>
       </div>
 <!--center_menu_area-->
@@ -107,7 +107,7 @@
 <?
 	}else{
 ?>
-    	<a href="#event_movie" class="popup-with-zoom-anim" onclick="start_api();"><img src="images/btn_event.png" alt=""/></a>
+    	<a href="#event_movie" class="popup-with-zoom-anim" onclick="start_api();" style="outline:none;"><img src="images/btn_event.png" alt=""/></a>
 <?
 	}
 ?>
