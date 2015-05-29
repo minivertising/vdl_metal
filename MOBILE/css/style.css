@@ -8,7 +8,7 @@
 	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 body{
-	background:#fff;
+	background:#000;
 }
 
 /* start state */
@@ -237,7 +237,7 @@ body{
 }
 .block_pro .txt_roll{
 	position:absolute;
-	top:20%;
+	top:22%;
 	width:100%;
 }
 .block_pro .txt_roll .inner_roll{
@@ -256,7 +256,7 @@ body{
 .block_pro .txt_roll .inner_roll div.arrow_left,
 .block_pro .txt_roll .inner_roll div.arrow_right{
 	width:10%;
-	margin-top:11%;
+	margin-top:13%;
 }
 
 .block_pro .txt_roll .inner_roll div.arrow_right{
@@ -268,13 +268,23 @@ body{
 	text-align:center;
 }
 
+.block_pro .btn_buy{
+	position:absolute;
+	bottom:36.5%;
+}
+
+.block_pro .btn_buy,
+.block_pro .btn_buy img{
+	width:100%;
+}
+
 .block_pro .bg_pro,
 .block_pro .bg_pro img{
 	width:100%;
 }
 
 .block_mina{
-	margin-top:-1%;
+	margin-top:-1.5%;
 	position:relative;
 }
 .block_mina,
@@ -292,7 +302,9 @@ body{
 	width:100%;
 	position:relative;
 }
-.block_mina .txt_roll .inner_roll div{
+.block_mina .txt_roll .inner_roll div.arrow_left,
+.block_mina .txt_roll .inner_roll div.arrow_right,
+.block_mina .txt_roll .inner_roll div.txt{
 	float:left;
 	width:84%;
 	text-align:center;

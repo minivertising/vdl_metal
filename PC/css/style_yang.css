@@ -458,13 +458,13 @@ body{
 
 
 .popup_wrap .p_position.p_mid_event .block_content .title{
-	padding-top:50px;
+	padding-top:30px;
 	padding-bottom:20px;
 }
 .popup_wrap .p_position.p_mid_event .block_content .movie{
 	padding-top:0;
 	margin-bottom:20px;
-	background:#000;
+	background:#fff;
 }
 .popup_wrap .p_position.p_mid_event .block_content .txt_notice{
 	text-align:center;
@@ -472,7 +472,7 @@ body{
 }
 .popup_wrap .p_position.p_mid_event .block_content .btn_block{
 	text-align:center;
-	padding-top:20px;
+	padding-top:14px;
 }
 .popup_wrap .p_position.p_mid_event .block_content .quiz{
 	position:relative;
@@ -483,8 +483,8 @@ body{
 .popup_wrap .p_position.p_mid_event .block_content .quiz .quiz_inner{
 	position:absolute;
 	width:200px;
-	right:123px;
-	top:206px;
+	right:45px;
+	top:156px;
 }
 .popup_wrap .p_position.p_mid_event .block_content .quiz .quiz_inner div{
 	float:left;
@@ -505,8 +505,8 @@ body{
 }
 .popup_wrap .p_position.p_mid_event .block_content .quiz .btn_hint{
 	position:absolute;
-	right:210px;
-	bottom:20px;
+	right:278px;
+	bottom:60px;
 }
 
 
@@ -656,6 +656,8 @@ body{
 	font-size:14px;
 	line-height:18px;
 	color:#000;
+	height:37px;
+	border-radius:none;
 }
 
 .popup_wrap .p_position.p_mid_input .block_input .input_one .input_phone .phone_ip input{
@@ -693,6 +695,9 @@ body{
 	float:left;
 }
 
+.popup_wrap .p_position.p_mid_input .check_block .check_one .in_check{
+	padding-top:2px;
+}
 .popup_wrap .p_position.p_mid_input .check_block .check_one .btn_check{
 	float:right;
 	text-align:right;

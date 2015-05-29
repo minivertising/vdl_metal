@@ -3,8 +3,8 @@
 ?>
 <style>
 .s1 {
-    width: 84%;
-    height: 80px;
+    width: 100%;
+    height: ;
 }      
 .s2 {
     width: 80%;
@@ -79,6 +79,7 @@
       <div class="arrow_right"><a href="#" onclick="next_slide();return false;"><img src="images/btn_arrow_right.png" alt=""/></a></div>
     </div>
   </div>
+  <div class="btn_buy"><a href="#" target="_blank"><img src="images/btn_buy.png" alt=""/></a></div>
   <div class="bg_pro"><img src="images/bg_pro.jpg" alt=""/></div>
 </div>
 <div class="mask"></div>

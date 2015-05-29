@@ -353,7 +353,15 @@
 }
 .contents_wrap .area5_bg .inner .txt_pro{
 	position:absolute;
-	top:340px;
+	top:375px;
+}
+.contents_wrap .area5_bg .inner .btn_buy{
+	position:absolute;
+	top:630px;
+}
+.contents_wrap .area5_bg .inner .btn_buy a{
+	display:block;
+	padding-left:40px;
 }
 .contents_wrap .area5_bg .inner .txt_pro .inner_txt_pro{
 	width:320px;
