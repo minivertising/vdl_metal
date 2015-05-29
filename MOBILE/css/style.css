@@ -1089,8 +1089,8 @@ body{
 .popup_wrap .p_position .block_content .inner .quiz .btn_hint{
 	position: absolute;
 	width:25%;
-	bottom:6%;
-	right:31%;
+	bottom:16%;
+	right:41%;
 }
 .popup_wrap .p_position .block_content .inner .quiz .btn_hint a img{
 	width:100%;
