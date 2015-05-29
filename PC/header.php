@@ -31,6 +31,6 @@
   ga('send', 'pageview');
 
 </script>
-    <title>Document</title>
+    <title>VDL</title>
   </head>
   <body>
