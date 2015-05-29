@@ -1012,12 +1012,24 @@ body{
 .popup_wrap .p_position .block_content .inner .quiz .block_input{
 	position: absolute;
 	width:40%;
-	top:52%;
-	left:45%;
+	top:34.5%;
+	left:60.3%;
 }
-@media screen and (min-device-width: 375px) and (max-device-width: 400px) {
+@media screen and (min-device-width: 360px) and (max-device-width: 373px) {
 	.popup_wrap .p_position .block_content .inner .quiz .block_input{
-		top:53%;
+		top:35%;
+	}
+	.popup_wrap .p_position .block_content .inner .quiz .block_input .inner_input div input{
+		width:78%;
+		text-align:center;
+		line-height:18px;
+		height:30px;
+	}
+	
+}
+@media screen and (min-device-width: 374px) and (max-device-width: 400px) {
+	.popup_wrap .p_position .block_content .inner .quiz .block_input{
+		top:36.2%;
 	}
 	.popup_wrap .p_position .block_content .inner .quiz .block_input .inner_input div input{
 		width:78%;
@@ -1029,13 +1041,26 @@ body{
 }
 @media screen and (min-device-width: 401px) and (max-device-width: 800px) {
 	.popup_wrap .p_position .block_content .inner .quiz .block_input{
-		top:54%;
+		top:36%;
 	}
 	.popup_wrap .p_position .block_content .inner .quiz .block_input .inner_input div input{
 		width:78%;
 		text-align:center;
 		line-height:18px;
 		height:30px;
+	}
+	
+}
+@media screen and (min-device-width: 1023px) and (max-device-width: 1200px) {
+	.popup_wrap .p_position .block_content .inner .quiz .block_input{
+		top:37%;
+	}
+	.popup_wrap .p_position .block_content .inner .quiz .block_input .inner_input div input{
+		width:78%;
+		text-align:center;
+		line-height:18px;
+		font-size:30px;
+		height:40px;
 	}
 	
 }
