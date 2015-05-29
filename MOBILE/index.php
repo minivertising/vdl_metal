@@ -281,7 +281,7 @@ function sns_share(media)
 		  container: '#kakao-link-btn',
 		  label: "VDL MEETS SHIN MINA\r\n신민아 셀피의 비밀 힌트 영상을 보고 퀴즈를 맞춰주세요! 맞추신 분에게는 VDL 뷰티 메탈 쿠션 파운데이션과 LG전자 G4를 선물로 드려요!",
 		  image: {
-			src: '"http://www.mnv.kr/MOBILE/images/img_sns_share_new.jpg',
+			src: 'http://www.mnv.kr/MOBILE/images/img_sns_share_new.jpg',
 
 			width: '1200',
 			height: '630'
