@@ -919,7 +919,7 @@
     <div class="block_content">
       <div class="inner">
         <div class="movie">
-        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url']?>" frameborder="0" id="ytplayer_pop2" class="ytplayer_pop2" width="880" height="486"></iframe>
+        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url5']?>" frameborder="0" id="ytplayer_pop2" class="ytplayer_pop2" width="880" height="486"></iframe>
         </div>
       </div><!--inner-->
     </div>

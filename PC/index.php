@@ -56,7 +56,7 @@
       <div class="center_menu_area">
         <div class="title">
         	<div><img src="images/title.png" alt=""/></div>
-   	    	<div class="btn_view_mv"><a href="#movie_pop" class="popup-with-zoom-anim" style="outline:none;"><img src="images/bt_top_play.png" alt=""/></a></div>
+   	    	<div class="btn_view_mv"><a href="#movie_pop" class="popup-with-zoom-anim" onclick="start_api2();" style="outline:none;"><img src="images/bt_top_play.png" alt=""/></a></div>
         </div>
       </div>
 <!--center_menu_area-->
@@ -787,6 +787,39 @@ var txt_num2 = 0;
 
     }, 1000)
 
+	function start_api2()
+	{
+		// 유튜브 반복 재생
+		var controllable_player3,start, 
+		statechange3 = function(e){
+			if (e.data === 0)
+			{
+				controllable_player3.seekTo(0); controllable_player3.playVideo();
+			}
+			else if (e.data === 1)
+			{
+				//controllable_player3.playVideo();
+			}
+			else if (e.data === 2)
+			{
+			}
+			else if (e.data === 5)
+			{
+			}
+		};
+		function onYouTubeIframeAPIReady3() {
+			controllable_player3 = new YT.Player('ytplayer_pop2', {events: {'onStateChange': statechange3}}); 
+		}
+
+		if(window.opera){
+			addEventListener('load', onYouTubeIframeAPIReady3, false);
+		}
+
+		//alert(typeof(controllable_player));
+		if (typeof(controllable_player3) == 'undefined'){
+			onYouTubeIframeAPIReady3();
+		}
+	}
 	// quick menu
 	var quickTop;
 	var navi1;
