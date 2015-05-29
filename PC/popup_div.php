@@ -407,7 +407,7 @@
 <!--end 힌트-->  
 
 <!----------------- 개인정보 활용 약관 팝업 ----------------->
-<div id="pop_use_agree" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-250px;margin-left:-200px">
+<div id="pop_use_agree" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-left:-200px">
   <div class="p_mid_agree p_position">
     <div class="block_close clearfix">
       <a href="#event_input" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
@@ -465,7 +465,7 @@
 <!----------------- IE7 개인정보 활용 약관 팝업 ----------------->
 
 <!----------------- 개인정보 취급위탁동의 약관 팝업 ----------------->
-<div id="pop_privacy_agree" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-250px;margin-left:-200px">
+<div id="pop_privacy_agree" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-left:-200px">
   <div class="p_mid_agree p_position">
     <div class="block_close clearfix">
       <a href="#event_input" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
@@ -511,7 +511,7 @@
 <!----------------- IE7 개인정보 취급위탁동의 약관 팝업 ----------------->
 
 <!----------------- 광고성 정보전송동의 약관 팝업 ----------------->
-<div id="pop_adver_agree" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-top:-250px;margin-left:-200px">
+<div id="pop_adver_agree" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:400px;top:50%;left:50%;margin-left:-200px">
   <div class="p_mid_agree p_position">
     <div class="block_close clearfix">
       <a href="#event_input" class="btn_close popup-with-zoom-anim"><img src="images/popup/btn_close.png" /></a>
