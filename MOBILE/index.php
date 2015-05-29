@@ -22,7 +22,7 @@
     <li><a href="#" onclick="screen_move('event')"><img src="images/btn_gnb_event.png"  alt=""/></a></li>
     <li><a href="#" onclick="screen_move('metal')"><img src="images/btn_gnb_pro.png"  alt=""/></a></li>
     <li><a href="http://www.vdlcosmetics.com/m/index.jsp" target="_blank"><img src="images/btn_home.jpg"  alt=""/></a></li>
-    <li><a href="http://www.vdlxkakao.com/MOBILE/index.php?media=vdl_metal" target="_blank"><img src="images/btn_kakao.png"  alt=""/></a></li>
+    <li><a href="http://www.vdlxkakao.com/?media=vdl_metal" target="_blank"><img src="images/btn_kakao.png"  alt=""/></a></li>
   </ul>
   <div class="btn_sns">
     <div class="inner_sns clearfix">
