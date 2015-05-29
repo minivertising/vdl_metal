@@ -580,7 +580,6 @@ function start_api()
 			//$("#btn_event_wait").hide();
 			//$("#btn_event").show();
 		}
-
 	};
 	function onYouTubeIframeAPIReady() {
 		controllable_player = new YT.Player('ytplayer_pop', {events: {'onStateChange': statechange}}); 
@@ -806,6 +805,7 @@ var txt_num2 = 0;
 			else if (e.data === 5)
 			{
 			}
+
 		};
 		function onYouTubeIframeAPIReady3() {
 			controllable_player3 = new YT.Player('ytplayer_pop2', {events: {'onStateChange': statechange3}}); 
