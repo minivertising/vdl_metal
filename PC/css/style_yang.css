@@ -483,8 +483,8 @@ body{
 .popup_wrap .p_position.p_mid_event .block_content .quiz .quiz_inner{
 	position:absolute;
 	width:200px;
-	right:123px;
-	top:206px;
+	right:45px;
+	top:156px;
 }
 .popup_wrap .p_position.p_mid_event .block_content .quiz .quiz_inner div{
 	float:left;
@@ -505,8 +505,8 @@ body{
 }
 .popup_wrap .p_position.p_mid_event .block_content .quiz .btn_hint{
 	position:absolute;
-	right:210px;
-	bottom:20px;
+	right:278px;
+	bottom:60px;
 }
 
 
