@@ -914,7 +914,7 @@
 <div id="movie_pop" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:900px;top:50%;left:50%;margin-left:-450px;">
   <div class="p_mid_movie p_position">
     <div class="block_close clearfix">
-      <a href="#" onclick="$.magnificPopup.close();" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+      <a href="#" onclick="$.magnificPopup.close();" class="btn_close"><img src="images/popup/btn_close_w.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">

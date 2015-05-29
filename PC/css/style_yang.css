@@ -458,13 +458,13 @@ body{
 
 
 .popup_wrap .p_position.p_mid_event .block_content .title{
-	padding-top:50px;
+	padding-top:30px;
 	padding-bottom:20px;
 }
 .popup_wrap .p_position.p_mid_event .block_content .movie{
 	padding-top:0;
 	margin-bottom:20px;
-	background:#000;
+	background:#fff;
 }
 .popup_wrap .p_position.p_mid_event .block_content .txt_notice{
 	text-align:center;
@@ -472,7 +472,7 @@ body{
 }
 .popup_wrap .p_position.p_mid_event .block_content .btn_block{
 	text-align:center;
-	padding-top:20px;
+	padding-top:14px;
 }
 .popup_wrap .p_position.p_mid_event .block_content .quiz{
 	position:relative;

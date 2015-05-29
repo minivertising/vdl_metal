@@ -143,6 +143,9 @@
                 <div class="arrow_right"><a href="#" onclick="next_txt2();return false;"><img src="images/btn_arrow_right.png" alt=""/></a></div>
             </div>
         </div>
+        <div class="btn_buy">
+        	<a href="http://www.vdlcosmetics.com/product/detail.jsp?pid=KR38001091" target="_blank"><img src="images/btn_buy.png" alt=""/></a>
+        </div>
     </div>
   </div>
  </div>  
