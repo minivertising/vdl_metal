@@ -1,9 +1,26 @@
 <?
 	include_once   "./header.php";
 ?>
-        <div style="width:100%; background:#000; margin-bottom:10px;">
-          <iframe allowfullscreen="1" src="<?=$_gl['youtube_url3']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
+<style>
+body{
+	background:#000;
+}
+
+</style>
+	<div class="popup_wrap">
+   	  	<div class="p_mid p_position movie">
+            <div class="block_close clearfix">
+                <a href="index.php" class="btn_close"><img src="images/popup/btn_close_w.png" /></a>
+            </div>
+            <div class="block_content">
+            	<div class="inner">
+ 					<div style="width:100%; background:#000;">
+                    <iframe allowfullscreen="1" src="<?=$_gl['youtube_url4']?>" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
+                    </div>
+                </div><!--inner-->
+            </div>
         </div>
+	</div>
 <?
 	include_once   "./popup_div.php";
 ?>
@@ -44,19 +61,7 @@
 
     }, 1000)
 
- jQuery(window).bind("orientationchange", function(e) { // 가로세로 전환 처리
-            var orientation = window.orientation;
- 
-            if (orientation == 90 || orientation == -90) {
-	            var i_tw = document.body.clientWidth;
-				alert(i_tw);
-            } else {
-	            var i_tw = document.body.clientWidth;
-				alert(i_tw);
-            }
- 
-        });
- 
+
 $(document).ready(function() {
 
 	//처음 화면 크기에 따라 영상및 커버 크기 변경
@@ -65,26 +70,6 @@ $(document).ready(function() {
 	var youtube_height = (width / 16) * 9;
 	$("#ytplayer").height(youtube_height);
 
-	// 팝업 jQuery 스타일
-	$('.popup-with-zoom-anim').magnificPopup({
-		type: 'inline',
-		fixedContentPos: true,
-		fixedBgPos: true,
-		overflowY: 'hidden',
-		closeBtnInside: true,
-		//preloader: false,
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-zoom-in',
-		showCloseBtn : false,
-		closeOnBgClick: true,
-		callbacks: {
-			open: function() {
-			},
-			close: function() {
-			}
-		}
-	});
 });
 
 </script>
