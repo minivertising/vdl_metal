@@ -911,15 +911,15 @@
     <!--IE7 정답!-->
 
 <!--영상-->
-<div id="movie_pop" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:880px;top:50%;left:50%;margin-left:-450px;">
-  <div class="p_mid_movie p_position">
+<div id="movie_pop" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:884px;top:50%;left:50%;margin-left:-430px;">
+  <div class="p_mid_movie p_position"  style="width:884px">
     <div class="block_close clearfix">
       <a href="#" onclick="$.magnificPopup.close();" class="btn_close"><img src="images/popup/btn_close_w.png" /></a>
     </div>
-    <div class="block_content">
+    <div class="block_content" style="width:864px">
       <div class="inner">
         <div class="movie">
-        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url5']?>" frameborder="0" id="ytplayer_pop2" class="ytplayer_pop2" width="880" height="486"></iframe>
+        <iframe allowfullscreen="1" src="<?=$_gl['youtube_url5']?>" frameborder="0" id="ytplayer_pop2" class="ytplayer_pop2" width="864" height="486"></iframe>
         </div>
       </div><!--inner-->
     </div>
