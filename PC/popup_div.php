@@ -348,7 +348,7 @@
                     </div>
 
                     <div class="btn_block end">
-                        <a href="#" onclick="$.magnificPopup.close();"><img src="images/popup/btn_ok_big.png" alt=""/></a>
+                        <a href="#" onclick="alert('참여해 주셔서 감사합니다.');$.magnificPopup.close();"><img src="images/popup/btn_ok_big.png" alt=""/></a>
                     </div>
                 </div><!--inner-->
             </div>
