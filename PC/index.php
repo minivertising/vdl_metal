@@ -279,10 +279,6 @@ function start_api()
 		{
 			$("#IE7_fake_btn").hide();
 			$("#IE7_real_btn").show();
-			//$("#btn_sel_cloud").attr("data-mfp-src","#share_present");
-			//$("#btn_sel_cloud").attr("class","popup-with-zoom-anim");
-			//$("#btn_event_wait").hide();
-			//$("#btn_event").show();
 		}
 	};
 	function onYouTubeIframeAPIReady() {
@@ -581,6 +577,7 @@ function start_api()
 			//$("#btn_event_wait").hide();
 			//$("#btn_event").show();
 		}
+
 	};
 	function onYouTubeIframeAPIReady() {
 		controllable_player = new YT.Player('ytplayer_pop', {events: {'onStateChange': statechange}}); 
@@ -722,6 +719,7 @@ var txt_num2 = 0;
     statechange1 = function(e){
 		if (e.data === 0)
 		{
+
 			controllable_player1.seekTo(0); controllable_player1.playVideo();controllable_player1.mute();
 		}
 		else if (e.data === 1)
@@ -739,9 +737,18 @@ var txt_num2 = 0;
 			controllable_player1.mute();
     	//controllable_player.playVideo(); 
     };
-    function onYouTubeIframeAPIReady() {
+    function onYouTubeIframeAPIReady1() {
 		controllable_player1 = new YT.Player('ytplayer', {events: {'onStateChange': statechange1}}); 
     }
+
+    if(window.opera){
+		addEventListener('load', onYouTubeIframeAPIReady1, false);
+    }
+	setTimeout(function(){
+    	if (typeof(controllable_player1) == 'undefined'){
+    		onYouTubeIframeAPIReady1();
+    	}
+    }, 1000)
 
     // 유튜브 반복 재생
     var controllable_player2,start, 
@@ -875,8 +882,12 @@ $(document).ready(function() {
 		closeOnBgClick: false,
 		callbacks: {
 			open: function() {
+				controllable_player1.pauseVideo();
+				controllable_player2.pauseVideo();
 			},
 			close: function() {
+				controllable_player1.playVideo();
+				controllable_player2.playVideo();
 			}
 		}
 	});
