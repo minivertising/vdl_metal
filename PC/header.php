@@ -7,7 +7,7 @@
     <meta property="og:title" content="VDL MEETS KAKAO FRIENDS">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.mnv.kr/PC/index.php" />
-    <meta property="og:image" content="http://www.vdlxkakao.com/MOBILE/images/img_sns_share_new2.jpg" />
+    <meta property="og:image" content="http://www.mnv.kr/MOBILE/images/img_sns_share_new.jpg" />
     <meta property="og:description" content="VDL MEETS SHIN MINA 신민아 셀피의 비밀을 말하다. 신민아 셀피의 비밀 힌트 영상을 보고 퀴즈를 맞춰주세요! 맞추신 분에게는 VDL 뷰티 메탈쿠션 파운데이션과 LG전자 G4를 선물로 드려요!">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" type="text/css" href="../lib/Magnific-Popup/magnific-popup.css"> 
