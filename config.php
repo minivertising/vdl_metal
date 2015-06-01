@@ -30,16 +30,16 @@
 		exit;
 	}
 	*/
-
-	if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 7.0" ))
+//print_r($_SERVER['HTTP_USER_AGENT']);
+	if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 7.0" ) || stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 8.0" ))
 		$IE7	= "Y";
 	else
 		$IE7	= "N";
 
-	if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 8.0" ))
-		$IE7	= "Y";
-	else
-		$IE7	= "N";
+	//if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 8.0" ))
+		//$IE7	= "Y";
+	//else
+		//$IE7	= "N";
 
 	/*
 	if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 9.0" ))

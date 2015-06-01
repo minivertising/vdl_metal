@@ -121,13 +121,19 @@
 	}else{
 ?>
     	<a href="#event_movie" class="popup-with-zoom-anim" onclick="start_api();" style="outline:none;"><img src="images/btn_event.png" alt=""/></a>
+    <!-- <div class="video_area">
+          <div class="youtube_div">
+            <iframe allowfullscreen="1" src="<?=$_gl['youtube_url4']?>" frameborder="0" id="ytplayer_viral" class="ytplayer_viral"></iframe>
+          </div>
+          <div class="cover_area">
+          </div> -->
+
 <?
 	}
 ?>
 
     </div>
 	
-
   </div>
  </div>  
 <!--area4-->
@@ -881,7 +887,6 @@ $(window).resize(function(){
 });
 
 $(document).ready(function() {
-
 	//처음 화면 크기에 따라 영상및 커버 크기 변경
 	var width = $(window).width();
 	$("#ytplayer").width(width);
