@@ -36,12 +36,12 @@
 	else
 		$IE7	= "N";
 
-	/*
 	if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 8.0" ))
-		$IE8	= "Y";
+		$IE7	= "Y";
 	else
-		$IE8	= "N";
+		$IE7	= "N";
 
+	/*
 	if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 9.0" ))
 		$IE9	= "Y";
 	else
