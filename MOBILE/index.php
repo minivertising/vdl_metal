@@ -1,5 +1,14 @@
 <?
 	include_once   "./header.php";
+
+	if (!$_SESSION['ss_media'])
+	{
+		$media	= $_REQUEST['media'];
+
+		$_SESSION['ss_media'] = $media;
+		VM_InsertTrackingInfo($media, $gubun);
+	}
+
 ?>
 <style>
 .s1 {

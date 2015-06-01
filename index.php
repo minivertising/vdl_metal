@@ -4,7 +4,7 @@
 	//unset($media);
 	$media	= $_REQUEST['media'];
 
-	//$_SESSION['ss_media'] = $media;
+	$_SESSION['ss_media'] = $media;
 
 	VM_InsertTrackingInfo($media, $gubun);
 
