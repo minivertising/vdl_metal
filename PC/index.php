@@ -107,7 +107,7 @@
 
 
 <!--area4-->
-<div class="area4_bg" style="display:none;">
+<div class="area4_bg bg2" style="display:none;">
   <div class="area4">
   	<div class="tag_event"><img src="images/title_sec_event.png" alt=""/></div>
     
@@ -126,20 +126,8 @@
 ?>
 
     </div>
+	
 
-    <div class="video_area">
-    <!--youtube_div-->
-          <div class="youtube_div">
-            <!-- <iframe allowfullscreen="1" src="<?=$_gl['youtube_url4']?>" frameborder="0" id="ytplayer_viral" class="ytplayer_viral"></iframe> -->
-			<img src="./images/bg_mina.jpg">
-          </div>
-    <!--youtube_div-->
-    <!--cover_area-->
-          <div class="cover_area">
-          </div>
-    <!--cover_area-->
-    </div>
-        
   </div>
  </div>  
 <!--area4-->
@@ -290,25 +278,25 @@ function start_api()
 	$("#IE7_real_btn").hide();
 
 	// 유튜브 반복 재생
-	var controllable_player,start, 
-	statechange = function(e){
+	var controllable_player5,start, 
+	statechange5 = function(e){
 		if (e.data === 0) // 종료됨
 		{
 			$("#IE7_fake_btn").hide();
 			$("#IE7_real_btn").show();
 		}
 	};
-	function onYouTubeIframeAPIReady() {
-		controllable_player = new YT.Player('IE7_ytplayer_pop', {events: {'onStateChange': statechange}}); 
+	function onYouTubeIframeAPIReady5() {
+		controllable_player5 = new YT.Player('IE7_ytplayer_pop', {events: {'onStateChange': statechange5}}); 
 	}
 
 	if(window.opera){
-		addEventListener('load', onYouTubeIframeAPIReady, false);
+		addEventListener('load', onYouTubeIframeAPIReady5, false);
 	}
 
 	//alert(typeof(controllable_player));
-	if (typeof(controllable_player) == 'undefined'){
-		onYouTubeIframeAPIReady();
+	if (typeof(controllable_player5) == 'undefined'){
+		onYouTubeIframeAPIReady5();
 	}
 }
 
@@ -593,8 +581,8 @@ function start_api()
 	$("#real_btn").hide();
 
 	// 유튜브 반복 재생
-	var controllable_player,start, 
-	statechange = function(e){
+	var controllable_player6,start, 
+	statechange6 = function(e){
 		if (e.data === 0) // 종료됨
 		{
 			$("#fake_btn").hide();
@@ -605,16 +593,16 @@ function start_api()
 			//$("#btn_event").show();
 		}
 	};
-	function onYouTubeIframeAPIReady() {
-		controllable_player = new YT.Player('ytplayer_pop', {events: {'onStateChange': statechange}}); 
+	function onYouTubeIframeAPIReady6() {
+		controllable_player6 = new YT.Player('ytplayer_pop', {events: {'onStateChange': statechange6}}); 
 	}
 
 	if(window.opera){
-		addEventListener('load', onYouTubeIframeAPIReady, false);
+		addEventListener('load', onYouTubeIframeAPIReady6, false);
 	}
 
-	if (typeof(controllable_player) == 'undefined'){
-		onYouTubeIframeAPIReady();
+	if (typeof(controllable_player6) == 'undefined'){
+		onYouTubeIframeAPIReady6();
 	}
 }
 
