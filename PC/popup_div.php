@@ -9,7 +9,7 @@
         <div class="title">
           <img src="images/popup/title_event_1.png" />
         </div>
-        <div class="movie">
+        <div class="movie" style="display:none">
           <iframe allowfullscreen="1" src="<?=$_gl['youtube_url2']?>" frameborder="0" id="ytplayer_pop" class="ytplayer_pop"></iframe>
         </div>
         <div class="txt_notice">

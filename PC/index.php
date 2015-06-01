@@ -738,7 +738,7 @@ function input_info()
 <script type="text/javascript">
 var txt_num = 0;
 var txt_num2 = 0;
-/*
+
     // 유튜브 반복 재생
     var controllable_player1,start, 
     statechange1 = function(e){
@@ -808,7 +808,7 @@ var txt_num2 = 0;
 		//$(".cover_area").css("background","url('./images/movCover.png') repeat");
 
     }, 1000)
-*/
+
 	function start_api2()
 	{
 		// 유튜브 반복 재생
