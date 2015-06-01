@@ -73,7 +73,26 @@
 	right:10px;
 	top:9px;
 }
-
+.contents_wrap .icon_area2 .kakao{
+	position:absolute;
+	right:10px;
+	top:60px;
+	width:200px;
+	height:200px;
+}
+.contents_wrap .icon_area2 .kakao .inner{
+	position:relative;
+}
+.contents_wrap .icon_area2 .kakao .inner .close,
+.contents_wrap .icon_area2 .kakao .inner .img{
+	position:absolute;
+	top:40px;
+	right:10px;
+}
+.contents_wrap .icon_area2 .kakao .inner .close{
+	top:20px;
+	right:32px;
+}
 
 
 
