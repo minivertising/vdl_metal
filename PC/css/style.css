@@ -154,17 +154,14 @@
   width: 100%;
   height: 100%;
   background: #fff url(../images/bg_event.png) center 0 no-repeat;
-  background-size: cover;
 }
 .contents_wrap .area2_bg.bg2{
   background: #fff url(../images/bg_mina.jpg) center 0 no-repeat;
-  background-size:cover;
   height:1226px;
   margin-top:-2px;
 }
 .contents_wrap .area4_bg.bg2{
   background: #fff url(../images/bg_viral.jpg) center 0 no-repeat;
-  background-size:cover;
   height:1000px;
   margin-top:-2px;
 }
