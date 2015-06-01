@@ -99,7 +99,7 @@
 
 
 <!--area4-->
-<div class="area4_bg" style="display:none;">
+<div class="area4_bg bg2" style="display:none;">
   <div class="area4">
   	<div class="tag_event"><img src="images/title_sec_event.png" alt=""/></div>
     
@@ -118,19 +118,8 @@
 ?>
 
     </div>
+	
 
-    <div class="video_area">
-    <!--youtube_div-->
-          <div class="youtube_div">
-            <iframe allowfullscreen="1" src="<?=$_gl['youtube_url4']?>" frameborder="0" id="ytplayer_viral" class="ytplayer_viral"></iframe>
-          </div>
-    <!--youtube_div-->
-    <!--cover_area-->
-          <div class="cover_area">
-          </div>
-    <!--cover_area-->
-    </div>
-        
   </div>
  </div>  
 <!--area4-->
