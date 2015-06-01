@@ -70,7 +70,7 @@
   <!-- Page Heading -->
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="page-header">빌리프 이벤트 당첨자 목록</h1>
+        <h1 class="page-header">이벤트 참여자 목록</h1>
       </div>
     </div>
     <!-- /.row -->
@@ -82,7 +82,6 @@
               <input type="hidden" name="pg" value="<?=$pg?>">
               <select name="search_type">
                 <option value="mb_name" <?php if($search_type == "mb_name"){?>selected<?php }?>>이름</option>
-                <option value="shop_name" <?php if($search_type == "shop_name"){?>selected<?php }?>>매장명</option>
                 <option value="mb_phone" <?php if($search_type == "mb_phone"){?>selected<?php }?>>전화번호</option>
               </select>
               <input type="text" name="search_txt" value="<?php echo $search_txt?>">
@@ -90,7 +89,7 @@
               <input type="submit" value="검색">
 			  <li align="right";>
 			  <?
-					$member = "SELECT count(idx) FROM ".$_gl['winner_info_table']." WHERE mb_name <> 'admin' ";
+					$member = "SELECT count(idx) FROM ".$_gl['member_info_table']." WHERE mb_name <> 'admin' ";
 					$res3 = mysqli_query($my_db, $member);
 					list($total_count)	= @mysqli_fetch_array($res3);
 					echo  "전체 참여자수 : $total_count";
@@ -104,8 +103,6 @@
                 <th>순번</th>
                 <th>이름</th>
                 <th>전화번호</th>
-                <th>매장명</th>
-                <th>당첨상품</th>
                 <th>등록일</th>
 				<th>구분</th>
               </tr>
@@ -119,24 +116,16 @@
 	
 	if ($search_txt != "")
 	{
-		if ($search_type == "shop_name")
-		{
-			$shop_query2 = "SELECT idx FROM ".$_gl['shop_info_table']." WHERE shop_name like '%".$search_txt."%'";
-			$res2 = mysqli_query($my_db, $shop_query2);
-			list($shop_idx)	= @mysqli_fetch_array($res2);
-			$where	.= " AND shop_idx ='".$shop_idx."'";
-		}else{
-			$where	.= " AND ".$search_type." like '%".$search_txt."%'";
-		}
+		$where	.= " AND ".$search_type." like '%".$search_txt."%'";
 	}
-	$buyer_count_query = "SELECT count(*) FROM ".$_gl['winner_info_table']." WHERE 1 ".$where."";
+	$buyer_count_query = "SELECT count(*) FROM ".$_gl['member_info_table']." WHERE 1 ".$where."";
 
 	list($buyer_count) = @mysqli_fetch_array(mysqli_query($my_db, $buyer_count_query));
 	$PAGE_CLASS = new Page($pg,$buyer_count,$page_size,$block_size);
 
 	$BLOCK_LIST = $PAGE_CLASS->blockList();
 	$PAGE_UNCOUNT = $PAGE_CLASS->page_uncount;
-	$buyer_list_query = "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_ipaddr <> 'admin' ".$where." Order by idx DESC LIMIT $PAGE_CLASS->page_start, $page_size";
+	$buyer_list_query = "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_name <> 'admin' ".$where." Order by idx DESC LIMIT $PAGE_CLASS->page_start, $page_size";
 
 	$res = mysqli_query($my_db, $buyer_list_query);
 
@@ -147,16 +136,11 @@
 
 	foreach($buyer_info as $key => $val)
 	{
-		$shop_query = "SELECT shop_name FROM ".$_gl['shop_info_table']." WHERE idx='".$buyer_info[$key]['shop_idx']."'";
-		$res = mysqli_query($my_db, $shop_query);
-		$shop_name	= @mysqli_fetch_array($res);
 ?>
               <tr>
                 <td><?php echo $PAGE_UNCOUNT--?></td>	<!-- No. 하나씩 감소 -->
                 <td><?php echo $buyer_info[$key]['mb_name']?></td>
                 <td><?php echo $buyer_info[$key]['mb_phone']?></td>
-                <td><?php echo $shop_name['shop_name']?></td>
-                <td><?php echo $buyer_info[$key]['mb_winner']?></td>
                 <td><?php echo $buyer_info[$key]['mb_regdate']?></td>
 				<td><?php echo $buyer_info[$key]['mb_gubun']?></td>
               </tr>

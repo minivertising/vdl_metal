@@ -30,14 +30,14 @@
             </thead>
             <tbody>
 <?php 
-	$date_query = "SELECT substr(regdate,1,10) mb_date FROM ".$_gl['member_info_table']." WHERE 1 Group by substr(regdate,1,10) order by regdate desc";
+	$date_query = "SELECT substr(mb_regdate,1,10) mb_date FROM ".$_gl['member_info_table']." WHERE 1 Group by substr(mb_regdate,1,10) order by mb_regdate desc";
 	$res = mysqli_query($my_db, $date_query);
 	
 	while ($date_data = @mysqli_fetch_array($res))
 	{		
-		$pc_query		= "SELECT * FROM ".$_gl['member_info_table']." WHERE regdate LIKE  '%".$date_data['mb_date']."%' AND gubun='PC'";
+		$pc_query		= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='PC'";
 		$pc_count		= mysqli_num_rows(mysqli_query($my_db, $pc_query));
-		$mobile_query	= "SELECT * FROM ".$_gl['member_info_table']." WHERE regdate LIKE  '%".$date_data['mb_date']."%' AND gubun='MOBILE'";
+		$mobile_query	= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='MOBILE'";
 		$mobile_count	= mysqli_num_rows(mysqli_query($my_db, $mobile_query));
 		$total_count = $pc_count + $mobile_count;
 

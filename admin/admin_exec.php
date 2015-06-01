@@ -8,7 +8,7 @@
 			$mb_id = $_REQUEST['mb_id'];
 			$mb_pw = $_REQUEST['mb_pw'];
 
-			$query = "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_name='".$mb_id."' AND mb_phone='".$mb_pw."'";
+			$query = "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_name='".$mb_id."' AND mb_phone='".$mb_pw."'";
 			$result 		= mysqli_query($my_db, $query);
 			$member_info	= mysqli_fetch_array($result);
 			if ($member_info)
