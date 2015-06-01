@@ -417,6 +417,9 @@ function input_info()
 	});
 }
 
+$("#IE7_all_agree").click(function() {
+		$("input[name=IE7_agree]:checkbox").attr("checked", true);
+});
 </script>
 <?
 	}else{

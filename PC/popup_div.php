@@ -106,7 +106,7 @@
             <div><input type="text" name="IE7_answer_input4" id="IE7_answer_input4" onkeyup="chktxt(this)" maxlength="1"></div>
           </div>
           <div class="btn_hint">
-            <a href="#"><img src="images/popup/btn_hint.png" alt=""/></a>
+            <a href="#" onclick="open_pop('IE7_event_hint','IE7_event_answer')"><img src="images/popup/btn_hint.png" alt=""/></a>
           </div>
         </div>
         <div class="btn_block">
@@ -116,7 +116,7 @@
     </div>
   </div>
 </div>
-<!----------------- 이벤트 단어넣기 팝업 ----------------->
+<!----------------- IE7 이벤트 단어넣기 팝업 ----------------->
 
 <!----------------- 이벤트 개인정보 입력 팝업 ----------------->
 <div id="event_input" class="popup_wrap zoom-anim-dialog mfp-hide" style="width:550px;top:50%;left:50%;margin-left:-275px;">
@@ -223,7 +223,7 @@
 <!----------------- 이벤트 개인정보 입력 팝업 ----------------->
 
 <!----------------- IE7 이벤트 개인정보 입력 팝업 ----------------->
-<div id="IE7_event_input" class="popup_wrap" style="position:absolute;width:550px;top:50%;left:50%;margin-top:-310px;margin-left:-275px;z-index:99999;display:none;">
+<div id="IE7_event_input" class="popup_wrap" style="position:absolute;width:550px;top:50%;left:50%;margin-top:-310px;margin-left:-275px;z-index:99999;display:none">
   <div class="p_mid_input p_position">
     <div class="block_close clearfix">
       <a href="#" onclick="open_pop('IE7_confirm3_alert','IE7_event_input')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
@@ -275,7 +275,7 @@
         <div class="check_block">
           <div class="check_one clearfix">
             <div class="in_check">
-              <input type="checkbox" name="all_agree" id="all_agree" class="all_chk_cl">
+              <input type="checkbox" name="all_agree" id="IE7_all_agree" class="all_chk_cl">
             </div>
             <div class="txt_check">
               <img src="images/popup/label_agree_all.png" alt=""/>
@@ -285,7 +285,7 @@
           </div>
           <div class="check_one clearfix">
             <div class="in_check">
-              <input type="checkbox" name="IE7_use_agree" id="IE7_use_agree">
+              <input type="checkbox" name="IE7_agree" id="IE7_use_agree">
             </div>
             <div class="txt_check">
               <img src="images/popup/label_agree.png" alt=""/>
@@ -296,7 +296,7 @@
           </div>
           <div class="check_one clearfix">
             <div class="in_check">
-              <input type="checkbox" name="IE7_privacy_agree" id="IE7_privacy_agree">
+              <input type="checkbox" name="IE7_agree" id="IE7_privacy_agree">
             </div>
             <div class="txt_check">
               <img src="images/popup/label_agree.png" alt=""/>
@@ -307,7 +307,7 @@
           </div>
           <div class="check_one clearfix">
             <div class="in_check">
-              <input type="checkbox" name="IE7_adver_agree" id="IE7_adver_agree">
+              <input type="checkbox" name="IE7_agree" id="IE7_adver_agree">
             </div>
             <div class="txt_check">
               <img src="images/popup/label_agree.png" alt=""/>
@@ -399,6 +399,26 @@
         </div>
         <div class="btn_block">
           <a href="#event_answer" class="popup-with-zoom-anim"><img src="images/popup/btn_ok.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!--end 힌트-->  
+
+<!--힌트.-->
+<div id="IE7_event_hint" class="popup_wrap" style="position:absolute;width:400px;top:50%;left:50%;margin-left:-200px;margin-top:-140px;z-index:99999;display:none;">
+  <div class="p_alert p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="open_pop('IE7_event_answer','IE7_event_hint')" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="title">
+          <img src="images/popup/title_alert_hint.png" />
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="open_pop('IE7_event_answer','IE7_event_hint')"><img src="images/popup/btn_ok.png" alt=""/></a>
         </div>
       </div><!--inner-->
     </div>
