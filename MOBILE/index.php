@@ -254,7 +254,7 @@ function sns_share(media)
 {
 	if (media == "facebook")
 	{
-		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.mnv.kr/?media=fbshare'),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.vdl-metalcushion.com/?media=fbshare'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -265,7 +265,7 @@ function sns_share(media)
 			}
 		});
 	}else if (media == "twitter"){
-		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS SHIN MINA 신민아 셀피의 비밀을 말하다. 신민아 셀피의 비밀 힌트 영상을 보고 퀴즈를 맞춰주세요! 맞추신 분에게는 VDL 뷰티 메탈쿠션 파운데이션과 LG전자 G4를 선물로 드려요!") + '&url='+ encodeURIComponent('http://www.mnv.kr/?media=twshare'),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("VDL MEETS SHIN MINA 신민아 셀피의 비밀을 말하다. 신민아 셀피의 비밀 힌트 영상을 보고 퀴즈를 맞춰주세요! 맞추신 분에게는 VDL 뷰티 메탈쿠션 파운데이션과 LG전자 G4를 선물로 드려요!") + '&url='+ encodeURIComponent('http://www.vdl-metalcushion.com/?media=twshare'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -283,14 +283,14 @@ function sns_share(media)
 		  container: '#kakao-link-btn',
 		  label: "VDL MEETS SHIN MINA\r\n신민아 셀피의 비밀 힌트 영상을 보고 퀴즈를 맞춰주세요! 맞추신 분에게는 VDL 뷰티 메탈 쿠션 파운데이션과 LG전자 G4를 선물로 드려요!",
 		  image: {
-			src: 'http://www.mnv.kr/MOBILE/images/img_sns_share_new_kt.jpg',
+			src: 'http://www.vdl-metalcushion.com/MOBILE/images/img_sns_share_new_kt.jpg',
 
 			width: '1200',
 			height: '630'
 		  },
 		  webButton: {
 			text: 'VDL MEETS SHIN MINA',
-			url: 'http://www.mnv.kr/?media=kakao' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+			url: 'http://www.vdl-metalcushion.com/?media=kakao' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 		  }
 		});
 		$.ajax({
@@ -311,7 +311,7 @@ function sns_share(media)
 				Kakao.API.request( {
 					url : '/v1/api/story/linkinfo',
 					data : {
-						url : 'http://www.mnv.kr/?media=ksshare'
+						url : 'http://www.vdl-metalcushion.com/?media=ksshare'
 					}
 				}).then(function(res) {
 					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.

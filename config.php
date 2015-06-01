@@ -23,11 +23,13 @@
 		}
 	}
 
+	/*
 	if(stripos( $_SERVER['HTTP_HOST'], "metalcushion" )){
 	//if(stripos( $_SERVER['HTTP_HOST'], "mnv.kr" )){
 		echo "오픈 중비중입니다.";
 		exit;
 	}
+	*/
 
 	if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 7.0" ))
 		$IE7	= "Y";
