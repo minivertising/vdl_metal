@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="../lib/iCheck/skins/all.css">
     <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-    <!-- <script type="text/javascript" src="../js/main.js"></script> -->
     <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
     <script type='text/javascript' src='../lib/iCheck/icheck.js'></script>
     <!-- <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script> -->
