@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
-  <meta property="og:title" content="VDL MEETS KAKAO FRIENDS">
+  <meta property="og:title" content="VDL MEETS SHIN MINA">
   <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.vdl-metalcushion.com/PC/index.php" />
     <meta property="og:image" content="http://www.vdl-metalcushion.com/MOBILE/images/img_sns_share_new_fb.jpg" />

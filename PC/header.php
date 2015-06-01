@@ -4,7 +4,7 @@
 <!doctype html>
 <html>
   <head>
-    <meta property="og:title" content="VDL MEETS KAKAO FRIENDS">
+    <meta property="og:title" content="VDL MEETS SHIN MINA">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.vdl-metalcushion.com/PC/index.php" />
     <meta property="og:image" content="http://www.vdl-metalcushion.com/MOBILE/images/img_sns_share_new_fb.jpg" />
