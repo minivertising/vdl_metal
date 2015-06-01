@@ -11,6 +11,12 @@
     margin-top:7%;
 }      
 </style>
+<div class="pop_icon">
+	<div class="inner">
+    	<div class="close"><a href="#"><img src="images/btn_close_pop.png" width="23" alt=""/></a></div>
+        <div class="img"><a href="http://www.vdlxkakao.com/?media=vdl_metal" target="_blank"><img src="images/btn_go_kakao.png" width="110" alt=""/></a></div>
+    </div>
+</div>
 <div class="menu clearfix">
   <a href="index.php" class="logo"><img src="images/logo.png" width="80" alt=""/></a>
   <a href="#" class="menu_ham"  onclick="show_menu()"><img src="images/menu_ham.png" width="27" alt=""/></a>
