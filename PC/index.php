@@ -458,7 +458,9 @@ function movie_share(media)
 			}
 		});
 	}else{
+		/*
 		media	= "stmovie";
+
 		// 로그인 창을 띄웁니다.
 		Kakao.Auth.login({
 			success: function() {
@@ -503,6 +505,8 @@ function movie_share(media)
 				alert(JSON.stringify(err))
 			},
 		});
+		*/
+		alert('서비스 준비중입니다.');
 	}
 }
 
@@ -532,6 +536,7 @@ function sns_share(media)
 			}
 		});
 	}else{
+		/*
 		// 로그인 창을 띄웁니다.
 		Kakao.Auth.login({
 			success: function() {
@@ -576,6 +581,8 @@ function sns_share(media)
 				alert(JSON.stringify(err))
 			},
 		});
+		*/
+		alert('서비스 준비중입니다.');
 	}
 }
 
@@ -731,7 +738,7 @@ function input_info()
 <script type="text/javascript">
 var txt_num = 0;
 var txt_num2 = 0;
-
+/*
     // 유튜브 반복 재생
     var controllable_player1,start, 
     statechange1 = function(e){
@@ -801,7 +808,7 @@ var txt_num2 = 0;
 		//$(".cover_area").css("background","url('./images/movCover.png') repeat");
 
     }, 1000)
-
+*/
 	function start_api2()
 	{
 		// 유튜브 반복 재생
