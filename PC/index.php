@@ -447,7 +447,8 @@ function movie_share(media)
 			}
 		});
 	}else{
-		/*
+		Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
+
 		media	= "stmovie";
 
 		// 로그인 창을 띄웁니다.
@@ -494,8 +495,7 @@ function movie_share(media)
 				alert(JSON.stringify(err))
 			},
 		});
-		*/
-		alert('서비스 준비중입니다.');
+		
 	}
 }
 
@@ -570,9 +570,10 @@ function sns_share(media)
 				alert(JSON.stringify(err))
 			},
 		});
-		*/
+		
 		alert('서비스 준비중입니다.');
 	}
+	*/
 }
 
 function start_api()
@@ -587,10 +588,6 @@ function start_api()
 		{
 			$("#fake_btn").hide();
 			$("#real_btn").show();
-			//$("#btn_sel_cloud").attr("data-mfp-src","#share_present");
-			//$("#btn_sel_cloud").attr("class","popup-with-zoom-anim");
-			//$("#btn_event_wait").hide();
-			//$("#btn_event").show();
 		}
 	};
 	function onYouTubeIframeAPIReady6() {
@@ -885,7 +882,6 @@ $(window).resize(function(){
 });
 
 $(document).ready(function() {
-	Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
 
 	//처음 화면 크기에 따라 영상및 커버 크기 변경
 	var width = $(window).width();
