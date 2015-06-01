@@ -851,13 +851,13 @@ $(window).scroll(function() {
 		$("#menu_navi2").attr('src','images/btn_gnb_mina_off.png');
 		$("#menu_navi3").attr('src','images/btn_gnb_event_off.png');
 		$("#menu_navi4").attr('src','images/btn_gnb_metal_off.png');
-		controllable_player1.playVideo();
+		//controllable_player1.playVideo();
 	}else if (navi1 <= $(window).scrollTop() && $(window).scrollTop() <= navi2){
 		$("#menu_navi1").attr('src','images/btn_gnb_mv_off.png');
 		$("#menu_navi2").attr('src','images/btn_gnb_mina_on.png');
 		$("#menu_navi3").attr('src','images/btn_gnb_event_off.png');
 		$("#menu_navi4").attr('src','images/btn_gnb_metal_off.png');
-		controllable_player1.pauseVideo();
+		//controllable_player1.pauseVideo();
 	}else if (navi2 <= $(window).scrollTop() && $(window).scrollTop() <= navi3){
 		$("#menu_navi1").attr('src','images/btn_gnb_mv_off.png');
 		$("#menu_navi2").attr('src','images/btn_gnb_mina_off.png');
