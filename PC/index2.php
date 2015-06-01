@@ -1,5 +1,5 @@
 <?
-	include_once   "./header.php";
+	include_once   "./header2.php";
 ?>
     <div id="header_wrap" style="position:absolute;width:100%;height:70px;background:skyblue;z-index:19995">
       <div>
