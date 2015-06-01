@@ -525,7 +525,8 @@ function sns_share(media)
 			}
 		});
 	}else{
-		/*
+		Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
+
 		// 로그인 창을 띄웁니다.
 		Kakao.Auth.login({
 			success: function() {
@@ -571,9 +572,7 @@ function sns_share(media)
 			},
 		});
 		
-		alert('서비스 준비중입니다.');
 	}
-	*/
 }
 
 function start_api()
