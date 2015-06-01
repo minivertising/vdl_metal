@@ -130,7 +130,8 @@
     <div class="video_area">
     <!--youtube_div-->
           <div class="youtube_div">
-            <iframe allowfullscreen="1" src="<?=$_gl['youtube_url4']?>" frameborder="0" id="ytplayer_viral" class="ytplayer_viral"></iframe>
+            <!-- <iframe allowfullscreen="1" src="<?=$_gl['youtube_url4']?>" frameborder="0" id="ytplayer_viral" class="ytplayer_viral"></iframe> -->
+			<img src="./images/bg_mina.jpg">
           </div>
     <!--youtube_div-->
     <!--cover_area-->
@@ -896,7 +897,7 @@ $(window).resize(function(){
 });
 
 $(document).ready(function() {
-	//Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
+	Kakao.init('050c56bc8b9f3d019a9daa270fc255b9');
 
 	//처음 화면 크기에 따라 영상및 커버 크기 변경
 	var width = $(window).width();
@@ -942,11 +943,11 @@ $(document).ready(function() {
 		callbacks: {
 			open: function() {
 				controllable_player1.pauseVideo();
-				controllable_player2.pauseVideo();
+				//controllable_player2.pauseVideo();
 			},
 			close: function() {
 				controllable_player1.playVideo();
-				controllable_player2.playVideo();
+				//controllable_player2.playVideo();
 			}
 		}
 	});
