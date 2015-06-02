@@ -20,7 +20,7 @@
     margin-top:7%;
 }      
 </style>
-<div class="pop_icon">
+<div class="pop_icon" style="display:none">
 	<div class="inner">
     	<div class="close"><a href="#" onclick="$('.pop_icon').hide();return false;"><img src="images/btn_close_pop.png" width="23" alt=""/></a></div>
         <div class="img"><a href="http://www.vdlxkakao.com/?media=vdl_metal" target="_blank"><img src="images/btn_go_kakao.png" width="110" alt=""/></a></div>
