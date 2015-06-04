@@ -23,7 +23,7 @@
   <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script type="text/javascript" src="../lib/swiper/swiper.jquery.js"></script>
-  <script type='text/javascript' src="../js/analytics.js"></script>
+  <!-- <script type='text/javascript' src="../js/analytics.js"></script> -->
   <script type='text/javascript' src='../lib/iCheck/icheck.js'></script>
   <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
   <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
@@ -38,8 +38,7 @@
   ga('create', 'UA-63502456-1', 'auto');
   ga('send', 'pageview');
 
-</script>
-<style>
+</script><style>
 html,body { height: 100%; margin: 0; padding: 0;}
 </style>
 
