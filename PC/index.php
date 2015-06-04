@@ -8,6 +8,9 @@
 		$_SESSION['ss_media'] = $media;
 		VM_InsertTrackingInfo($media, $gubun);
 	}
+
+	if ($gubun == "MOBILE")
+		echo "<script>location.href='http://www.vdl-metalcushion.com/MOBILE/index.php';</script>";
 ?>
 <!--contents_wrap-->
 <div class="contents_wrap">
