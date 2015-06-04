@@ -43,7 +43,7 @@
         	<a href="#" onclick="sns_share('story');"><img src="images/btn_sns_ks.png" alt=""/></a>
             <a href="#" onclick="sns_share('twitter');"><img src="images/btn_sns_tw.png" alt=""/></a>
         </div>
-        <div class="kakao" id="kakao_banner" style="display:none;">
+        <div class="kakao" id="kakao_banner">
         	<div class="inner">
             	<div class="close"><a href="#" onclick="$('#kakao_banner').hide();return false;"><img src="images/btn_close_pop.png" alt=""/></a></div>
         		<div class="img"><a href="http://www.vdlxkakao.com/?media=vdl_metal" target="_blank"><img src="images/btn_kakao.png" alt=""/></a></div>
