@@ -49,7 +49,11 @@
   </div>
 </div>
 <div class="block_top">
-  <a href="popup_movie.php"><img src="images/img_top.jpg" alt=""/></a>
+  <div class="top_btn">
+  	<a href="#" onclick="screen_move('event')"><img src="images/popup/btn_top_event.png" alt=""/></a>
+    <a href="popup_movie.php"><img src="images/popup/btn_top_movie.png" alt=""/></a>
+  </div>
+  <div class="bg_top"><img src="images/img_top.jpg" alt=""/></div>
 </div>
 
 <div class="block_mina">

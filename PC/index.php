@@ -72,7 +72,10 @@
       <div class="center_menu_area">
         <div class="title">
         	<div><img src="images/title.png" alt=""/></div>
-   	    	<div class="btn_view_mv"><a href="#movie_pop" class="popup-with-zoom-anim" onclick="start_api2();" style="outline:none;"><img src="images/bt_top_play.png" alt=""/></a></div>
+   	    	<div class="btn_view_mv">
+            	<a href="#" onclick="move_area('event')" style="outline:none;"><img src="images/bt_top_event.png" alt=""/></a>
+            	<a href="#movie_pop" class="popup-with-zoom-anim" onclick="start_api2();" style="outline:none;"><img src="images/bt_top_play.png" alt=""/></a>
+            </div>
         </div>
       </div>
 <!--center_menu_area-->

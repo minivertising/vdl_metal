@@ -185,12 +185,22 @@ body{
 .block_top .title img{
 	width:100%;
 }
-.block_top .top_bg{
+.block_top .bg_top{
 	width:100%;
 }
-.block_top .top_bg img{
+.block_top .bg_top img{
 	width:100%;
 }
+.block_top .top_btn{
+	position:absolute;
+	top:70%;
+}
+
+.block_top .top_btn a img{
+	width:49%;
+}
+
+
 .block_top .btn_main_block{
 	width:100%;
 	position:absolute;
