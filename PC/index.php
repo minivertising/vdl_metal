@@ -588,6 +588,7 @@ function start_api()
 {
 	$("#fake_btn").show();
 	$("#real_btn").hide();
+			alert('222');
 
 	// 유튜브 반복 재생
 	var controllable_player6,start, 
@@ -596,6 +597,9 @@ function start_api()
 		{
 			$("#fake_btn").hide();
 			$("#real_btn").show();
+		}else if (e.data === 1) // 재생중
+		{
+			alert('111');
 		}
 	};
 	function onYouTubeIframeAPIReady6() {
